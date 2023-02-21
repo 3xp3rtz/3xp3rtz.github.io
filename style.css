@@ -1,5 +1,24 @@
+@media only screen and (min-width: 990px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	#left-nav {
+		display: none;
+	}
+}
+
+body {
+	background-color: #cde;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 #nav-bar {
     table-layout: auto;
+	will-change: transform;
+	transform: translateX(-100);
 }
 
 .nav-elem {
@@ -9,7 +28,6 @@
 	line-height: 40px;
 	background-color: #4FA0D8;
 	border-right: #CCC 1px solid;
-    /* width: 100px; */
 }
 
 .nav-elem a {
