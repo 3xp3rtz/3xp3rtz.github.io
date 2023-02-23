@@ -21,7 +21,10 @@
 		font-size: 24px;
 		padding-inline: 10px;
 	}
-}	
+    .nav-child, .nav-child li {
+        padding-inline: 0px;
+    }
+}
 
 @media only screen and (max-width: 600px) {
 	#left-nav {
@@ -36,13 +39,21 @@
 	padding-left: 10px;
 }
 
-#content p {
+#main-content p {
 	padding-left: 10px;
+}
+
+#main-content {
+    padding-left: 10px;
+}
+
+.spaced {
+    padding-top: 30px;
 }
 
 body {
 	background-color: #cde;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #nav-bar {
@@ -107,7 +118,7 @@ li:hover {
 }
 
 .nav-elem li:hover {
-	background-color: #F0F0F0;
+	background-color: #eeeeF0;
 }
 
 .expand {
