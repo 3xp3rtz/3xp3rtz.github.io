@@ -16,14 +16,14 @@
 	#nav-bar {
 		height: 60px;
 	}
-	.nav-elem {
+	.nav-child, .nav-child li {
+		padding-inline: 0px;
+	}
+	.nav-bar-elem {
 		line-height: 60px;
 		font-size: 24px;
 		padding-inline: 10px;
 	}
-    .nav-child, .nav-child li {
-        padding-inline: 0px;
-    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -51,9 +51,15 @@
     padding-top: 30px;
 }
 
+html {
+	height: 100%;
+}
+
 body {
-	background-color: #cde;
+	/* background-color: #cde; */
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	height: 100%;
+	background-image: linear-gradient(to bottom right, rgba(0, 255, 255, 0.1), rgba(9, 187, 251, 0.4), rgba(0, 127, 255, 0.9));
 }
 
 #nav-bar {
@@ -65,7 +71,7 @@ body {
 	margin: -8px;
 }
 
-.nav-elem {
+.nav-elem, .nav-bar-elem {
 	display: block;
 	position: relative;
 	float: left;
@@ -73,13 +79,13 @@ body {
 	border-right: #CCC 1px solid;
 }
 
-.nav-elem a {
+.nav-bar-elem a {
 	margin: 15px;
 	color: #FFFFFF;
 	text-decoration: none;
 }
 
-.nav-elem:hover>.nav-child {
+.nav-bar-elem:hover>.nav-child {
 	display: block;
 	position: absolute;
 }
@@ -117,7 +123,7 @@ li:hover {
 	background-color: #95B4CA;
 }
 
-.nav-elem li:hover {
+.nav-bar-elem li:hover {
 	background-color: #eeeeF0;
 }
 
