@@ -5,12 +5,33 @@
     <title>3xp3rtz</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/style.css">
-</head>
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['\\(', '\\)']],
+            extensions: ["AMSmath.js", "AMSsymbols.js", "mhchem.js", "noErrors.js", "noUndefined.js"]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="jquery.jslatex.js"></script></head>
+    <script>
+        $(function () {
+            $(".latex").latex();
+        });
+    </script>
 
 <body>
     <!-- nav bar -->
-    <div id="nav-bar"><div id="left-nav"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a>Unit 1</a><ul class="nav-child"><li><a href="#">Java OOP</a></li><li class="nav-elem"><a href="#">Objects <span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Classes</a></li><li><a href="#">Attributes</a></li><li><a href="#">Methods</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Arrays</a><ul class="nav-child"><li class="nav-elem"><a href="#">Primitive Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Integers</a></li><li><a href="#" nowrap>Strings</a></li></ul></li><li class="nav-elem"><a href="#">Object Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Multidimensional</a></li><li><a href="#">Numbers</a></li></ul></li><li><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a>Classes</a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li class="nav-elem"><a href="#">List<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Wow</a></li></ul></li></ul></li><li class="nav-bar-elem"><a href="chem-notes.html">Chem Notes</a></li></ul></div><div id="right-nav"></div></div>
+    <div id="nav-bar"><div id="left-nav"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a>Unit 1</a><ul class="nav-child"><li><a href="#">Java OOP</a></li><li class="nav-elem"><a href="#">Objects <span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Classes</a></li><li><a href="#">Attributes</a></li><li><a href="#">Methods</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Arrays</a><ul class="nav-child"><li class="nav-elem"><a href="#">Primitive Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Integers</a></li><li><a href="#" nowrap>Strings</a></li></ul></li><li class="nav-elem"><a href="#">Object Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Multidimensional</a></li><li><a href="#">Numbers</a></li></ul></li><li><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a>Classes</a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li class="nav-elem"><a href="#">List<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Wow</a></li></ul></li></ul></li><li class="nav-bar-elem"><a href="chem-notes.html">Chem Notes</a></li>                <li class="nav-bar-elem"><a href="math-notes.html">Math Notes</a></li></ul></div><div id="right-nav"></div></div>
     <div class="content indent small">
+        <div id="lesson-1">
+
         <h1>Covalent/Molecular Bonds</h1>
 
         <h2>Stability</h2>
@@ -109,9 +130,116 @@
         <p>H + another non-metal element</p>
         <p>HCl, H_2S, H_3P</p>
         <p>- followed by subscript (aq) for aqueous</p>
+        <p>Hydro-element-ic acid</p>
         
-        <p></p>
+        <h3>Oxyacids</h3>
+        <p>H + polyatomic ion</p>
+        <p>Add # of negative charges the polyatomic ion has</p>
+        <p>-ite: -ous acid</p>
+        <p>nitrite -> nitrous acid</p>
+        <p>-ate: -ic acid</p>
+        <p>sulfate -> sulfuric acid</p>
 
+        <p></p>
+        </div>
+        
+        
+        <br><br><br><br><br><br>
+
+
+        <div id="lesson-2">
+        
+        <h1>VSEPR Theory</h1>
+        <h2>Polarity in Molecules</h2>
+
+        <p>Overall polarity is based on its shapes and bonds </p>
+
+
+        <p>can put polar bonds to make non-polar bonds</p>
+        <p>two "trucks" pulling in different directions, a non-polar molecule</p>
+        <p>Third "truck" pulls in a different direction = uneven pull from different directions = polar</p>
+        <p>Fourth "truck" pulls in another different direction: even pull = non-polar</p>
+        <p>Fourth "truck" replaced by a weak car = uneven pull from stronger pull on one side = polar</p>
+        <br>
+        <h3>Rule of Thumb:</h3>
+        <p>If the shape is symmetrical, the molecule will be non-polar</p>
+        <p>If the shape is asymmetrical, the molecule will be polar.</p>
+
+        <h2>What is VSEPR Theory?</h2>
+        <p>VSEPR theory (pronounced ves-purr) is used to predict the shapes of molecules based on the repulsion of the bonding and non-bonding electrons in the molecule</p>
+        <br>
+        <p>1. Draw Lewis diagram</p>
+        <p>Treat the multiple bonds as if they were single bonds</p>
+        <br>
+        
+        <p>Bond angles from outer atom to central atom to outer atom</p>
+        <p>Asymmetrical from different atoms or shape</p>
+        <br>
+        <p>AX_4E_0</p>
+        <p>Atom BondedElement_# LonePairs_#</p>
+        <p>\(CH_4\) = \(CH_4E_0\)</p>
+        <p>If the central atom is placed in the center of a sphere</p>
+
+        <p>Ball and stick diagram</p>
+
+        <p>Normal lines = flat on plane</p>
+        <p>Filled triangle (larger end on outer atom) = coming out of screen</p>
+        <p>Hashed triangle (larger end on outer atom) = going into screen</p>
+        <br>
+        <p>Four pairs of electrons will always arrange in a tetrahedral shape</p>
+        <p>Tetrahedron domain = tetrahedron family</p>
+        <p>Anything in this family = \(A X_n E_m \Rightarrow n+m = 4\)</p>
+        <br>
+        <p>Shape is determined by the atoms, not the electrons</p>
+        <p>Polarity not contributed to by lone pairs</p>
+        <p>Lone pair is still repelling the atoms</p>
+        <br>
+        <p>\(NH_3\)</p>
+        <p>\chemfig{A-B}\\</p>
+        <br>
+        <p>
+
+
+        </p>
+
+        <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 5\)</p>
+        <p>\(\quad\)Triangular (trigonal) bipyramidal shape</p>
+        <p>
+                F  F
+                | /
+            F---P
+                | \
+                F  F
+
+        </p>
+
+        <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 6\)</p>
+        <p>\(\quad\)Regular octahedron</p>
+        <p>
+              F   F             F
+               \ /              |
+            F---S---F       F ) S ( F
+               / \            > | <
+              F   F         F   F   F
+        </p>
+
+        <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 2\)</p>
+        <p>Linear</p>
+        <p>F--Be--F</p>
+        
+        <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 3\)</p>
+        <p>
+            F   F
+             \ /
+              B
+              |
+              F
+        </p>
+
+        <p>\ce{H2O}</p>
+
+        <br><br><br><br>
+        </div>
     </div>
 </body>
 
