@@ -23,7 +23,7 @@
     <!-- nav bar -->
     <div id="nav-bar"><div id="left-nav"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a>Unit 1</a><ul class="nav-child"><li><a href="#">Java OOP</a></li><li class="nav-elem"><a href="#">Objects <span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Classes</a></li><li><a href="#">Attributes</a></li><li><a href="#">Methods</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Arrays</a><ul class="nav-child"><li class="nav-elem"><a href="#">Primitive Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Integers</a></li><li><a href="#" nowrap>Strings</a></li></ul></li><li class="nav-elem"><a href="#">Object Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Multidimensional</a></li><li><a href="#">Numbers</a></li></ul></li><li><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a>Classes</a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li class="nav-elem"><a href="#">List<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Wow</a></li></ul></li></ul></li><li class="nav-bar-elem"><a href="chem-notes.html">Chem Notes</a></li>                <li class="nav-bar-elem"><a href="math-notes.html">Math Notes</a></li></ul></div><div id="right-nav"></div></div>
     <div class="content indent small">
-
+        <div id="lesson-3.6">
         <h1>3.6 Factoring Polynomials</h1>
         <h2>The Remainder Theorem</h2>
         <p>If a polynomial \(P(x)\) is divided by \((x-b),\ b \in \mathbb{R}\)<p></p>
@@ -171,6 +171,71 @@
         <p>_ | 12</p>
 
         <br><br><br><br>
+        </div>
+
+        <div id="lesson-3.4">
+        <h2>3.4 Transformations of Power Functions (Cubic, Quartic, and Other)</h2>
+
+        <p>\(f(x) = (x+2)^3 + 8\)</p>
+        <p>\((x+2)^3 + 8 = 0\)</p>
+        <p>\(\sqrt[3]{(x+2)^3} = \sqrt[3]{-8}\)</p>
+        <p>\(x = -2\)</p>
+        <p>\(y\!\!-\!\!intercept = f(0) = 16\)</p><br>
+
+        <p>\(f(x) = -(2x-1)^4 + 16\)</p>
+        <p>\(\phantom{f(x)} = -[\,2\,(x-\frac{1}{2})\,]^4 + 16\)</p>
+        <p>\(\phantom{f(x)} = -16(x-\frac{1}{2})^4 + 16\)</p><br>
+
+        <p>\(x\!\!-\!\!intercept\)</p>
+        <p>\(\phantom{-1}0 = -16(x-\frac{1}{2})^4 + 16\)</p>
+        <p>\(-16 = -16(x-\frac{1}{2})^4\)</p>
+        <p>\(\phantom{-1}1 = (x-\frac{1}{2})^4\)</p><br>
+        
+        <p>6. a) \(f(x) = x^2\ \sqrt[3]{x-1}\)</p>
+        <p>\(\phantom{\text{6. a)}} f(x) \rightarrow x^\frac{7}{3}\)</p><br>
+
+        <p>\(\phantom{\text{6. }}\)b) \(f(x) = x^\frac{1}{3}(x-8)^\frac{2}{3}\)</p>
+        <p>oblique asymptote / slant asymptote</p>
+
+        <br>
+        <h2>Factoring \(x^n\)</h2>
+        <p>\(f(x) = x^n - 1\)</p>
+        <p>\(\quad n=odd: b = \pm1\)</p>
+        <p>\(\quad\ \phantom{n=odd: } f(1) = 0\)</p>
+        <p>\(\quad\ \phantom{n=odd: } f(-1) \neq 0\)</p>
+        
+        <p>\(1 | 1 0 0 ... 0 -1\)</p>
+        1 | 1 0 0 ... 0 -1
+          |   1 1 ... 1  1
+        --+---------------------------
+          | 1 1 1 ... 1  0
+        <br><br>
+        \(x^n-1 = (x-1)(x^n-1 + x^n-2 + ... x + 1)\)
+        <br><br>
+        
+        <p>\(\quad n=even: b = \pm1\)</p>
+        <p>\(\quad\ \phantom{n=even: } f(1) = 0\)</p>
+        <p>\(\quad\ \phantom{n=even: } f(-1) = 0\)</p>
+        <br><br>
+        
+        1  | 1  0  0  0 ...  0 -1
+           |    1  1  1 ...  1  1
+        ---+---------------------------
+        -1 | 1  1  1  1 ...  1  0
+           |   -1  0 -1 ... -1
+        ---+---------------------------
+           | 1  0  1  0 ...  0  (dropped 0 because factored an x out)
+        
+        <br><br><br>
+
+
+        \(
+        \longdiv[x=1]{x^3+x^2-1}
+        \longdiv{225}{15}
+        \)
+
+        </div>
+        <br><br><br><br><br>
     </div>
 </body>
 

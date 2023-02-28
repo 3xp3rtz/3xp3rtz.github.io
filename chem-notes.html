@@ -9,9 +9,9 @@
     window.MathJax = {
         tex: {
             inlineMath: [['\\(', '\\)']],
-            packages: {'[+]': ['mhchem']}
+            packages: {'[+]': ['mhchem', 'color']}
         },
-        loader: { load: ['[tex]/mhchem'] },
+        loader: { load: ['[tex]/mhchem', '[tex]/color'] },
         startup: { typeset: true },
         svg: {
             fontCache: 'global'
@@ -225,18 +225,11 @@
         <p>F--Be--F</p>
         
         <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 3\)</p>
-        <p>
-            F   F
-            \ /
-              B
-              |
-              F
-        </p>
-            
+        
         <!-- \(\ce{H2O}\) -->
         \(
         \begin{array}{c}
-        \ce{\phantom{H_3}CH_3} \\
+        \ce{\phantom{C}CH_3} \\
         | \\
         \ce{CH_3-C-CH_3}\\
         | \\
@@ -246,6 +239,236 @@
 
         <br><br><br><br>
         </div>
+        
+        <h1>Organic Chemistry</h1>
+        <p>Organic molecules are covalently-bonded, made of carbons and hydrogens</p>
+        <p>Isomers: different organic molecules with the same formula</p>
+        <p>Acetic acid: \(\ce{C2H3O2-} \text{ or }\ce{CH3COO-}\)</p><br>
+
+        <p>More organic than non-organic molecules</p>
+        <p>Carbon: 4 valence electrons -> 4 bonds</p>
+        <p>- can form tetrahedral structures</p>
+        <p>Readily bonds with other carbons in branches, rings, etc.</p>
+        <p>Also bonds with \(\ce{O, N, S}\), and halogens</p><br>
+
+        <h2>Organic Chemistry Tree</h2>
+        <img src="Organic Chemistry Table.pdf">
+        <p>Base -> branches</p><br>
+
+        <h2>Drawing Organic Compounds</h2>
+        <p>1. Structural Diagram</p>
+        <p>Shows all bonds in molecule (ignoring \(\ce{H}\) bonds)</p><br>
+        <p>
+            \(
+            \begin{array}{c}
+            \ce{H\quad H\quad H} \\
+            |\quad\ |\quad\ |\\
+            \ce{H-C-C-C-H}\\
+            |\quad\ |\quad\ |\\
+            \ce{H\quad H\quad H} \\
+            \end{array}
+            \)
+        </p>
+
+        <br><br>
+        <p>2. Condensed Structure</p>
+        <p>No bonds but all atoms shown in sequence</p><br>
+        <p>
+            \(\ce{CH3-CH2-CH3}\)
+        </p><br>
+
+        <p>3. Line (Skeletal) Diagrams</p>
+        <p>Carbon atoms implied by vertices (including ends)</p>
+        <p>\(\ce{H}\) not shown but other atoms are</p><br>
+        <p>
+            /\
+        </p><br>
+
+        <h2>General Rules</h2>
+        <ul class="indent">
+            <li>- prefix indicates # of carbon atoms</li>
+            <li>- ending indicates functional groups in structure</li>
+            <li>\(\qquad\)- \(\ce{C=C}\) "ene", \(\ce{-OH}\) "ol"</li>
+            <li>- branches indicated before prefix for # carbons in \(alphabetical\ order\)</li>
+        </ul>
+        <h3>\({\color{purple} BRANCHES}
+            {\text{#} of C's}
+            {BONDS }
+            {FUNCTIONAL GROUPS}\)</h3>
+
+        <br><br>
+        <h3>Naming Rules</h3>
+        <p>Prefix for carbon atoms in chain</p>
+        <ul class="indent">
+            <li>1: meth</li>
+            <li>2: eth</li>
+            <li>3: prop</li>
+            <li>4: but</li>
+            <li>5: pent</li>
+            <li>6: hex</li>
+            <li>7: hept</li>
+            <li>8: oct</li>
+            <li>9: non</li>
+            <li>10: dec</li>
+        </ul><br><br>
+        
+        <ul class="indent no-hover">
+            <li>
+                <h1>Alkanes</h1>
+                <p>Single \(\ce{C-C}\) bonds</p>
+                <p>General Formula \(\ce{C_nH_{2n+2}}\)</p>
+                <p>n = # carbon atoms in chain</p>
+                <p>Naming</p>
+                <p>Correct prefix for # carbons</p>
+                <p>Ends in -ane</p>
+
+            <h2>Naming Branched Hydrocarbons</h2>
+            <p>1. Identify longest condinuous chain/ring of carbons</p>
+            <p>2. # of carbons from end that gives lowest sub for numbers of the branches</p>
+            <p>3. Name each branch and indicate its location with a number</p>
+            <p>4. List the branches in alphabetical order before # carbons prefix</p>
+            <p>5. Commas separate numbers, hyphens separate numbers from words</p>
+            <p>6. If more than 1 of the same branch, Greek prefixes used to indicate this</p>
+            <p>\(\quad\)- prefix for # of carbons</p>
+
+            <h3>Naming Hydrocarbon (Alkyl) Branches</h3>
+            <p>Not all branches attached to main chain at carbon 1</p>
+            <p>When carbon attached to main chain (R) branch named using # C's + -yl</p>
+            <p>\(\quad\)methyl, ethyl, etc.</p><br>
+            
+            <p>When not attached to carbon 1, indicate to which carbon is attached</p><br>
+            <p>\(\ce{Propan-2-yl}\)</p><br>
+            <p>
+            \(
+                \begin{array}{c}
+                \ce{\phantom{C}R-CH2-CH3}\\
+                | \\
+                \ce{CH3} \\
+                \end{array}
+                \)
+            </p><br><br>
+            
+            <p>\(\ce{Pentan-3-yl}\)</p><br>
+            <p>
+                \(
+                \begin{array}{c}
+                \ce{R-CH2-CH2-CH3}\\
+                \phantom{R-} | \phantom{CH2-CH3}\\
+                \phantom{R-} \ce{CH2-CH3} \phantom{CH3}\\
+                \end{array}
+                \)
+            </p>
+
+            <p>
+                    /
+                \   \
+                |   |   |   |
+                / \ / \ / \ / \
+                |   |   |
+                        \
+                        /
+
+            </p>
+
+            <p>10 chain</p>
+            <p>2,3,4,7,8-pentamethyl-5,6-alpropyldecane</p>
+
+            <h2>Other Branches</h2>
+            <ul class="indent">
+                <li>Halogen branches
+                    <p>-Br  bromo</p>
+                    <p>-I  iodo</p>
+                    <p>-Cl  chloro</p>
+                    <p>-F  fluoro</p>
+                </li>
+                <li>-NO2  Nitro</li>
+                <li>-NH2  Amino</li>
+                <li>-OH  Hydroxy</li>
+            </ul><br>
+
+            <p>Tend towards fewer branches</p>
+            <p>2-bromo-1-chloro-4-butan-2-ylhexane (better answer)</p>
+            <p>2-bromo-1-chloro-5-methyl-4-propylheptane (technically correct)</p><br>
+
+            <p>3-methyl-4-propan-2-ylhexane</p>
+            <p>
+                /
+                \ / \ / \
+                     |
+                    / \
+            </p>
+            <p>2,4-dimethyl-3-ethylhexane</p><br>
+
+            <p>2-methylbutane</p>
+            <p>
+                \(
+                \begin{array}{c}
+                \ce{R-CH2-CH2-CH3}\\
+                \phantom{R-} | \phantom{CH2-CH3}\\
+                \phantom{R-} \ce{CH2-CH3} \phantom{CH3}\\
+                \end{array}
+                \)
+            </p>
+            <p>3-methylpentane</p>
+            <p>2,2-dimethylbutane</p><br>
+
+            <p>2-bromopropane</p>
+            <p>2-bromo-2-methylpropane</p>
+            </li>
+            <li>
+            <h1>Alkenes</h1>
+            <p>Contain 1+ \(\ce{C=C}\) double bond</p>
+            <p>Suffix: -ene</p>
+            <p>Position of double bond is indicated for simple alkenes with 4+ carbons or for all branched alkenes</p>
+            <p>Position indicated with number in front of -ene</p>
+            <p>Cis or trans configuration indicated before number</p>
+            <p>Cis makes "C" shape, trans makes "S" shape</p>
+            <p>Neither cis nor trans = E/Z (not covered)</p><br>
+            <p>
+                \(
+                \text{Cis configuration}
+                \begin{array}{c}
+                \ce{Br\ \ Br}\\
+                |\quad |\\
+                \phantom{C-}\ce{C=C-C}\\
+                \end{array}
+                \)
+            </p><br>
+            <p>
+                \(
+                \text{Trans configuration}
+                \begin{array}{c}
+                \ce{Br\phantom{\ \ Br}}\\
+                |\phantom{\quad |}\\
+                \phantom{C-}\ce{C=C-C}\\
+                \phantom{|}\quad |\\
+                \ce{\phantom{Br}\ \ Br}\\
+                \end{array}
+                \)
+            </p>
+            <br><p>hex-cis-2-trans-4-diene</p><br>
+            <p>
+                \(
+                \text{something}\quad
+                \begin{array}{c}
+                \phantom{H-}\ce{H\phantom{-}C\phantom{-}C\phantom{-}C\phantom{-C-}C}\\
+                \phantom{H-}|\phantom{-}\ \ |\phantom{-}\ \ |\phantom{-}\ \ |\phantom{-C-}\ |\\
+                \ce{H-C-C=C-C=C-C}\\
+                \phantom{H-}|\qquad\qquad\qquad|\phantom{-}\ \ |\\
+                \phantom{H-}\ce{H\phantom{-C=C-C}C\phantom{-}C}\\
+                \end{array}
+                \)
+            </p>
+            </li>
+            <li>
+                <h1>Alkynes</h1>
+                <p>Contains a \(\ce{C#C}\) bond</p>
+                <p>Suffix: -yne</p>
+                <p>Position indicated for simple alkynes with 4+ carbons or for all branched alkynes</p>
+                <p>\(\quad\)- indicated by a number before -yne</p>
+            </li>
+        
+        <br><br><br><br>
     </div>
 </body>
 

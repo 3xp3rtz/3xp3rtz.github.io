@@ -11,6 +11,11 @@
 	.nav-elem {
 		line-height: 40px;
 	}
+	.nav-bar-elem {
+		line-height: 40px;
+		font-size: 17px;
+		padding-inline: 10px;
+	}
 }
 
 /* nav bar big screen */
