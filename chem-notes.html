@@ -6,25 +6,31 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/style.css">
     <script>
-        MathJax = {
+    window.MathJax = {
         tex: {
             inlineMath: [['\\(', '\\)']],
-            extensions: ["AMSmath.js", "AMSsymbols.js", "mhchem.js", "noErrors.js", "noUndefined.js"]
+            packages: {'[+]': ['mhchem']}
         },
+        loader: { load: ['[tex]/mhchem'] },
+        startup: { typeset: true },
         svg: {
             fontCache: 'global'
         }
-        };
+    };
     </script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script src="jquery.jslatex.js"></script></head>
+    <script src="jquery.jslatex.js"></script>
+    <script src="http://www.latex-project.org/lppl/lppl-1-3c.txt"></script>
     <script>
         $(function () {
             $(".latex").latex();
         });
     </script>
+</head>
 
 <body>
     <!-- nav bar -->
@@ -81,28 +87,19 @@
         <p class="indent">6. a) add double/triple bonds if center is still missing</p>
 
         <h2>Examples</h2>
-        <div class="chem-mono">
-            <p>CCl_4</p>
-            <p class="indent">Cl</p>
-            <p> Cl C CL</p>
-            <p class="indent">Cl</p>
-            <p>- bond all to center</p>
-            <p class="indent">Cl</p>
-            <p class="indent">|</p>
-            <p> Cl - C - CL</p>
-            <p class="indent">|</p>
-            <p class="indent">Cl</p>
-
-            <p class="spaced">SO_4^2-</p>
-            <p class="indent">O</p>
-            <p>O S O</p>
-            <p class="indent">O</p>
-
-            <p class="indent">O</p>
-            <p>O S O</p>
-            <p class="indent">O</p>
-            
-        </div>
+        \(\ce{CCl4}\)
+        \(
+        \begin{array}{c}
+        \qquad\quad \ce{C}\\
+        \qquad\quad |\\
+        \quad = \quad \ce{Cl-C-Cl}\\
+        \qquad\quad |\\
+        \qquad\quad \ce{Cl}
+        
+        
+        \end{array}
+        
+        \)
         
         <h2>Molecular Elements</h2>
         <h3>Diatomic molecules:</h3>
@@ -195,13 +192,12 @@
         <p>Lone pair is still repelling the atoms</p>
         <br>
         <p>\(NH_3\)</p>
-        <p>\chemfig{A-B}\\</p>
         <br>
         <p>
 
 
         </p>
-
+        
         <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 5\)</p>
         <p>\(\quad\)Triangular (trigonal) bipyramidal shape</p>
         <p>
@@ -210,11 +206,11 @@
             F---P
                 | \
                 F  F
-
+                
         </p>
-
-        <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 6\)</p>
-        <p>\(\quad\)Regular octahedron</p>
+            
+            <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 6\)</p>
+            <p>\(\quad\)Regular octahedron</p>
         <p>
               F   F             F
                \ /              |
@@ -222,7 +218,7 @@
                / \            > | <
               F   F         F   F   F
         </p>
-
+        
         <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 2\)</p>
         <p>Linear</p>
         <p>F--Be--F</p>
@@ -230,13 +226,22 @@
         <p>Another domain/family: \(A X_n E_m \Rightarrow n+m = 3\)</p>
         <p>
             F   F
-             \ /
+            \ /
               B
               |
               F
         </p>
-
-        <p>\ce{H2O}</p>
+            
+        <!-- \(\ce{H2O}\) -->
+        \(
+        \begin{array}{c}
+        \ce{\phantom{H_3}CH_3} \\
+        | \\
+        \ce{CH_3-C-CH_3}\\
+        | \\
+        \ce{Cl}
+        \end{array}
+        \)
 
         <br><br><br><br>
         </div>
