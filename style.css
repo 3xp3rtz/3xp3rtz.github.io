@@ -136,11 +136,6 @@ body {
         rgba(0, 91, 191, 0.9));
 }
 
-.content p {
-    margin: 5px;
-    padding-left: 10px;
-}
-
 .indent {
 	padding-left: 20px;
 }
@@ -149,12 +144,17 @@ body {
 	padding-left: 40px;
 }
 
+.small {
+	font-size: smaller;
+}
+
 .content {
 	color: #FFFFFF;
 }
 
-.small {
-	font-size: smaller;
+.content p {
+	margin: 5px;
+	padding-left: 10px;
 }
 
 .content-header {

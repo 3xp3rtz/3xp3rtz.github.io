@@ -21,8 +21,7 @@
 
 <body>
     <!-- nav bar -->
-    <div id="nav-bar"><div id="left-nav"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a>Unit 1</a><ul class="nav-child"><li><a href="#">Java OOP</a></li><li class="nav-elem"><a href="#">Objects <span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Classes</a></li><li><a href="#">Attributes</a></li><li><a href="#">Methods</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Arrays</a><ul class="nav-child"><li class="nav-elem"><a href="#">Primitive Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Integers</a></li><li><a href="#" nowrap>Strings</a></li></ul></li><li class="nav-elem"><a href="#">Object Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Multidimensional</a></li><li><a href="#">Numbers</a></li></ul></li><li><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a>Classes</a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li class="nav-elem"><a href="#">List<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Wow</a></li></ul></li></ul></li><li class="nav-bar-elem"><a href="chem-notes.html">Chem Notes</a></li>                <li class="nav-bar-elem"><a href="math-notes.html">Math Notes</a></li></ul></div><div id="right-nav"></div></div>
-    <div class="content indent small">
+    <div class="nav-bar" id="nav-bar"><div id="left-nav"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a>Unit 1</a><ul class="nav-child"><li><a href="#">Java OOP</a></li><li class="nav-elem"><a href="#">Objects <span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Classes</a></li><li><a href="#">Attributes</a></li><li><a href="#">Methods</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Arrays</a><ul class="nav-child"><li class="nav-elem"><a href="#">Primitive Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Integers</a></li><li><a href="#" nowrap>Strings</a></li></ul></li><li class="nav-elem"><a href="#">Object Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Multidimensional</a></li><li><a href="#">Numbers</a></li></ul></li><li><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a>Classes</a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li class="nav-elem"><a href="#">List<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Wow</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li></ul></div><div id="right-nav"></div></div>    <div class="content indent small">
         <div id="lesson-3.6">
         <h1>3.6 Factoring Polynomials</h1>
         <h2>The Remainder Theorem</h2>
@@ -231,9 +230,227 @@
 
         \(
         \longdiv[x=1]{x^3+x^2-1}
-        \longdiv{225}{15}
         \)
 
+        </div>
+        <br><br><br><br><br>
+        <div id="lesson-4.1">
+            <h1>Solving Polynomial Equations</h1>
+            <p>Polynomial equation is defined as \(P(x)=0\)</p><br>
+            <p>Show that \(\sqrt{3}\) is a solution to \(P(x)=x^4+9=6x^2\)</p>
+            <p>\(P(\sqrt{3})=x^4-6x^2+9=0\)</p>
+            <p>\(\sqrt{3}^4 - 6\sqrt{3}^2 + 9 = 9 - 6\times3 + 9 = 0\)</p><br>
+            
+            <h2>Grouping</h2>
+            <p>\(P(x)=8x^3-12x^2-2x+3=0\)</p>
+            <p>\(\phantom{P(x)}=4x^2(2x-3)-(2x-3)\)</p>
+            <p>\(\phantom{P(x)}=(4x^2-1)(2x-3)\)</p>
+            <p>\(\phantom{P(x)}=(2x-1)(2x+1)(2x-3)\)</p>
+            <p>\(x=\frac{-1}{2},\frac{1}{2},\frac{3}{2}\)</p><br>
+
+            <h2>Integral Zero Theorem</h2>
+            <p>\((x^2-13)x=15-3x^2\)</p>
+            <p>\(x^3+3x^2-13x-15=0\)</p>
+            <p>\(b=\frac{a_0}{a_n}=\pm1,\pm3,\pm5,\pm15\)</p><br>
+
+            <div class="table indent">
+                \(
+                \begin{array}{c|c c c c}
+                \text{-1} & \text{1} & \text{3} & \text{-13} & \text{-15} \\
+                &&\text{-1} & \text{-2} & \text{15} \\
+                \hline\text{3}& \text{1} & \text{2} & \text{-15} & \text{0} \\
+                && \text{3} & \text{15} \\
+                \hline\text{3}& \text{1} & \text{5} & \text{0}\\
+                \end{array}
+                \)
+            </div><br>
+
+            <p>\(P(x)=(x+1)(x^2+2x-15)\)</p>
+            <p>\(\phantom{P(x)}=(x+1)(x-3)(x+5)\)</p>
+
+            <h2>Rational Zero Theorem</h2>
+            <p>Cannot use integral zero theorem if coefficients of \(P(x)\) are not integers</p>
+            <p>Prep \(P(x)\) by multiplying all coefficients to get integers</p><br>
+
+            <p>\(3x^4+\frac{7}{2}x^3-\frac{2}{3}x^2-\frac{3}{2}x-\frac{1}{3}=0\quad\) multiply by 6</p>
+            <p>\(18x^4+21x^3-4x^2-9x-2=0\)</p><br>
+
+            <div class="table indent">
+                \(
+                \begin{array}{c|c c c c c}
+                -1 & 18 & 21 & -4 & -9 & -2 \\
+                && -18 & -3 & 7 & 2\\\hline
+                -\frac{1}{2} & 18 & 3 & -7 & -2 & 0\\
+                && -9 & 3 & 2\\\hline
+                -\frac{1}{6} & 18 & -6 & -4 & 0\\
+                <!-- && -3 & \\\hline
+                & 18 & -9 -->
+                \end{array}
+                \)
+            </div><br><br>
+
+            <p>Is \(-\frac{2}{3}\) a possible rational zero of \(P(x)=2x^3+\>...\,+-8\)?</p>
+
+
+            <h2>Non-Rational Zeros</h2>
+            <p>Must show up as conjugate pairs</p>
+            <p>\(x^4-2x^3-4x^2+6x+3=0\)</p>
+            <p>\(x=1+\sqrt{2},\ \therefore x=1-\sqrt{2}\)</p>
+            <p>\((x-1-\sqrt{2})(x-1+\sqrt{2})=[(x-1)^2-2]=x^2-2x-1\)</p><br>
+
+            <div class="table indent">
+                \(
+                \begin{array}{l}
+                \underline{x^2-2x-1}\text{/}\overline{x^4-2x^3-4x^2+6x+3}\\
+                \phantom{x^2-2x-1\text{/}}\underline{x^4-2x^3-x^2\phantom{x=1=1\ }}\\
+                \phantom{x^2-2x-1\text{/}\overline{x^4-2x^3}}-3x^2+6x+3\phantom{x=1=1\ }\\
+                \phantom{x^2-2x-1\text{/}\overline{x^4-2x^3\ \ }}\underline{-3x^2+6x+3}\\
+                \phantom{x^2-2x-1\text{/}\overline{x^4-2x^3-3x^2+6x+\>}}0\\
+                \end{array}
+                \)
+            </div><br>
+
+            <h2>What is IVT</h2>
+            <p>\(x^3+x-1=0\)</p>
+            <p>We know the behaviour of \(x^3+x\), -1 shifts zeros away from origin</p>
+
+        </div>
+        <br><br><br><br><br>
+        <div id="lesson-4.3">
+        <h1>Solving Polynomial Inequalities</h1>
+        <p>\(P(x)\leq0\)</p>
+        <p>\(P(x)=x^2-4\)</p>
+        <p>\(\phantom{P(x)}=(x+2)(x-2)\leq0\)</p>
+        <p>\(x\in[-2,2]\)</p><br>
+
+        <h3>Using a Sign Chart</h3>
+        <p></p>
+        <div class="table indent">
+            \(
+            \begin{array}{c|c c}
+            \phantom{(x+2)(x-2)}\ \,& &-2&2
+            \end{array}
+            \)<br>
+            \(
+            \begin{array}{c|c|c|c}
+            \hline
+            x+2 & - & + & +\\\hline 
+            x-2 & - & - & +\\\hline
+            (x+2)(x-2) & + & - & +
+            \end{array}
+            \)
+        </div><br><br>
+        <div class="table indent">
+            \(
+            \begin{array}{c|c c}
+            \phantom{x(x-1)}\ \,& & 0 & 1
+            \end{array}
+            \)<br>
+            \(
+            \begin{array}{c|c|c|c}
+            \hline
+            x & - & + & +\\\hline 
+            x-1 & - & - & +\\\hline
+            x(x-1) & + & - & +
+            \end{array}
+            \)
+        </div><br><br>
+        <p>Solve \((x^2-x-2)(x^2+1)(x-3)^3\geq0\)</p>
+        <p>\(x^2 + 1\) is always positive</p>
+        <p>\((x-2)(x+1)(x^2+1)(x-3)^3\geq0\)</p>
+        <div class="table indent">
+            \(
+            \begin{array}{c|c c c}
+            \phantom{(x-2)(x+1)(x^2+1)(x-3)^3}\ & & -1 & 2 & 3
+            \end{array}
+            \)<br>
+            \(
+            \begin{array}{c|c|c|c|c}
+            \hline
+            x+1 & - & + & + & +\\\hline 
+            x-2 & - & - & + & +\\\hline
+            (x-3)^3 & - & - & - & +\\\hline
+            (x-2)(x+1)(x^2+1)(x-3)^3 & - & + & - & +
+            \end{array}
+            \)
+        </div>
+        <p>\(x\in[-1,2]\cup[3,\inf)\)</p><br><br>
+        
+        <p>\(x^2(x-2)(x+2)(x+1) > 0\)</p>
+        <p>Sketch: </p>
+        <img src="/images/figure-4.1.1.png">
+        <p>\(x\in(-2, -1)\cup(-2,\inf)\)</p><br>
+        
+        <p>\(x(x-1)(x+2)\gt0\)</p>
+        <img src="/images/figure-4.1.2.png">
+        <p>\(x\in(-2, 0)\cup(1,\inf)\)</p><br>
+        
+        <p>\((x^4-1)(x^2-9)\leq0\)</p>
+        <p>\((x-1)(x+1)(x^2+1)(x-3)(x+3)\)</p>
+        <img src="/images/figure-4.1.3.png">
+        <p>\(x\in(-\inf,-3]\cup[-1,1]\cup[3,\inf)\)</p><br>
+
+        <p>\(P(x)=(x+1)^2\leq(x-2)^3+5\)</p>
+        <p>\(\phantom{P(x)=}x^2+2x+1\leq x^3-6x^2+12x-8+5\)</p>
+        <p>\(\phantom{P(x)=}x^3-7x^2+10x-4\geq0\)</p><br>
+
+        <div class="synthetic indent">
+            \(
+            \begin{array}{c|c c c c}
+            1 & 1 & -7 & 10 & -4 \\
+            && 1 & -6 & -4 \\
+            \hline & 1 & -6 & -4 & 0 \\
+            \end{array}
+            \)
+        </div><br>
+        <h2>Reduced Quadratic Formula</h2>
+        <p>\(ax^2+bx+c=0\)</p>
+        <p>\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</p><br>
+        <p>\(ax^2+2b'x+c=0\)</p>
+        <p>\(x=\frac{-2b'\pm\sqrt{2b'^2-4ac}}{2a}\)</p>
+        <p>\(\phantom{x}=\frac{-2b'\pm2\sqrt{b'^2-ac}}{2a}\)</p>
+        <p>\(\phantom{x}=\frac{-b'\pm\sqrt{b'^2-ac}}{a}\)</p><br>
+
+        <p>\((x-1)(x-3-\sqrt{5})(x-3+\sqrt{5})\geq0\)</p>
+        <img src="/images/figure-4.1.4.png">
+        <p>\(x\in[3-\sqrt{5}, 1]\cup[3+\sqrt{5},\inf)\)</p><br>
+
+        <p>\((x-1)^4+8x\gt4(x^2+1)\)</p>
+        <p>\((x-1)^4+8x-4(x^2+1)\gt0\)</p>
+        <p>\(x^4-4x^3+6x^2-4x+1+8x-4x^2-4\gt0\)</p>
+        <p>\(x^4-4x^3+2x^2+4x-3\gt0\)</p><br>
+
+        <div class="table indent">
+            \(
+            \begin{array}{c|c c c c c}
+            1 &      1 & -4 & 2 & 4 & -3 \\
+            &&           1 & -3 & -1 & 3 \\
+            \hline 1 & 1 & -3 & -1 & 3 & 0 \\
+            &&              1 & -2 & -3 \\
+            \hline -1 & 1 & -2 & -3 & 0 \\
+            &&              -1 & 3 \\
+            \hline   & 1 & -3 & 0 \\
+            \end{array}
+            \)
+        </div>
+        <p>\(P(x)=(x-1)^2(x+1)(x-3)\)</p>
+
+        <div class="table indent">
+            \(
+            \begin{array}{c|c c c}
+            \phantom{(x-2)(x+1)(x^2+1)(x-3)^3}\ & & -1 & 2 & 3
+            \end{array}
+            \)<br>
+            \(
+            \begin{array}{c|c|c|c|c}
+            \hline
+            x+1 & - & + & + & +\\\hline 
+            x-2 & - & - & + & +\\\hline
+            (x-3)^3 & - & - & - & +\\\hline
+            (x-2)(x+1)(x^2+1)(x-3)^3 & - & + & - & +
+            \end{array}
+            \)
+        </div>
         </div>
         <br><br><br><br><br>
     </div>
