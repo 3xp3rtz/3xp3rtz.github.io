@@ -148,6 +148,12 @@ body {
 	font-size: smaller;
 }
 
+.spaced {
+    padding-top: 30px;
+}
+
+/* ------------- TEMPLATE ENDS ------------ */
+
 .content {
 	color: #FFFFFF;
 }
@@ -173,14 +179,6 @@ body {
     padding-left: 10px;
 }
 
-.spaced {
-    padding-top: 30px;
-}
-
-.chem-mono {
-	font-family: monospace;
-}
-
 #main-content {
     color: #eeeeff;
 }
@@ -193,12 +191,31 @@ body {
     max-width: 250px;
 }
 
+.achievements-row {
+    margin: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.achievements-row a {
+    text-decoration: none;
+}
+
 .content-block {
     display: flex;
     align-items: center;
-    width: calc(50% - 30px);
+    text-align: left;
+    height: 200px;
+    margin: 10px;
 }
 
 .content-block h2 {
-    
+    width: 50%;
+    padding: 5px;
+}
+
+.content-block p {
+    padding-left: 12px;
 }

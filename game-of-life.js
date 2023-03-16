@@ -1,0 +1,298 @@
+var cv = document.getElementById("canvas");
+var c = cv.getContext("2d");
+const wdt = 20, hgt = 20, barW = 200;
+const w = document.documentElement.scrollWidth-50-barW;
+const h = document.documentElement.scrollHeight-50;
+
+var board;
+
+var iters;
+var advance;
+var state;
+var slider;
+
+var mouseX, mouseY;
+var held;
+
+var req;
+
+var pauseLoc = [w + 25, h - 100, w + 75, h - 50];
+var wrapLoc;
+
+function clamp(n, min, max) {
+    if (n < min) return min;
+    if (n > max) return max;
+    return n;
+}
+
+function setup() {
+    cv.width = w+barW;
+    cv.height = h;
+    
+    board = [];
+    for (let i = 0; i < hgt; i++) {
+        board.push([]);
+        for (let j = 0; j < hgt; j++) {
+            board[i].push(0);
+        }
+    }
+
+    advance = true;
+    slider = false;
+    wrap = false;
+    held = false;
+
+    iters = 5;
+    state = 0;
+    pauseLoc = [w + 25, h - 100, 50, 50];
+    wrapLoc = [w + 125, h - 100, 50, 50];
+    
+    c.fillRect(0,0,w,h);
+    c.fillStyle = "#dddddd";
+    c.fillRect(w,0,barW,h);
+    c.strokeRect(w,0,barW,h);
+    
+    cv.addEventListener('mousemove', (evt) => {
+        mouseX = evt.offsetX;
+        mouseY = evt.offsetY;
+        if (held && mouseX >= 0 && mouseX < w && mouseY >= 0 && mouseY < h) {
+            board[clamp((mouseY/(h/hgt))|0,0,hgt)][clamp((mouseX/(w/wdt))|0,0,wdt)] = state ? 1 : 0;
+        }
+        if (slider) {
+            iters = clamp(((mouseX-w-20)/10)|0, 1, 15);
+        }
+    });
+    
+    cv.addEventListener('mousedown', (evt) => {
+        held = true;
+        mouseX = evt.offsetX;
+        mouseY = evt.offsetY;
+        if (mouseY >= 0 && mouseY < h) {
+            if (mouseX >= 0 && mouseX < w) {
+                let yloc = mouseY / (h/hgt);
+                let xloc = mouseX / (w/wdt);
+                state = (board[yloc|0][xloc|0] == 0);
+                board[yloc|0][xloc|0] = state ? 1 : 0;
+            } else if (inBox(mouseX, mouseY, ...pauseLoc)) {
+                advance = !advance;
+            } else if (inBox(mouseX, mouseY, ...wrapLoc)) {
+                wrap = !wrap;
+            }
+            if (inBox(mouseX, mouseY, w + 10 + 10*iters, h-145, w + 30 + 10*iters, h-125)) {
+                slider = true;
+            } else slider = false;
+        }
+    });
+
+    cv.addEventListener('mouseup', (evt) => {
+        held = false;
+    });
+
+    window.addEventListener('keydown', (evt) => {
+        key = evt.key;
+        keyCode = evt.code;
+        console.log('key pressed',key,keyCode);
+        if (key == 'p') {
+            console.log('paused');
+            window.cancelAnimationFrame(req);
+        }
+        if (key == 'r') {
+            console.log('unpaused');
+            req = requestAnimationFrame(draw);
+        }
+        if (key == ' ') {
+            advance = !advance;
+        }
+        if (key == 'x') {
+            console.log(board);
+        }
+        if (keyCode == 'Enter') {
+            board = iterate(board);
+            drawArr(board);
+        }
+    });
+    
+    console.log("setup complete");
+    
+    c.frameCount = 0;
+    req = window.requestAnimationFrame(draw);
+    console.log("init draw");
+}
+
+function draw() {
+    if (advance && (++c.frameCount % iters == 0)) board = iterate(board);
+    drawBoard(board);
+    c.fillStyle = "#FFFFFF";
+    console.log('tilesize', w/wdt, h/hgt);
+
+    c.strokeStyle = "#000000";
+    let col1, col2;
+    if (inBox(mouseX, mouseY, ...pauseLoc)) {
+        if (advance) {
+            col1 = "#44cc55";
+            col2 = "#77ff88";
+        } else {
+            col1 = "#ff7788";
+            col2 = "#881122";
+        }
+    } else {
+        if (advance) {
+            col1 = "#22aa33";
+            col2 = "#55bb66";
+        } else {
+            col1 = "#cc5555";
+            col2 = "#881122";
+        }
+    }
+    c.lineWidth = 2;
+    c.fillStyle = col1;
+    c.fillRect(...pauseLoc);
+    c.strokeRect(...pauseLoc);
+    c.fillStyle = col2;
+    if (advance) {
+        c.beginPath();
+        c.lineTo(pauseLoc[0]+15, pauseLoc[1]+10);
+        c.lineTo(pauseLoc[0]+15, pauseLoc[1]+40);
+        c.lineTo(pauseLoc[0]+35, pauseLoc[1]+25);
+        c.closePath();
+        c.fill();
+        c.stroke();
+    } else {
+        c.fillRect(pauseLoc[0]+10, pauseLoc[1]+10, 10, 30);
+        c.fillRect(pauseLoc[0]+30, pauseLoc[1]+10, 10, 30);
+    }
+    if (inBox(mouseX, mouseY, ...wrapLoc)) {
+        if (wrap) {
+            col1 = "#44cc55";
+            col2 = "#77ff88";
+        } else {
+            col1 = "#ff7788";
+            col2 = "#881122";
+        }
+    } else {
+        if (wrap) {
+            col1 = "#22aa33";
+            col2 = "#227722";
+        } else {
+            col1 = "#cc5555";
+            col2 = "#881122";
+        }
+    }
+    c.lineWidth = 1;
+    c.fillStyle = col1;
+    c.fillRect(...wrapLoc);
+    c.strokeRect(...wrapLoc);
+    c.fillStyle = col2;
+    if (wrap) {
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                c.fillRect(wrapLoc[0]+17+i*10, wrapLoc[1]+17+j*10, 7, 7);
+                c.strokeRect(wrapLoc[0]+17+i*10, wrapLoc[1]+17+j*10, 7, 7);
+            }
+        }
+        c.beginPath();
+        c.lineTo(wrapLoc[0]+20, wrapLoc[1]+23);
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+23);
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+26);
+        c.lineTo(wrapLoc[0]+20, wrapLoc[1]+26);
+        // c.lineTo(wrapLoc[0]+15, wrapLoc[1]+40);
+        // c.lineTo(wrapLoc[0]+35, wrapLoc[1]+25);
+        c.arc(wrapLoc[0]+15, wrapLoc[1]+18, 8, Math.PI/2, Math.PI*3/2);
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+10);
+        
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+7);
+        c.lineTo(wrapLoc[0]+30, wrapLoc[1]+12);
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+16);
+        
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+13);
+        c.arc(wrapLoc[0]+15, wrapLoc[1]+18, 5, Math.PI*3/2, Math.PI/2, true);
+
+        c.closePath();
+        c.fill();
+        c.stroke();
+    } else {
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                c.fillRect(wrapLoc[0]+17+i*10, wrapLoc[1]+17+j*10, 7, 7);
+                c.strokeRect(wrapLoc[0]+17+i*10, wrapLoc[1]+17+j*10, 7, 7);
+            }
+        }
+        c.beginPath();
+        c.lineTo(wrapLoc[0]+20, wrapLoc[1]+23);
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+23);
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+26);
+        c.lineTo(wrapLoc[0]+20, wrapLoc[1]+26);
+        // c.lineTo(wrapLoc[0]+15, wrapLoc[1]+40);
+        // c.lineTo(wrapLoc[0]+35, wrapLoc[1]+25);
+        c.arc(wrapLoc[0]+15, wrapLoc[1]+18, 8, Math.PI/2, Math.PI*3/2);
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+10);
+        
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+7);
+        c.lineTo(wrapLoc[0]+30, wrapLoc[1]+12);
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+16);
+        
+        c.lineTo(wrapLoc[0]+25, wrapLoc[1]+13);
+        c.arc(wrapLoc[0]+15, wrapLoc[1]+18, 5, Math.PI*3/2, Math.PI/2, true);
+
+        c.closePath();
+        c.fill();
+        c.stroke();
+    }
+
+    // fill(163 + 64*inBox(mouseX, mouseY, ...pauseLoc));
+    // rect(pauseLoc[0]+10, pauseLoc[1]+10, pauseLoc[2]-30, pauseLoc[3]-10);
+    // rect(pauseLoc[0]+30, pauseLoc[1]+10, pauseLoc[2]-10, pauseLoc[3]-10);
+
+    // fill(163 + 64*inBox(mouseX, mouseY, ...wrapLoc));
+
+    // fill(163);
+    // rect(w+20, h-140, w+180, h-130, 5);
+
+    // fill(127 - 48*inBox(mouseX, mouseY, w + 10 + 10*iters, h-145, w + 30 + 10*iters, h-125));
+    // circle(w + 20 + 10*iters, h-135, 20);
+
+    // fill(0);
+    // stroke(0);
+    // text("Iterations/sec", w + 60, h-150);
+    req = window.requestAnimationFrame(draw);
+}
+
+function inBox(x, y, x1, y1, x2, y2, corners=false) {
+    if (corners) return (x1 <= x && x <= x2 && y1 <= y && y <= y2) ? 1 : 0;
+    return (x1 <= x && x <= x1+x2 && y1 <= y && y <= y1+y2) ? 1 : 0;
+}
+
+function iterate(arr) {
+    let out = Array(arr.length).fill(null).map(() => Array(arr[0].length));
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            let t = 0;
+            for (let k = -1; k <= 1; k++) {
+                for (let l = -1; l <= 1; l++) {
+                    if ((k == 0 && l == 0) || (!wrap && (i + k < 0 || i + k >= hgt || j + l < 0 || j + l >= wdt))) continue;
+                    t += arr[(i+k+hgt)%hgt][(j+l+wdt)%wdt];
+                }
+            }
+            if (t == 3) {
+                out[i][j] = 1;
+            } else if (t == 2) {
+                out[i][j] = arr[i][j];
+            } else out[i][j] = 0;
+        }
+    }
+    return out;
+}
+
+
+function drawBoard(arr) {
+    c.strokeStyle = "#FFFFFF";
+    c.lineWidth = 1;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            c.fillStyle = (arr[i][j] ? "white" : "black");
+            c.fillRect(w/hgt * j, h/wdt * i, w/hgt, h/wdt);
+            c.strokeRect(w/hgt * j, h/wdt * i, w/hgt, h/wdt);
+        }
+    }
+}
+
