@@ -50,7 +50,6 @@ function setup() {
     c.fillRect(0,0,w,h);
     c.fillStyle = "#dddddd";
     c.fillRect(w,0,barW,h);
-    c.strokeRect(w,0,barW,h);
     
     cv.addEventListener('mousemove', (evt) => {
         mouseX = evt.offsetX;
@@ -78,14 +77,15 @@ function setup() {
             } else if (inBox(mouseX, mouseY, ...wrapLoc)) {
                 wrap = !wrap;
             }
-            if (inBox(mouseX, mouseY, w + 10 + 10*iters, h-145, w + 30 + 10*iters, h-125)) {
+            if (inBox(mouseX, mouseY, w + 10 + 10*iters, h-145, 20, 20)) {
                 slider = true;
             } else slider = false;
         }
     });
 
-    cv.addEventListener('mouseup', (evt) => {
+    window.addEventListener('mouseup', (evt) => {
         held = false;
+        slider = false;
     });
 
     window.addEventListener('keydown', (evt) => {
@@ -120,11 +120,15 @@ function setup() {
 }
 
 function draw() {
-    if (advance && (++c.frameCount % iters == 0)) board = iterate(board);
+    if (advance && (c.frameCount++ % Math.round(75/iters) == 0)) {
+        board = iterate(board);
+    }
+    c.fillStyle = "#dddddd";
+    c.fillRect(w,0,barW,h);
     drawBoard(board);
     c.fillStyle = "#FFFFFF";
-    console.log('tilesize', w/wdt, h/hgt);
 
+    // drawing pause button
     c.strokeStyle = "#000000";
     let col1, col2;
     if (inBox(mouseX, mouseY, ...pauseLoc)) {
@@ -161,6 +165,8 @@ function draw() {
         c.fillRect(pauseLoc[0]+10, pauseLoc[1]+10, 10, 30);
         c.fillRect(pauseLoc[0]+30, pauseLoc[1]+10, 10, 30);
     }
+
+    // drawing wrap toggle
     if (inBox(mouseX, mouseY, ...wrapLoc)) {
         if (wrap) {
             col1 = "#44cc55";
@@ -183,7 +189,7 @@ function draw() {
     c.fillRect(...wrapLoc);
     c.strokeRect(...wrapLoc);
     c.fillStyle = col2;
-    if (wrap) {
+    if (wrap) { // wrap symbol
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
                 c.fillRect(wrapLoc[0]+17+i*10, wrapLoc[1]+17+j*10, 7, 7);
@@ -210,7 +216,7 @@ function draw() {
         c.closePath();
         c.fill();
         c.stroke();
-    } else {
+    } else { // no wrap symbol
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
                 c.fillRect(wrapLoc[0]+17+i*10, wrapLoc[1]+17+j*10, 7, 7);
@@ -233,23 +239,52 @@ function draw() {
         
         c.lineTo(wrapLoc[0]+25, wrapLoc[1]+13);
         c.arc(wrapLoc[0]+15, wrapLoc[1]+18, 5, Math.PI*3/2, Math.PI/2, true);
-
+        
+        c.closePath();
+        c.fill();
+        c.stroke();
+        c.fillStyle = "#ff0000";
+        c.beginPath();
+        c.lineTo(wrapLoc[0]+6, wrapLoc[1]+10);
+        c.lineTo(wrapLoc[0]+8, wrapLoc[1]+8);
+        c.lineTo(wrapLoc[0]+13, wrapLoc[1]+13);
+        c.lineTo(wrapLoc[0]+18, wrapLoc[1]+8);
+        c.lineTo(wrapLoc[0]+20, wrapLoc[1]+10);
+        c.lineTo(wrapLoc[0]+15, wrapLoc[1]+15);
+        c.lineTo(wrapLoc[0]+20, wrapLoc[1]+20);
+        c.lineTo(wrapLoc[0]+18, wrapLoc[1]+22);
+        c.lineTo(wrapLoc[0]+13, wrapLoc[1]+17);
+        c.lineTo(wrapLoc[0]+8, wrapLoc[1]+22);
+        c.lineTo(wrapLoc[0]+6, wrapLoc[1]+20);
+        c.lineTo(wrapLoc[0]+11, wrapLoc[1]+15);
         c.closePath();
         c.fill();
         c.stroke();
     }
 
-    // fill(163 + 64*inBox(mouseX, mouseY, ...pauseLoc));
-    // rect(pauseLoc[0]+10, pauseLoc[1]+10, pauseLoc[2]-30, pauseLoc[3]-10);
-    // rect(pauseLoc[0]+30, pauseLoc[1]+10, pauseLoc[2]-10, pauseLoc[3]-10);
+    // drawing slider
+    c.fillStyle = "#cccccc";
+    c.beginPath();
+    c.roundRect(w+20, h-140, 160, 10, 5);
+    c.closePath();
+    c.fill();
+    c.fillStyle = inBox(mouseX, mouseY, w + 10 + 10*iters, h-145, 20, 20) ? "#555555" : "#777777";
+    c.beginPath();
+    c.arc(w + 20 + 10*iters, h-135, 10, 0, Math.PI*2);    
+    c.closePath();
+    c.fill();
 
-    // fill(163 + 64*inBox(mouseX, mouseY, ...wrapLoc));
+    // drawing text
+    c.fillStyle = "#000000";
+    c.font = "13px Arial"
+    c.fillText("Pause", pauseLoc[0] + 7, pauseLoc[1] + 65);
+    c.fillText("Wrapping", wrapLoc[0] - 3, wrapLoc[1] + 65);
+    c.fillText(iters, w + 25 - 5*((iters/10)|0), h-150);
+    c.fillText("Iterations/sec", w + 40, h-150);
 
-    // fill(163);
-    // rect(w+20, h-140, w+180, h-130, 5);
-
-    // fill(127 - 48*inBox(mouseX, mouseY, w + 10 + 10*iters, h-145, w + 30 + 10*iters, h-125));
-    // circle(w + 20 + 10*iters, h-135, 20);
+    c.font = "25px Courier New";
+    c.fillText("Conway's", w + 40, 50);
+    c.fillText("Game of Life", w + 10, 80);
 
     // fill(0);
     // stroke(0);
