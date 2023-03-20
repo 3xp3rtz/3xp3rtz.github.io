@@ -77,7 +77,7 @@ function setup() {
             } else if (inBox(mouseX, mouseY, ...wrapLoc)) {
                 wrap = !wrap;
             }
-            if (inBox(mouseX, mouseY, w + 10 + 10*iters, h-145, 20, 20)) {
+            if (inBox(mouseX, mouseY, w + 10 + 10*iters, h-135, 20, 20)) {
                 slider = true;
             } else slider = false;
         }
@@ -265,31 +265,65 @@ function draw() {
     // drawing slider
     c.fillStyle = "#cccccc";
     c.beginPath();
-    c.roundRect(w+20, h-140, 160, 10, 5);
+    c.roundRect(w+20, h-130, 160, 10, 5);
     c.closePath();
     c.fill();
-    c.fillStyle = inBox(mouseX, mouseY, w + 10 + 10*iters, h-145, 20, 20) ? "#555555" : "#777777";
+    c.fillStyle = inBox(mouseX, mouseY, w + 10 + 10*iters, h-135, 20, 20) ? "#555555" : "#777777";
     c.beginPath();
-    c.arc(w + 20 + 10*iters, h-135, 10, 0, Math.PI*2);    
+    c.arc(w + 20 + 10*iters, h-125, 10, 0, Math.PI*2);    
     c.closePath();
     c.fill();
+
+    // drawing example boxes
+    c.fillStyle = "#000000";
+    c.font = "15px Arial";
+    c.fillText("Underpopulation", w + 45, 180);
+    drawStateChange(100, [[1,0,0],[0,1,0],[0,0,0]], [[0,0,0],[0,0,0],[0,0,0]]);
+    
+    c.font = "15px Arial";
+    c.fillText("Repopulation", w + 55, 270);
+    drawStateChange(190, [[0,0,1],[0,0,1],[1,0,0]], [[0,0,0],[0,1,0],[0,0,0]]);
+
+    c.font = "15px Arial";
+    c.fillText("Overpopulation", w + 50, 360);
+    drawStateChange(280, [[1,0,1],[0,1,1],[1,0,0]], [[0,0,0],[0,0,0],[0,0,0]]);
 
     // drawing text
     c.fillStyle = "#000000";
     c.font = "13px Arial"
     c.fillText("Pause", pauseLoc[0] + 7, pauseLoc[1] + 65);
     c.fillText("Wrapping", wrapLoc[0] - 3, wrapLoc[1] + 65);
-    c.fillText(iters, w + 25 - 5*((iters/10)|0), h-150);
-    c.fillText("Iterations/sec", w + 40, h-150);
+    c.fillText(iters, w + 25 - 5*((iters/10)|0), h-140);
+    c.fillText("Iterations/sec", w + 40, h-140);
 
     c.font = "25px Courier New";
     c.fillText("Conway's", w + 40, 50);
     c.fillText("Game of Life", w + 10, 80);
 
-    // fill(0);
-    // stroke(0);
-    // text("Iterations/sec", w + 60, h-150);
     req = window.requestAnimationFrame(draw);
+}
+
+function drawStateChange(y, arr1, arr2) {
+    c.font = "30px Arial";
+    c.fillText("→", w + 85, y + 37);
+    c.fillStyle = "#000000";
+    c.fillRect(w+15, y, 60, 60);
+    c.fillRect(w+125, y, 60, 60);
+    c.strokeStyle = "#ffffff";
+    for (let row = 0; row < arr1.length; row++) {
+        for (let col = 0; col < arr1[row].length; col++) {
+            c.fillStyle = arr1[row][col] == 1 ? "#ffffff" : "#000000";
+            c.fillRect(w + 15 + col*(60/arr1.length), y + row*(60/arr1[row].length), 60/arr1.length, 60/arr1[row].length);
+            c.strokeRect(w + 15 + col*(60/arr1.length), y + row*(60/arr1[row].length), 60/arr1.length, 60/arr1[row].length);
+        }
+    }
+    for (let row = 0; row < arr2.length; row++) {
+        for (let col = 0; col < arr2[row].length; col++) {
+            c.fillStyle = arr2[row][col] == 1 ? "#ffffff" : "#000000";
+            c.fillRect(w + 125 + col*(60/arr2.length), y + row*(60/arr2[row].length), 60/arr2.length, 60/arr2[row].length);
+            c.strokeRect(w + 125 + col*(60/arr2.length), y + row*(60/arr2[row].length), 60/arr2.length, 60/arr2[row].length);
+        }
+    }
 }
 
 function inBox(x, y, x1, y1, x2, y2, corners=false) {

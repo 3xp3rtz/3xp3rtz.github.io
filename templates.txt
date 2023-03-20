@@ -1,3 +1,4 @@
+synthetic div
             <div class="table indent">
                 \(
                 \begin{array}{c|c c c c}
@@ -9,6 +10,8 @@
                 \end{array}
                 \)
             </div><br>
+
+long div
             <div class="table indent">
                 \(
                 \begin{array}{l}

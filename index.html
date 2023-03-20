@@ -9,60 +9,50 @@
 
 <body>
     <div class="nav-bar" id="nav-bar">
-        <div id="left-nav">
-            <ul id="nav-options">
-                <li class="nav-bar-elem"><a href="index.html">Home</a></li>
-                <li class="nav-bar-elem"><a>Unit 1</a>
-                    <ul class="nav-child">
-                        <li><a href="#">Java OOP</a></li>
-                        <li class="nav-elem"><a href="#">Objects <span class="expand">»</span></a>
-                            <ul class="nav-child">
-                                <li><a href="#">Classes</a></li>
-                                <li><a href="#">Attributes</a></li>
-                                <li><a href="#">Methods</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-bar-elem"><a>Arrays</a>
-                    <ul class="nav-child">
-                        <li class="nav-elem"><a href="#">Primitive Arrays<span class="expand">»</span></a>
-                            <ul class="nav-child">
-                                <li><a href="#" nowrap>Integers</a></li>
-                                <li><a href="#" nowrap>Strings</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-elem"><a href="#">Object Arrays<span class="expand">»</span></a>
-                            <ul class="nav-child">
-                                <li><a href="#">Multidimensional</a></li>
-                                <li><a href="#">Numbers</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">ArrayLists</a></li>
-                    </ul>
-                </li>
-                <li class="nav-bar-elem"><a>Classes</a>
-                    <ul class="nav-child">
-                        <li><a href="#">Inheritance</a></li>
-                        <li class="nav-elem"><a href="#">List<span class="expand">»</span></a>
-                            <ul class="nav-child">
-                                <li><a href="#">Wow</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-bar-elem"><a>Notes</a>
-                    <ul class="nav-child">
-                        <li><a href="chem-notes.html">Chem Notes</a></li>
-                        <li><a href="math-notes.html">Math Notes</a></li>
-                        <li><a href="tej-notes.html">TEJ Notes</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div id="right-nav">
-            
-        </div>
+        <ul id="nav-options">
+            <li class="nav-bar-elem"><a href="index.html">Home</a></li>
+            <li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a>
+                <ul class="nav-child">
+                    <li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a>
+                        <ul class="nav-child">
+                            <li><a href="ics-notes.html?page=oop-classes">Classes</a></li>
+                            <li><a href="ics-notes.html?page=oop-attributes">Attributes</a></li>
+                            <li><a href="ics-notes.html?page=oop-methods">Methods</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a>
+                        <ul class="nav-child">
+                            <li><a href="#" nowrap>Primitive Arrays</a></li>
+                            <li><a href="#" nowrap>Object Arrays</a></li>
+                            <li><a href="#" nowrap>ArrayLists</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-elem"><a href="#">Classes<span class="expand">»</span></a>
+                        <ul class="nav-child">
+                            <li><a href="#">Inheritance</a></li>
+                            <li><a href="#">Numbers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-bar-elem"><a>Classes</a>
+                <ul class="nav-child">
+                    <li><a href="#">Inheritance</a></li>
+                    <li class="nav-elem"><a href="#">List<span class="expand">»</span></a>
+                        <ul class="nav-child">
+                            <li><a href="#">Wow</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-bar-elem"><a>Other Notes</a>
+                <ul class="nav-child">
+                    <li><a href="chem-notes.html">Chem Notes</a></li>
+                    <li><a href="math-notes.html">Math Notes</a></li>
+                    <li><a href="tej-notes.html">TEJ Notes</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
     <div id="main-content">
         <h1 class="content-header">3xp3rtz</h1>
@@ -91,7 +81,7 @@
                     <p>A minigame based on Jetpack Joyride themed around Valentine's day.</p>
                 </button>
             </a>
-            <a href="/game-of-life.html" target="_blank">
+            <a href="/game-of-life.html">
                 <button class="content-block">
                     <h2>Conway's Game of Life</h2>
                     <p>A Processing.py-based simulation to run the cellular automata devised
@@ -101,7 +91,7 @@
             </a>
         </div>
         <div class="achievements-row">
-            <a href="http://github.com/3xp3rtz/HSPAL_Compiler" target="_blank">
+            <a href="http://github.com/3xp3rtz/HSPAL-Compiler" target="_blank">
                 <button class="content-block">
                     <h2>HSPAL Compiler</h2>
                     <p>A compiler for the esolang Hexadecimal-Stacking Pseudo Assembly Language</p>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>3xp3rtz</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/notes.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['\\(', '\\)']],
+            packages: {'[+]': ['mhchem', 'color']}
+        },
+        loader: { load: ['[tex]/mhchem', '[tex]/color'] },
+        startup: { typeset: true },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+</head>
+
+<body onload="loadPage()">
+    <!-- nav bar -->
+    <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop-classes">Classes</a></li><li><a href="ics-notes.html?page=oop-attributes">Attributes</a></li><li><a href="ics-notes.html?page=oop-methods">Methods</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Primitive Arrays</a></li><li><a href="#" nowrap>Object Arrays</a></li><li><a href="#" nowrap>ArrayLists</a></li></ul></li><li class="nav-elem"><a href="#">Classes<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li><a href="#">Numbers</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Classes</a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li class="nav-elem"><a href="#">List<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Wow</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li></ul></div>
+    <script src="ics-notes.js"></script>
+
+    <div id="note-nav" class="content indent">
+        <h1>ICS4U Notes</h1>
+        <h3>Here you can find some of my notes on lessons in the ICS4U course.</h3>
+
+        <button class="indent" onclick="window.location.href='ics-notes.html?page=oop'"><a class="content-medium">Java OOP</a></button>
+        <button class="indent" onclick="window.location.href='ics-notes.html?page=arr'"><a class="content-medium">Arrays</a></button>
+        <button class="indent" onclick="window.location.href='ics-notes.html?page=arrls'"><a class="content-medium">ArrayLists</a></button>
+    <br></div>
+    
+    <div id="note-content">
+    
+    <div class="hidden indent content" id="content-oop">
+        <h2>Java Object Oriented Programming (OOP)</h2>
+        <p>Object oriented programming, or OOP for short, is a way of organizing a program's components into similar structures to have a customizable blueprint that suits most of each individual instance's needs.</p><br>
+        <p>For example, if I was to model a classroom of students, I wouldn't make a custom class for each student in the room; instead, there would likely be a <code>Student</code> class to handle the structure for me, and add in customizable attributes in different class constructors or set methods.</p>
+
+        <div class="java-snippet">
+            <code>
+                public class Student {<br>
+                    <tab/>private int age;<br>
+                    <tab/>private String name;<br>
+                    <tab/>private double average;<br><br>
+                    <tab/>public Student() {<br>
+                    <tab/><tab/>age = 14;<br>
+                    <tab/><tab/>name = "Dave";<br>
+                    <tab/><tab/>average = 80;<br>
+                    <tab/>}<br><br>
+                    <tab/>public Student(int a, String n, double av) {<br>
+                    <tab/><tab/>age = a;<br>
+                    <tab/><tab/>name = n;<br>
+                    <tab/><tab/>average = av;<br>
+                    <tab/>}<br>
+                }
+            </code>
+        </div>
+    </div>
+
+
+
+    <div class="hidden indent content" id="content-arr">
+        <h2>Arrays</h2>
+        <p>Arrays are a more compact way to handle similar groups of data of the same type. Instead of having 5 separate variables to hold 5 numbers, you can instead have an array of length 5, where each element in the array corresponds to one of these numbers. </p>
+        <pre>        <code>averages = [80, 75, 90, 94, 83]</code></pre>
+        <p>In Java, there are several types of arrays: primitive arrays, which hold Java's built-in data types like <code>int</code> and <code>char</code>, and <code>Object</code> arrays, which can be filled with instances of built-in or user-created classes, such as an array of <code>Student</code>s, or even an array of arrays!</p>
+        <pre>        <code>grid = [[1, 3, 2, 2, 5], [3, 5, 4, 4, 3], [2, 1, 5, 1, 2]]</code></pre>
+        
+        <h3>Initialization</h3>
+        <p>There are several ways to create an array. For this demonstration, I will be using an integer array to keep things simple. The most basic way to do so is by using the following syntax: <code>int[] array = new int[len];</code> This will initialize a new array of integers of length <code>len</code>, each of which are set to 0 by default. So if I wanted to make an array named <code>arr</code> with length 23, I would write:</p>
+        <pre>        <code>int[] arr = new int[23];</code></pre>
+        <p>To access elements of the array, we use square brackets to surround the index of the object which we are requesting, 0-indexed, meaning the first object is in the 0th place, the second object in the 1st, and so on.</p>
+        <pre>        <code>System.out.println(arr[0]); // prints the 1st item in the list, set to 0 by default</code></pre>
+        <pre>        <code>System.out.println(arr[3]); // prints the 4th item in the list, set to 0 by default</code></pre>
+        <pre>        <code>System.out.println(arr[15]); // prints the 16th item in the list, set to 0 by default</code></pre>
+
+        <h3>Initializing an Array with Values</h3>
+        <p>The most basic way to fill the array is to set each item individually:</p>
+        <div class="java-snippet">
+            <code>
+                int[] averages = new int[5];<br>
+                averages[0] = 80;<br>
+                averages[1] = 75;<br>
+                averages[2] = 90;<br>
+                averages[3] = 94;<br>
+                averages[4] = 83;<br>
+            </code>
+        </div><br>
+        <p>While this method works, it is extremely tedious and becomes very inefficient for arrays of size 100, or 1000 and beyond. This leads to another way to fill the array upon initialization: using an array literal, which looks like this:</p>
+
+        <div class="java-snippet">
+            <code>
+                int[] averages = new int[] {80, 75, 90, 94, 83};<br>
+                int[] averages = {80, 75, 90, 94, 83}; // only works for uninitialized arrays<br>
+            </code>
+        </div>
+    </div>
+    
+
+
+    <div class="hidden indent content" id="content-arrls">
+        <h2>Arrays</h2>
+        <p>While arrays in Java are constrained to a set size, ArrayLists are able to add and remove elements, but only work with <code>Object</code>s.</p>
+    </div>
+
+    </div>
+
+    <br><br><br><br>
+
+
+</body>
+</html>

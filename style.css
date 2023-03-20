@@ -21,16 +21,22 @@
 .nav-bar-elem a {
 	color: #FFFFFF;
 	text-decoration: none;
-	padding: 15px;
-}
-
-.nav-bar-elem:hover>.nav-child {
-    display: block;
-	position: absolute;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .nav-child {
     display: none;
+}
+
+.nav-bar-elem:hover > .nav-child {
+    display: block;
+	position: absolute;
+}
+
+.nav-elem:hover > .nav-child {
+    display: block;
+	position: absolute;
 }
 
 .nav-child li {
@@ -45,20 +51,20 @@
 	color: #000000;
 }
 
-ul {
+.nav-bar ul {
     list-style: none;
 	margin: 0;
 	padding: 0px;
 	min-width: 10em;
 }
 
-ul ul ul {
+.nav-bar ul ul ul {
 	left: 100%;
 	top: 0;
 	margin-left: 1px;
 }
 
-li:hover {
+.nav-bar li:hover {
 	background-color: #95B4CA;
 }
 
@@ -99,14 +105,14 @@ li:hover {
 	#nav-bar {
         height: 60px;
 	}
-	.nav-child, .nav-child li {
-		padding-inline: 0px;
-	}
 	.nav-bar-elem {
         line-height: 60px;
 		font-size: 24px;
 		padding-inline: 10px;
 	}
+    .nav-child, .nav-child li {
+        padding: 0px;
+    }
     .nav-bar-elem a {
         padding-left: 12px;
         padding-right: 12px;
@@ -136,10 +142,6 @@ body {
         rgba(0, 91, 191, 0.9));
 }
 
-.indent {
-	padding-left: 20px;
-}
-
 .double-indent {
 	padding-left: 40px;
 }
@@ -152,16 +154,11 @@ body {
     padding-top: 30px;
 }
 
+.no-hover li:hover {
+    background-color: inherit;
+}
+
 /* ------------- TEMPLATE ENDS ------------ */
-
-.content {
-	color: #FFFFFF;
-}
-
-.content p {
-	margin: 5px;
-	padding-left: 10px;
-}
 
 .content-header {
 	padding-left: 10px;
@@ -181,14 +178,6 @@ body {
 
 #main-content {
     color: #eeeeff;
-}
-
-.no-hover li:hover {
-    background-color: inherit;
-}
-
-.table li {
-    max-width: 250px;
 }
 
 .achievements-row {
