@@ -79,15 +79,20 @@ img {
     display: none;
 }
 
+.content p {
+    max-width: 96%;
+}
+
 .content code {
     background-color: #7c55e7;
     padding-left: 3px;
     padding-right: 3px;
+    max-width: 90%;
 }
 
 .content .java-snippet {
     margin-top: 10px;
-    background-color: #4b26af;
+    background-image: linear-gradient(to right,rgba(165, 42, 247, 0.6),rgba(208, 55, 246, 0.9),rgba(165, 42, 247, 0.6));
     display: block;
     border: 3px solid rgb(171, 140, 206);
     padding: 10px;
