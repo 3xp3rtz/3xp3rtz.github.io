@@ -211,5 +211,11 @@ body {
 }
 
 .content-block p {
-    padding-left: 12px;
+    /* padding-left: 12px; */
+}
+
+.content-block img {
+	display: flex;
+    width: 25%;
+    height: 25%;
 }

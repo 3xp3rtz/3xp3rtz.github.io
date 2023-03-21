@@ -21,7 +21,7 @@
 
 <body>
     <!-- nav bar -->
-    <div class="nav-bar" id="nav-bar"><div id="left-nav"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a>ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="#">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Classes</a></li><li><a href="#">Attributes</a></li><li><a href="#">Methods</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Primitive Arrays</a></li><li><a href="#" nowrap>Object Arrays</a></li><li><a href="#" nowrap>ArrayLists</a></li></ul></li><li class="nav-elem"><a href="#">Classes<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li><a href="#">Numbers</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Classes</a><ul class="nav-child"><li><a href="#">Inheritance</a></li><li class="nav-elem"><a href="#">List<span class="expand">»</span></a><ul class="nav-child"><li><a href="#">Wow</a></li></ul></li></ul></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li></ul></div><div id="right-nav"></div></div>
+    <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop-classes">Classes</a></li><li><a href="ics-notes.html?page=oop-attributes">Attributes</a></li><li><a href="ics-notes.html?page=oop-methods">Methods</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Primitive Arrays</a></li><li><a href="#" nowrap>Object Arrays</a></li><li><a href="#" nowrap>2D Arrays</a></li></ul></li><li class="nav-elem"><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a href="https://github.com/3xp3rtz" target="_blank">My GitHub</a></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li><li class="nav-bar-elem"><a>Fun Widgets</a><ul class="nav-child"><li><a href="/game-of-life.html">Game of Life</a></li><li><a href="/mahjong.html">HK-Style Mahjong</a></li></ul></li></ul></div>
     <div class="content indent small">
         <div id="lesson-3.6">
         <h1>3.6 Factoring Polynomials</h1>
@@ -527,7 +527,7 @@
 
                \    |    /
                 \   |   /
-                 `. | ,`
+                 '_ | _'
                    '+'
                     |
         ____.....---+---.....______
@@ -571,6 +571,87 @@
         
         <h3>Features of a Reciprocal Function</h3>
         <p></p>
+
+        </div>
+        <br><br><br><br><br>
+
+        <div id="lesson-8">
+        <h1>Rational Functions</h1>
+        <p>Rational function: ratio between two polynomials \(f(x) = \frac{P(x)}{Q(x)}\)</p>
+        <p>\(tan(x)=\frac{sin(x)}{cos(x)}\) trigonometric rational function</p><br>
+
+        <p>a) \(f(x)=\frac{x^2-x+2}{x^2-1}\): rational function</p>
+        <p>b) \(f(x)=\frac{x}{\sqrt{x}+x^2}\): not a rational function</p>
+        <p>c) \(f(x)=x^{-2}+\frac{1}{x}=\frac{1+x}{x^2}\): rational function</p>
+
+        <h2>Domain of Rational Functions</h2>
+        <p>Always find domain</p><br>
+
+        <p>\(f(x)=\frac{x^2-1}{x-1}\)</p>
+        <p>Domain: \(D_f=\{x\in\mathbb{R} | x\neq1\}\)</p>
+        <p>\(f(x)=\frac{x+1}{x^2-4}\)</p>
+        <p>Domain: \(D_f=\{x\in\mathbb{R} | x\neq\pm2\}\)</p>
+        <p>\(f(x)=\frac{x^2-x}{6x^3+x^2-2x}=\frac{x^2-x}{x(2x-1)(3x+2)}\)</p>
+        <p>Domain: \(D_f=\{x\in\mathbb{R} | x\neq0,\,\frac{1}{2},\,-\frac{2}{3}\}\)</p>
+
+        <h2>y-intercept Point</h2>
+        <p>y-intercept for any function \(y=f(x)\) is at \((0, f(0))\) only of 0 is in \(D_f\)</p>
+        <p>\(f(x)=\frac{x^2+1}{x}\); \(D_f=\{x\in\mathbb{R} | x\neq0\}\): \(f(x)\) has no y-intercept</p>
+
+
+        <h2>Holes</h2>
+        <p>A hole exists in \(f(x)=\frac{P(x)}{Q(x)}\) at \(x=a\) if \(P(a)=0\) and \(Q(a)=0\) and if the simplified formula for \(f(x)\) becomes \(x=a\)</p>
+        <p>a) \(f(x)=\frac{x^2}{x}\); \(D_f=\{x\in\mathbb{R} | x\neq0\}\)</p>
+        <p>\(f(x)=x,\ x\neq0\); Simplified, \(f(0)=0\), therefore there is a hole at \((0,0)\)</p><br>
+
+        <p>b) \(f(x)=\frac{x^2}{x^4}\); \(D_f=\{x\in\mathbb{R} | x\neq0\}\)</p>
+        <p>\(f(x)=\frac{1}{x^2}, x\neq0\); Simplified, \(f(0)\) is defined, therefore there is a vertical asymptote at \(x=0\)</p><br>
+
+        <p>c) \(f(x)=\frac{x^2-4}{x+2}\); \(D_f=\{x\in\mathbb{R} | x\neq -2\}\)</p>
+        <p>\(f(x)=x-2, x\neq -2\); Simplified, \(f(x)\) is defined at \(x=-2\), therefore there is a hole at \((-2,\ \text{simplified} f(-2)) = (-2, -4)\)</p><br>
+
+        <p>d) \(f(x)=\frac{x^3-1}{x-1}\); \(D_f=\{x\in\mathbb{R} | x\neq1\}\)</p>
+        <p>\(f(x)=\frac{(x-1)(x^2+x+1)}{x-1}=x^2+x+1,\ x\neq1\); Simplified, \(f(x)\) is defined at \(x=1\), therefore there is a hole at \((1, \text{simplified} f(1))=(1, 3)\)</p><br>
+
+
+        <h2>Zeros</h2>
+        <p>Rational function \(f(x)=\frac{P(x)}{Q(x)}\) has zeros at \(x=a\) if \(P(a)=0\) and \(Q(a)\neq0\)</p><br>
+
+        <p>a) \(f(x)=\frac{x-1}{x^2-1}\); \(D_f=\{x\in\mathbb{R} | x\neq\pm1\}\)</p>
+        <p>\(f(x)=\frac{x-1}{(x-1)(x+1)}=\frac{1}{x-1}, x\neq\pm1\); zeros of \(P(x)\) are not in \(D_f\), therefore \(f(x)\) has no zeros</p><br>
+        <p>\(f(x)\) has a hole at \((1, \frac{1}{2})\), and a vertical asymptote at \(x=-1\)</p>
+
+        <p>c) \(y=\frac{x^2+1}{x-1}\); \(D_f=\{x\in\mathbb{R} | x\neq1\}\)</p>
+        <p>zeros of \(x^2+1=\pm i\), therefore y has no real x-intercepts</p><br>
+
+
+        <h2>Vertical Asymptotes</h2>
+        <p>\(x=a\) is considered a vertical asymptote if as \(x\) approaches \(a\), \(y\) becomes unbounded (\(y=f(x)\rightarrow\pm\inf\))</p>
+        <p>\(x\rightarrow a^-\quad y\rightarrow +\inf\)</p>
+        <p>\(x\rightarrow a^+\quad y\rightarrow -\inf\)</p>
+        <p>If \(x=a\) is a vertical asymptote for \(f(x)=\frac{P(x)}{Q(x)}\)</p>
+
+        <p>a) \(f(x)=\frac{x}{x^2+1}\); \(D_f=\{x\in\mathbb{R}\}\): No vertical asympototes</p>
+        <p>y-intercept: \(\frac{0}{1}=(0, 0)\)</p>
+        <p>x-intercept: \((0, 0)\)</p>
+        <p>Parity: \(f(x)\) is an odd function as \(f(-x)=-f(x)\)</p>
+        <p>Horizontal asympototes: \(x\rightarrow \pm\inf,\ y=0\)</p>
+
+                    |
+                    |
+                    | _,=''=_
+                    |/       ``---....___
+        ------------+--------------
+     --..,__       /|
+            `=..='` |
+                    |
+                    |
+
+
+        <p>b) \(f(x)=\frac{x+3}{x^2-x-6}\); \(D_f=\{x\in\mathbb{R} | x\neq -2, 3\}\)</p>
+        <p>\(f(x)=\frac{x+3}{(x+2)(x-3)}\)</p>
+        <p>As \(x\rightarrow -2^-: \frac{-2.001+3}{(-2.001-3)(-2.001+2)}=\frac{+}{(-)(-)}\), therefore \(y\rightarrow +\inf\)</p>
+        <p>As \(x\rightarrow -2^+: \frac{-1.999+3}{(-1.999-3)(-1.999+2)}=\frac{+}{(-)(+)}\), therefore \(y\rightarrow -\inf\)</p>
 
         </div>
         <br><br><br><br><br>

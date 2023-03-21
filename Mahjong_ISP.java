@@ -72,27 +72,6 @@ public class Mahjong_ISP extends JFrame implements KeyListener {
         }
     }
 
-	// 	// while the user does not want to exit
-	// 	while (game.choice != 3) {
-	// 		// show the main menu and get user input
-	// 		game.mainMenu();
-
-	// 		// options from main menu
-	// 		if (game.choice == 1) // instructions
-	// 		{
-	// 			game.instructions();
-	// 		}
-	// 		// play game
-	// 		else if (game.choice == 2) {
-	// 			game.play();
-	// 		} else if (game.choice == 9) {
-	// 			game.delay = false;
-	// 		}
-	// 	}
-	// 	// closing the program
-	// 	game.goodbye();
-	// }
-
     private int[] arrayListToArray(ArrayList tilesIn) {
 		int[] out = new int[tilesIn.size()];
 
@@ -232,7 +211,8 @@ public class Mahjong_ISP extends JFrame implements KeyListener {
                 }
             }
             
-            for (int i = 0 ; i < symbolX.length ; i++) System.out.fillPolygon (symbolX [i], symbolY [i], symbolX [i].length);
+            for (int i = 0 ; i < symbolX.length ; i++) 
+                System.out.fillPolygon (symbolX [i], symbolY [i], symbolX [i].length);
 
         }
 
@@ -328,7 +308,8 @@ public class Mahjong_ISP extends JFrame implements KeyListener {
             
             // drawing the symbol
             System.out.setColor (Color.red);
-            for (int i = 0 ; i < tSymbolX.length ; i++) System.out.fillPolygon (tSymbolX [i], tSymbolY [i], tSymbolX [i].length);
+            for (int i = 0 ; i < tSymbolX.length ; i++) 
+                System.out.fillPolygon (tSymbolX [i], tSymbolY [i], tSymbolX [i].length);
             
             // 10 thousand
             if (symbol == 18) {
