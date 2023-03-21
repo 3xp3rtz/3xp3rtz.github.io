@@ -42,6 +42,10 @@ img {
 	font-family: monospace;
 }
 
+.worksheet-questions li {
+    padding: 5px;
+}
+
 .table li {
     max-width: 250px;
 }
