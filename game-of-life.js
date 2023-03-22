@@ -2,7 +2,7 @@ var cv = document.getElementById("canvas");
 var c = cv.getContext("2d");
 const wdt = 20, hgt = 20, barW = 200;
 const w = document.documentElement.scrollWidth-50-barW;
-const h = document.documentElement.scrollHeight-50;
+const h = document.documentElement.scrollHeight-document.getElementById("nav-bar").offsetHeight-50;
 
 var board;
 

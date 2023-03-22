@@ -11,7 +11,7 @@
 	padding-left: 20px;
 }
 
-#note-nav {
+.note-nav {
     color: #FFFFFF;
     padding-left: 10px;
 }
@@ -50,28 +50,31 @@ img {
     max-width: 250px;
 }
 
-#note-nav h3 {
+.note-nav h3 {
     margin: 10px;
     padding-left: 10px;
 }
 
-#note-nav h1 {
-    padding-left: 10px;
+.note-nav h1 {
+    font-size: 10;
 }
 
-#note-nav {
+.note-nav {
+    padding-left: 10px;
+    display: flex;
     margin-left: 20px;
 }
 
-#note-nav .indent {
-    margin-inline-start: 30px;
-    padding: 7px;
-}    
+.note-nav .indent {
+    padding: 3px;
+}
 
-#note-nav button {
-    background-color: rgb(207, 161, 61);
-    border: 3px solid #ad6200;
+.note-nav button {
+    background-color: rgb(227, 161, 61);
+    border: 5px solid #bd6200;
     cursor: pointer;
+    margin: 10px;
+    height: 75px;
 }
 
 #note-content {

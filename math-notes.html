@@ -19,11 +19,23 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body onload="loadPage()">
     <!-- nav bar -->
     <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop-classes">Classes</a></li><li><a href="ics-notes.html?page=oop-attributes">Attributes</a></li><li><a href="ics-notes.html?page=oop-methods">Methods</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Primitive Arrays</a></li><li><a href="#" nowrap>Object Arrays</a></li><li><a href="#" nowrap>2D Arrays</a></li></ul></li><li class="nav-elem"><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a href="https://github.com/3xp3rtz" target="_blank">My GitHub</a></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li><li class="nav-bar-elem"><a>Fun Widgets</a><ul class="nav-child"><li><a href="/game-of-life.html">Game of Life</a></li><li><a href="/mahjong.html">HK-Style Mahjong</a></li></ul></li></ul></div>
+    <script src="math-notes.js"></script>
+
+    <div id="note-nav" class="content indent note-nav">
+        <h2>Math Notes</h2>
+        <button class="indent" onclick="window.location.href='math-notes.html?lesson=3.6'"><a class="content-medium">Factoring Polynomials</a></button>
+        <button class="indent" onclick="window.location.href='math-notes.html?lesson=3.4'"><a class="content-medium">Transformations of Power Functions</a></button>
+        <button class="indent" onclick="window.location.href='math-notes.html?lesson=4.1'"><a class="content-medium">Solving Polynomial Equations</a></button>
+        <button class="indent" onclick="window.location.href='math-notes.html?lesson=4.3'"><a class="content-medium">Solving Polynomial Inequalities</a></button>
+        <button class="indent" onclick="window.location.href='math-notes.html?lesson=5.1'"><a class="content-medium">Graphing Reciprocal Functions</a></button>
+        <button class="indent" onclick="window.location.href='math-notes.html?lesson=5.2'"><a class="content-medium">Rational Functions</a></button>
+    <br></div>
+
     <div class="content indent small">
-        <div id="lesson-3.6">
+        <div id="lesson-3.6" class="hidden">
         <h1>3.6 Factoring Polynomials</h1>
         <h2>The Remainder Theorem</h2>
         <p>If a polynomial \(P(x)\) is divided by \((x-b),\ b \in \mathbb{R}\)<p></p>
@@ -173,7 +185,8 @@
         <br><br><br><br>
         </div>
 
-        <div id="lesson-3.4">
+
+        <div id="lesson-3.4" class="hidden">
         <h2>3.4 Transformations of Power Functions (Cubic, Quartic, and Other)</h2>
 
         <p>\(f(x) = (x+2)^3 + 8\)</p>
@@ -235,7 +248,9 @@
 
         </div>
         <br><br><br><br><br>
-        <div id="lesson-4.1">
+
+
+        <div id="lesson-4.1" class="hidden">
             <h1>Solving Polynomial Equations</h1>
             <p>Polynomial equation is defined as \(P(x)=0\)</p><br>
             <p>Show that \(\sqrt{3}\) is a solution to \(P(x)=x^4+9=6x^2\)</p>
@@ -318,7 +333,8 @@
         </div>
         <br><br><br><br><br>
 
-        <div id="lesson-4.3">
+
+        <div id="lesson-4.3" class="hidden">
         <h1>Solving Polynomial Inequalities</h1>
         <p>\(P(x)\leq0\)</p>
         <p>\(P(x)=x^2-4\)</p>
@@ -455,7 +471,8 @@
         </div>
         </div><br><br><br><br><br>
 
-        <div id="lesson-5.1">
+
+        <div id="lesson-5.1" class="hidden">
         <h1>Graphs of Reciprocal Functions</h1>
         <p>\(a\) is a reciprocal of \(b\) such that \(a\cdot b = 1,\ b=\frac{1}{a}\)</p>
         <p>\(f(x)\cdot g(x)=1,\ g(x)=\frac{1}{f(x)}\)</p>
@@ -575,7 +592,8 @@
         </div>
         <br><br><br><br><br>
 
-        <div id="lesson-8">
+
+        <div id="lesson-5.2" class="hidden">
         <h1>Rational Functions</h1>
         <p>Rational function: ratio between two polynomials \(f(x) = \frac{P(x)}{Q(x)}\)</p>
         <p>\(tan(x)=\frac{sin(x)}{cos(x)}\) trigonometric rational function</p><br>
@@ -629,14 +647,16 @@
         <p>\(x=a\) is considered a vertical asymptote if as \(x\) approaches \(a\), \(y\) becomes unbounded (\(y=f(x)\rightarrow\pm\inf\))</p>
         <p>\(x\rightarrow a^-\quad y\rightarrow +\inf\)</p>
         <p>\(x\rightarrow a^+\quad y\rightarrow -\inf\)</p>
-        <p>If \(x=a\) is a vertical asymptote for \(f(x)=\frac{P(x)}{Q(x)}\)</p>
+        <p>If \(x=a\) is a vertical asymptote for \(f(x)=\frac{P(x)}{Q(x)}\)</p><br>
 
-        <p>a) \(f(x)=\frac{x}{x^2+1}\); \(D_f=\{x\in\mathbb{R}\}\): No vertical asympototes</p>
+        <p>a) \(f(x)=\frac{x}{x^2+1}\); \(D_f=\{x\in\mathbb{R}\}\)</p>
         <p>y-intercept: \(\frac{0}{1}=(0, 0)\)</p>
         <p>x-intercept: \((0, 0)\)</p>
         <p>Parity: \(f(x)\) is an odd function as \(f(-x)=-f(x)\)</p>
-        <p>Horizontal asympototes: \(x\rightarrow \pm\inf,\ y=0\)</p>
+        <p>Horizontal asymptotes: \(x\rightarrow \pm\inf,\ y=0\)</p>
+        <p>Vertical asymptotes: As \(x\rightarrow a^-,\ y\rightarrow\pm\inf\); as \(x\rightarrow a^-,\ y\rightarrow\pm\inf\)</p>
 
+        <pre>
                     |
                     |
                     | _,=''=_
@@ -646,12 +666,76 @@
             `=..='` |
                     |
                     |
+        </pre><br>
 
-
-        <p>b) \(f(x)=\frac{x+3}{x^2-x-6}\); \(D_f=\{x\in\mathbb{R} | x\neq -2, 3\}\)</p>
+        <p>b) \(f(x)=\frac{x+3}{x^2-x-6}\); \(D_f=\{x\in\mathbb{R} | x\neq -2, 3\}\): vertical asymptotes at \(x=-2, x=3\)</p>
         <p>\(f(x)=\frac{x+3}{(x+2)(x-3)}\)</p>
         <p>As \(x\rightarrow -2^-: \frac{-2.001+3}{(-2.001-3)(-2.001+2)}=\frac{+}{(-)(-)}\), therefore \(y\rightarrow +\inf\)</p>
-        <p>As \(x\rightarrow -2^+: \frac{-1.999+3}{(-1.999-3)(-1.999+2)}=\frac{+}{(-)(+)}\), therefore \(y\rightarrow -\inf\)</p>
+        <p>As \(x\rightarrow -2^+: \frac{-1.999+3}{(-1.999-3)(-1.999+2)}=\frac{+}{(-)(+)}\), therefore \(y\rightarrow -\inf\)</p><br>
+
+        <p>As \(x\rightarrow 3^-: \frac{2.999+3}{(2.999-3)(2.999+2)}=\frac{+}{(-)(+)}\), therefore \(y\rightarrow -\inf\)</p>
+        <p>As \(x\rightarrow 3^+: \frac{3.001+3}{(3.001-3)(3.001+2)}=\frac{+}{(+)(+)}\), therefore \(y\rightarrow +\inf\)</p><br>
+
+        <pre>
+           VA: x=-2       VA: x=3
+             ||     |        ||
+             /|     |        |\
+      (-3,0)/ |     |        | `--....___
+        ---*--|-----+--------|------------
+    `''-._/   |   _-*(0,-1/2)|
+              |  /  |   `.   |
+              | /   |     \  |
+        </pre><br>
+
+        <p>NOTE: When checking for signs on either side of vertical asymptotes, the signs will be opposite if the multiplicity of the zero in the denominator is odd, and the signs will be equal when the multiplicity of the zero is even.</p>
+        <p>NOTE: Multiplicity of the zero in the numerator dictates the behaviour of the curve at that 0 as if it was a regular polynomial.</p><br>
+
+        <p>c) \(f(x)=\frac{x^3-1}{x^2-1}=\frac{(x-1)(x^2+x+1)}{(x+1)(x-1)}\): \(D_f=\{x\in\mathbb{R} | x\neq1, -1\}\)</p>
+        <p>\(f(x)=\frac{(x-1)(x^2+x+1)}{(x+1)(x-1)}=\frac{(x^2+x+1)}{x+1},\ x\neq\pm1\), hole at (1, \frac{3}{2})</p>
+        <p>Vertical asymptotes: \(x=-1\)</p>
+        <p>As \(x\rightarrow -1^-: \frac{-1.001^2-1.001+1}{-1.001+1}=\frac{+}{-}\), therefore \(y\rightarrow -\inf\)</p>
+        <p>As \(x\rightarrow -1^+: \frac{-0.999^2-0.999+1}{-0.999+1}=\frac{+}{+}\), therefore \(y\rightarrow +\inf\)</p><br>
+
+
+        <p>\(y=f(x)=\frac{P(x)}{Q(x)}=\frac{a_nx^n + a_{n-1}x^{n-1}+...+a_1+a_0}{b_mx^m + b_{m-1}x^{m-1}+...+b_1+b_0}\)</p>
+        <p>\(\phantom{y=f(x)=\frac{P(x)}{Q(x)}}=\frac{a_nx^n + (1 + \frac{a_{n-1}}{a_n}\frac{1}{x}+...+\frac{a_1}{a_n}\frac{1}{x^{n-1}} + \frac{a_0}{a_n}\frac{1}{x^n})}
+                                                     {b_mx^m + (1 + \frac{b_{m-1}}{b_m}\frac{1}{x}+...+\frac{b_1}{a_m}\frac{1}{x^{m-1}} + \frac{b_0}{b_m}\frac{1}{x^m})}\)</p><br>
+
+        <p>As \(|x|\rightarrow +\inf \quad y\rightarrow\frac{a_n}{b_m}x^{n-m}\)</p>
+        <p>1) if \(n=m \quad y=\frac{a_n}{b_m}\)</p>
+        <p>2) if \(n\lt m \quad y\rightarrow0\)</p>
+        <p>3) if \(n\gt m \quad y\) becomes unbounded</p><br>
+
+        <p>a) \(f(x)=\frac{x^2-2x+1}{3x^3-3x+5}\): \(y\rightarrow\frac{x^2}{3x^3}: n\lt m\), therefore horizontal asymptote at \(y=0\)</p>
+        <p>b) \(f(x)=\frac{2x^2}{x+1}\): \(y\rightarrow\frac{2x^2}{x+1}: n\gt m\), therefore no horizontal asymptotes</p>
+        <p>c) \(f(x)=\frac{x^2-2x+1}{3x^3-3x+5}\): \(y\rightarrow\frac{x^2}{3x^3}: n\lt m\), therefore horizontal asymptote at \(y=0\)</p><br>
+
+
+        <p>Sketch:</p>
+        <p>a) \(f(x)=\frac{x-1}{x^2-1}=\frac{x-1}{(x-1)(x+1)}: D_f=\{x\in\mathbb{R} | x\neq1, -1\}\)</p>
+        <p>\(f(x)=\frac{x-1}{(x-1)(x+1)}=\frac{1}{x+1}, x\neq\pm1\)</p>
+        <p>Hole at \(x=1: (1, \frac{1}{2})\)</p>
+        <p>Vertical asymptotes: \(x=-1\)</p>
+        <p>As \(x\rightarrow -1^-: \frac{-1.001-1}{(-1.001-1)(-1.001+1)}=\frac{-}{(-)(-)}\), therefore \(y\rightarrow -\inf\)</p>
+        <p>As \(x\rightarrow -1^+: \frac{-0.999-1}{(-0.999-1)(-0.999+1)}=\frac{-}{(-)(+)}\), therefore \(y\rightarrow +\inf\)</p><br>
+        <p>Horizontal asymptotes: \(f(x)\rightarrow\frac{x}{x^2}\rightarrow\frac{1}{x}\), therefore \(x\rightarrow0\)</p>
+        <p>Crosses HA? \(\frac{1}{x+1}=0,\ x\) does not exist, therefore does not cross HA</p>
+
+        <p>x-intercepts: none</p>
+        <p>y-intercept: (0, 1)</p>
+
+        <pre>
+                VA: x=-1
+                    |\   |
+                    | '._|
+                    |    *(0, 1)
+                    |    |  `()..____
+        ------------|----+-------------
+          `````''-. |    |  hole at (1, 1/2)
+                   \|    |
+                   ||    |
+
+        </pre>
 
         </div>
         <br><br><br><br><br>
