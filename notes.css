@@ -50,23 +50,30 @@ img {
     max-width: 250px;
 }
 
-.note-nav h3 {
-    margin: 10px;
-    padding-left: 10px;
-}
-
-.note-nav h1 {
-    font-size: 10;
+.note-nav h2, .note-nav h1 {
+    color: #000000;
+    text-align: center;
 }
 
 .note-nav {
     padding-left: 10px;
     display: flex;
-    margin-left: 20px;
+    margin: 20px;
+    border:rgba(160, 160, 160, 0.9) solid 2px;
+    background-image: linear-gradient(to bottom right, rgba(98, 255, 111), rgba(73, 179, 105, 0.9));
+    align-items: center;
+    height: 70px;
 }
 
 .note-nav .indent {
     padding: 3px;
+}
+
+.note-nav-buttons {
+    margin-left: 10px;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 15px;
 }
 
 .note-nav button {
@@ -74,7 +81,15 @@ img {
     border: 5px solid #bd6200;
     cursor: pointer;
     margin: 10px;
-    height: 75px;
+    height: auto;
+}
+
+#ics-note-nav button a {
+    padding: 15px;
+}
+
+#math-note-nav button a {
+    padding: 5px;
 }
 
 #note-content {
