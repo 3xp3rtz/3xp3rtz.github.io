@@ -26,7 +26,7 @@
 
 <body onload="loadPage()">
     <!-- nav bar -->
-    <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop-classes">Classes</a></li><li><a href="ics-notes.html?page=oop-attributes">Attributes</a></li><li><a href="ics-notes.html?page=oop-methods">Methods</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Primitive Arrays</a></li><li><a href="#" nowrap>Object Arrays</a></li><li><a href="#" nowrap>2D Arrays</a></li></ul></li><li class="nav-elem"><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a href="https://github.com/3xp3rtz" target="_blank">My GitHub</a></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li><li class="nav-bar-elem"><a>Fun Widgets</a><ul class="nav-child"><li><a href="/game-of-life.html">Game of Life</a></li><li><a href="/mahjong.html">HK-Style Mahjong</a></li></ul></li></ul></div>
+    <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop#classes">Classes</a></li><li><a href="ics-notes.html?page=oop#attributes">Attributes</a></li><li><a href="ics-notes.html?page=oop#methods">Methods</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Primitive Arrays</a></li><li><a href="#" nowrap>Object Arrays</a></li><li><a href="#" nowrap>2D Arrays</a></li></ul></li><li class="nav-elem"><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a href="https://github.com/3xp3rtz" target="_blank">My GitHub</a></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li><li class="nav-bar-elem"><a>Fun Widgets</a><ul class="nav-child"><li><a href="/game-of-life.html">Game of Life</a></li><li><a href="/mahjong.html">HK-Style Mahjong</a></li></ul></li></ul></div>
     <script src="ics-notes.js"></script>
 
     <div id="ics-note-nav" class="content indent note-nav">
@@ -64,6 +64,10 @@
                 }
             </code>
         </div>
+
+        <h2 id='classes'>Classes</h2>
+        <p></p>
+
     </div>
 
 
@@ -78,10 +82,11 @@
         <h3>Initialization</h3>
         <p>There are several ways to create an array. For this demonstration, I will be using an integer array to keep things simple. The most basic way to do so is by using the following syntax: <code>int[] array = new int[len];</code> This will initialize a new array of integers of length <code>len</code>, each of which are set to 0 by default. So if I wanted to make an array named <code>arr</code> with length 23, I would write:</p>
         <pre>        <code>int[] arr = new int[23];</code></pre>
+        <pre>        <code>arr = [0, 0, 0, ..., 0]; // initialized with all 0s</code></pre>
         <p>To access elements of the array, we use square brackets to surround the index of the object which we are requesting, 0-indexed, meaning the first object is in the 0th place, the second object in the 1st, and so on.</p>
-        <pre>        <code>System.out.println(arr[0]); // prints the 1st item in the list, set to 0 by default</code></pre>
-        <pre>        <code>System.out.println(arr[3]); // prints the 4th item in the list, set to 0 by default</code></pre>
-        <pre>        <code>System.out.println(arr[15]); // prints the 16th item in the list, set to 0 by default</code></pre>
+        <pre>        <code>System.out.println(arr[0]); // prints the 1st item in the list</code></pre>
+        <pre>        <code>System.out.println(arr[3]); // prints the 4th item in the list</code></pre>
+        <pre>        <code>System.out.println(arr[15]); // prints the 16th item in the list</code></pre>
 
         <h3>Initializing an Array with Values</h3>
         <p>The most basic way to fill the array is to set each item individually:</p>
