@@ -43,7 +43,7 @@
     <div class="hidden indent content" id="content-oop">
         <h2>Java Object Oriented Programming (OOP)</h2>
         <p>Object oriented programming, or OOP for short, is a way of organizing a program's components into similar structures to have a customizable blueprint that suits most of each individual instance's needs.</p><br>
-        <p>For example, if I was to model a classroom of students, I wouldn't make a custom class for each student in the room; instead, there would likely be a <code>Student</code> class to handle the structure for me, and add in customizable attributes in different class constructors or set methods.</p>
+        <p>For example, if I was to model a classroom of students, I wouldn't make a custom class for each student in the room; instead, there would likely be a <code>Student</code> class to handle the structure for me, and add in customizable attributes in different class constructors or set methods.</p><br>
 
         <div class="java-snippet">
             <code>
@@ -60,14 +60,24 @@
                     <tab/><tab/>age = a;<br>
                     <tab/><tab/>name = n;<br>
                     <tab/><tab/>average = av;<br>
+                    <tab/>}<br><br>
+                    <tab/>public String getStudentName() {<br>
+                    <tab/><tab/>return name;<br>
+                    <tab/>}<br><br>
+                    <tab/>public int getStudentAge() {<br>
+                    <tab/><tab/>return name;<br>
+                    <tab/>}<br><br>
+                    <tab/>public double getStudentAverage() {<br>
+                    <tab/><tab/>return double;<br>
                     <tab/>}<br>
                 }
             </code>
         </div>
+        <i><tab/>An example of a class</i>
 
         <h2 id='classes'>Classes</h2>
-        <p></p>
-
+        <p>Classes are the blueprint of blueprints in Java: they provide a structure which your own custom design can follow. Classes are a type of <code>Object</code> in Java, which means they can be used in existing methods such as <code>.equals</code>, or incorporated in arrays and ArrayLists (see more on ArrayLists <a href="?page=arrls">here</a>).</p>
+        
     </div>
 
 
@@ -117,7 +127,7 @@
 
 
     <div class="hidden indent content" id="content-arrls">
-        <h2>Arrays</h2>
+        <h2>ArrayLists</h2>
         <p>While arrays in Java are constrained to a set size, ArrayLists are able to add and remove elements, but only work with <code>Object</code>s. They can also search for objects and check whether a given item exists.</p>
 
         <div class="java-snippet">
