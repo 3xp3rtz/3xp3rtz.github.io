@@ -134,37 +134,40 @@
         
         <p>Check for duplicate factors</p>
 
-        <p>1 | 1  -2  -1  4  -2</p>
-        <p>__|__1_-1_-2_2</p>
-        <p>1 | 1  -1  -2  2  0</p>
-        <p>__|__1_0_-2_0</p>
-        <p>__| 1 0 -2  0  0</p><br>
-        <!-- <p></p> -->
-        <table></table>
+        <div class="table indent">
+            \(
+            \begin{array}{c|c c c c}
+            1 & 1 & -2 & -1 & 4 & -2\\
+            && 1 & -1 & -2 & 2 \\\hline
+            1 & 1 & -1 & -2 & 2 & 0 \\
+            && 1 & 0 & -2 & 0 \\\hline
+            & 1 & 0 & -2 & 0\\
+            \end{array}
+            \)
+        </div><br>
+
         <h2>Using Synthetic Division</h2>
 
         <p>\(P(x) = 2x^3 + 3x^2 - 3x - 2\)</p>
         <p>If x-b is a factor, \(b = \pm1, \pm2\)</p>
         <p>\(P(1) = 2 + 3 - 3 - 2 = 0\), therefore x-1 is a factor</p>
-        <p>1 | 2 3 -3 -2</p>
-        <p>_ | 2 3 -3 -2</p>
         
         <h2>Irrational something</h2>
         <p>\(P = a_nx^n + a_{n-1}x^{n-1}+...+a_1x + a_0\)</p>
         <p>If there are integral zeros, </p>
         <p>If there are rational zeros, the zeros of b/a are among a combination of:</p>
-        <p class="indent">b +-1,__+-...___+-a_0</p>
+        <p>\(b = \pm1, \pm2\)</p><br>
+        <p>b +-1,__+-...___+-a_0</p>
+        <p>\(\frac{b}{a}=\frac{\pm1,\pm2}{\pm1,\pm2,\pm3,\pm4,\pm6,\pm12}\)</p>
         <p>-- = ---------------------------</p>
+        <p>= \(\pm1, \pm\frac{1}{2}, \pm\frac{1}{3}, \pm\frac{1}{4}, \pm\frac{1}{6}, \pm\frac{1}{12}\)</p>
         <p>\(a = \pm1, \pm, ... \pm a_n\)</p><br>
         
         <p>\(P(x) = 12x^4 - 4x^3 - 11x^2 + x + 2\)</p>
         <p>Possible 0s:</p>
         <p>\(b = \pm1, \pm2\)</p><br>
-        <p>\(b = \pm1, \pm2\)</p>
-        <p>-- = ---------------------------</p>
-        <p>\(a = \pm1, \pm2, \pm3, \pm4, \pm6, \pm12\)</p>
-
-        <p>= 1, -1, 1/2, -1/2, 1/3, -1/3, 1/4, -1/4, 1/6, -1/6, 1/12, -1/12</p>
+        <p>\(\frac{b}{a}=\frac{\pm1,\pm2}{\pm1,\pm2,\pm3,\pm4,\pm6,\pm12}\)</p>
+        <p>= \(\pm1, \pm\frac{1}{2}, \pm\frac{1}{3}, \pm\frac{1}{4}, \pm\frac{1}{6}, \pm\frac{1}{12}\)</p>
         <p>= 2, -2, 2/3, -2/3</p><br>
 
         <p>P(1) = 12 - 4 - 11 + 1 + 2 = 0, therefore (x-1) is a factor</p>
