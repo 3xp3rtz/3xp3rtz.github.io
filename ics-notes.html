@@ -43,7 +43,7 @@
     <div class="hidden indent content" id="content-oop">
         <h2>Java Object Oriented Programming (OOP)</h2>
         <p>Object oriented programming, or OOP for short, is a way of organizing a program's components into similar structures to have a customizable blueprint that suits most of each individual instance's needs.</p><br>
-        <p>For example, if I was to model a classroom of students, I wouldn't make a custom class for each student in the room; instead, there would likely be a <code>Student</code> class to handle the structure for me, and add in customizable attributes in different class constructors or set methods.</p><br>
+        <p>For example, if I was to model a classroom of students, I wouldn't make a custom variable for each student and each attribute that student had in the room; instead, there would likely be a <code>Student</code> class to handle the structure for me, and add in customizable attributes in different class constructors or get/set methods for more flexibility depending on the instance of the class.</p><br>
 
         <div class="java-snippet">
             <code>
@@ -73,11 +73,14 @@
                 }
             </code>
         </div>
-        <i><tab/>An example of a class</i>
+        <i><tab/>An example of a class for a student</i>
 
         <h2 id='classes'>Classes</h2>
-        <p>Classes are the blueprint of blueprints in Java: they provide a structure which your own custom design can follow. Classes are a type of <code>Object</code> in Java, which means they can be used in existing methods such as <code>.equals</code>, or incorporated in arrays and ArrayLists (see more on ArrayLists <a href="?page=arrls">here</a>).</p>
-        
+        <p>Classes are the blueprint of blueprints in Java: they provide a structure which your own custom design can follow. Classes are a type of <code>Object</code> in Java, which means they can be used in existing methods such as <code>.equals</code>, or incorporated in arrays and ArrayLists (see more on ArrayLists <a href="?page=arrls">here</a>). These such integrations can help with keeping track of and comparing different instances of your classes.</p>
+        <p>The header for creating a new class goes as follows: a <code>public</code> or <code>private</code> scope keyword depending on whether you want to be able to access it from elsewhere (usually using public for access from a driver class); the keyword <code>class</code>, followed by the name of your class. That would look something like this:</p>
+        <pre>        <code>public class Computer { // public class, accessible from other classes</code></pre>
+        <pre>        <code>private class Computer { // private class, accessible from parent classes</code></pre>
+
     </div>
 
 
