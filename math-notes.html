@@ -990,8 +990,407 @@
 
         <p>6. \(\frac{1}{|x-1|}-\frac{|x+1|}{x}\leq2\)</p>
 
-
+        <br><br><br><br>
         </div>
+
+        <div id="lesson-8.1">
+        <h1>Exploring Logarithmic Functions</h1>
+        <p>\(f(x)=b^x, b\gt0,\ b\neq1,\ then\ f^-1(x)=\log_b x\)</p>
+        <p>\(D=\{x\in\mathbb{R}\}\)</p>
+        <p>\(R=\{y\in\mathbb{R} | y\gt0\}\)</p>
+
+        <p>\(b\gt0\): negative bases lead to all sorts of problems, e.g. x=1/2; (-|n|)^1/2 = sqrt(-)</p>
+        <p>\(b\neq1\): y=1^x is not an exponential function, it is constant</p><br>
+
+        <p><b>KEY POINTS: \((-1, \frac{1}{b}),\ (0, 1),\ (1, b)\)</b></p>
+        <p>Exponential functions grow at faster rates than \(x^n\)</p>
+        <p>as \(x\to-\infty,\ y\to0^+\)</p>
+        <p>as \(x\to+\infty,\ y\to\infty\)</p>
+
+        <p>\(y=b^x\ (0\lt b\lt1)\) = flipped over y-axis</p>
+        
+        <h2>Inverse</h2>
+        <p>\(f(x)=y=b^x\)</p>
+        <p>\(D_{f^{-1}}: \{x\in\mathbb{R} | x\gt0\}\)</p>
+        <p>\(R_{f^{-1}}: \{y\in\mathbb{R}\}\)</p>
+        <p>VA at \(x=0\)</p>
+        <p>as \(x\to0^+,\ y\to-\infty\)</p>
+        <p>\(f^{-1}(x)=\log_b x,\ b\gt0,\ b\neq1,\ x\gt0\)</p><br>
+
+        <p>\(y=b^x\iff x=\log_b y\)</p>
+        <p>\(8=2^3\iff 3=\log_2 8\)</p>
+        <p>\(0.0001=10^{-4}\iff -4=\log_{10} 0.0001\)</p>
+        <p>\(10000 = 10^4\iff \log_{10} 10000\)</p>
+        <p>\(1024=2^{10}\iff10=\log_{2} 1024\)</p><br>
+
+        <p>\(\log_{10}=\log\)</p>
+        <p>\(\ln x=\log_{e} x\)</p>
+        <p>\(y=e^x,\ x=\ln y\)</p><br>
+
+        <p>\(4=\log_2 16\iff16=2^4\)</p>
+        <p>\(3=\log_10 1000\iff1000=10^3\)</p>
+        <p>\(-4=\log_10 0.0001\iff0.0001=10^{-4}\)</p>
+        <p>\(4=\log_5 625\iff625=5^4\)</p><br>
+
+        <p>3. Find if the functions are well defined</p>
+        <p>a) \(\log_\sqrt{2} 1=\sqrt{2}^x, x=0\): well defined</p>
+        <p>b) \(\log_1 2\): base is 1, not well defined</p>
+        <p>c) \(\log_{\frac{1}{2}} \sqrt{2}=\frac{1}{2}^x = \sqrt{2}, \): well defined</p>
+        <p>d) \(\log_2 -10\): output is negative, not well defined</p>
+        <p>e) \(\log_-2 3\): base is negative, not well defined</p><br>
+
+        <p>4. Prove following formulas</p>
+        <p>a) \(\log_b 1 = 0,\ b^0 = 1\)</p>
+        <p>b) \(\log_b b = 1,\ b^1 = b\)</p>
+        <p>c) \(\log_b \frac{1}{b} = -1,\ b^{-1} = \frac{1}{b}\)</p>
+        <p>d) \(\log_{\frac{1}{b}} b = -1,\ \frac{1}{b}^{-1} = b\)</p>
+        <p>e) \(\log_b b^n = n,\ b^n = b^n\)</p><br>
+
+        <h2>Basic Equations</h2>
+        <p>5. Solve by converting to exponential form</p>
+        <p>a) \(x=\log_5 25,\ 5^x=25,\ 5^x=5^2,\ x=2\)</p>
+        <p>b) \(x=\log_4 1,\ 4^x=1,\ 4^x=4^0,\ x=0\)</p>
+        <p>c) \(2=\log_x 16, x\gt0, x\neq1;\ x^2=16,\ x=\pm4; (restrictions)\to x=4\)</p>
+        <p>d) \(\frac{1}{2}=\log_x 3, x\gt0, x\neq1;\ x^\frac{1}{2}=3,\ x=\pm9; (restrictions)\to x=9\)</p>
+        <p>e) \(\log_2 x = -2, x\gt0, 2^-2=x, x=\frac{1}{4}\)</p>
+
+        <h2>Sketching Logarithmic Functions</h2>
+        <p>\(y=\log_b x\ (0\lt b\lt1)\)</p>
+
+                |       |
+                \       |
+                 `.     |
+                   `=~-.|____________
+        ----------------+-----------------
+                        |
+                        |
+                        |
+                        |
+
+
+
+        <br><br><br><br>
+        </div>
+    
+        <div id="lesson-8.2">
+        <h1>Transformations of Logarithmic Functions</h1>
+        <p>\(y=-\log_2 (x-3)\)</p>
+        <p>Parent: \(y=\log_2 x\)</p>
+        <p><tab/>Key points: \((\frac{1}{2}, -1), (1,0), (2,1)\)</p>
+        <p>Transformation: \((x+3, -y)\)</p>
+        <p><tab/>New key points: \((\frac{7}{2}, 1), (4,0), (5,-1)\)</p><br>
+
+        <p>\(y=-2\log_{0.5} (2x-4)+3\)</p>
+        <p>\(\phantom{y}=-2\log_\frac{1}{2} [2(x-4)]+3\)</p>
+        <p>Parent: \(y=\log_\frac{1}{2} x\)</p>
+        <p><tab/>Key points: \((\frac{1}{2}, 1), (1,0), (2,-1)\)</p>
+        <p>Transformation: \((\frac{x}{2}+2, -2y+3)\)</p>
+        <p><tab/>New key points: \((\frac{9}{4}, 1), (\frac{5}{2},3), (3,5)\)</p><br>
+
+        <p>\(f(x)=y=\log_2 x\): Parent</p>
+        <p>\(g(x)=y=\log_2 |x|\): \(f(x)\) is duplicated across the y-axis (keeping VA at x = 0)</p>
+        <p>\(h(x)=y=|\log_2 x|\): \(f(x)\) but any negatives turn positive</p><br>
+
+
+
+        <br><br><br><br>
+        
+        </div>
+
+        
+        <div id="lesson-8.3">
+        <h1>Evaluating Logarithms</h1>
+        <p>\(y=b^x \iff x=\log_b y\)</p>
+        <p>\(b^n=b^n\)</p>
+        <p>\(b^n=x \rightarrow \log_b x=n\)</p>
+        <p>\(\log_b b^n=n\)</p><br>
+
+        <p>\(\ln sqrt[5]{e^3}=ln^\frac{3}{5}=\frac{3}{5}\)</p>
+        <p>\(e^1=1+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+...\)</p><br>
+
+        <p>\(b^m\cdot b^n = b^{m+n}\)</p>
+        <p>\(\frac{b^m}{b^n} = b^{m-n}\)</p>
+        <p>\((b^m)^n=b^{m\cdot n}\)</p>
+        <p>\(b^{-1}=\frac{1}{b}\)</p>
+        <p>\(\phantom{b^{-1}}=\frac{b^0}{b^1}\)</p>
+        <p>\(\phantom{b^{-1}}=b^{0-1}\)</p>
+        <p>\(\phantom{b^{-1}}=b^{-1}\)</p><br>
+
+        <h2>Proofs</h2>
+        <h3>The Power Rule</h3>
+        <p>\(\log_b x^n = n \log_b x\); \(x\gt0,\ b\gt0,\ b\neq1\)</p>
+        <p>Let \(m=\log_b x \leftrightarrow\ x=b^m\)</p>
+        <p>\(x=b^m\)</p><br>
+
+        <div class="table indent">
+            \(
+            \begin{array}{c|c}
+            LS & RS \\\hline
+            \log_b x^n & n \log_b x \\
+            \log_b (b^m)^n \\
+            \log_b b^{m\cdot n} \\
+            mn \\
+            n \log_b x \\
+            \end{array}
+            \)
+        </div><br>
+        
+        <h3>The Product Rule</h3>
+        <p>\(\log_b (xy) = \log_b x + \log_b y\); \(x\gt0, y\gt0, b\gt0, b\neq1\)</p>
+        <p>Let \(m=\log_b x \leftrightarrow x=b^m\)</p>
+        <p>Let \(n=\log_b y \leftrightarrow y=b^n\)</p><br>
+        
+        <div class="table indent">
+            \(
+            \begin{array}{c|c}
+            LS & RS \\\hline
+            \log_b x\cdot y & \log_b x + \log_b y \\
+            \log_b b^m\cdot b^n &  \\
+            \log_b b^{m+n} \\
+            m+n & \\
+            \log_b x + \log_b y
+            \end{array}
+            \)
+        </div><br>
+        
+        <h3>The Quotient Rule</h3>
+        <p>\(\log_b (\frac{x}{y}) = \log_b x - \log_b y\); \(x\gt0, y\gt0, b\gt0, b\neq1\)</p>
+        <p>Let \(m=\log_b x \leftrightarrow x=b^m\)</p>
+        <p>Let \(n=\log_b y \leftrightarrow y=b^n\)</p><br>
+        
+        <div class="table indent">
+            \(
+            \begin{array}{c|c}
+            LS & RS \\\hline
+            \log_b \frac{x}{y} & \log_b x - \log_b y \\
+            \log_b \frac{b^m}{b^n} \\
+            \log_b b^{m-n} \\
+            m-n & \\
+            \log_b x - \log_b y
+            \end{array}
+            \)
+        </div><br>
+        
+        <p>LS = RS, \(\therefore \log_b \frac{x}{y} = \log_b x - \log_b y\)</p>
+        
+        <h3>The Change of Base Rule</h3>
+        <p>\(\log_b x = \frac{\log_a x}{\log_a b}\); \(x\gt0, b\gt0, b\neq1, a\gt0, a\neq1\)</p>
+        <p>Let \(m=\log_a x \leftrightarrow x=a^m\)</p>
+        <p>Let \(n=\log_a b \leftrightarrow y=a^b\)</p><br>
+        
+        <div class="table indent">
+            \(
+            \begin{array}{c|c}
+            LS & RS \\\hline
+            \log_b x & \frac{\log_a x}{\log_a b} \\
+            \log_a^n a^m \\
+            \log_a^n (a^n)^{\frac{m}{n}} \\
+            \frac{m}{n} \\
+            \frac{\log_a x}{\log_a b}
+            \end{array}
+            \)
+        </div><br>
+        
+        <p>LS = RS, \(\therefore \log_b x = \frac{\log_a x}{\log_a b}\)</p>
+        
+        <h3>The Change of Base of an Exponent Rule</h3>
+        <p>\(2=3^?\)</p>
+        <p>\(10^?=e\)</p>
+        <p>\(e^?=10\)</p><br>
+
+        <p>\(b^n = b^n\)</p>
+        <p>\(\log_b n = \log_b n\)</p>
+        <p>\(n = b^{\log_b n}\)</p>
+
+        <p>\(2=3^{\log_3 2}\)</p>
+        <p>\(e=10^{\log e}\)</p>
+        <p>\(10=e^{\ln 10}\)</p>
+        <p>\(\frac{1}{2}=e^{\ln \frac{1}{2}}\)</p>
+        <!-- <p>\(\ln \frac{1}{x}=\)</p> -->
+
+        <h2>Practice</h2>
+        <p>3. Simplify, state restrictions</p>
+        <p>a) \(\log x^2 = 2\log x, x\gt0\)</p>
+        <p>b) \(\ln \sqrt[5]{x^4} = \frac{4}{5}\log x, x\gt0\)</p>
+        <p>c) \(\log_2 x^\frac{1}{3} = \frac{1}{3}\log_2 x, x\gt0\)</p><br>
+
+        <p>5. Power law/product law to exapand; state restrictions</p>
+        <p>a) \(\log(10xy) = \log(10) + \log x + \log y\)</p>
+        <p>b) \(\log_2(16a^2b^3) = \log_2(16) + \log_2 a^2 + \log_2 b^3 = 4 + 2\log_2 a + 3\log_2 b\)</p>
+`       
+        <p>6. Write as a single log</p>
+        <p>a) \(\log 20 + \log 50 + \log 0.1 = \log 20\cdot50\cdot0.1 = \log 100 = 2\)</p>
+        <p>b) \(2\log_5 10 + \frac{1}{2}\log_5 \frac{1}{2} = \log_5 10^2 + \log_5 \frac{1}{\sqrt{2}} = \log_5 100\cdot\frac{1}{\sqrt{2}} = \log_5 \frac{100}{\sqrt(2)}\)</p>
+        <p>c) \(2\ln x + 3\ln y + \frac{1}{3}\ln z = \ln x^2y^2z^\frac{1}{3}\), \(x\gt0, y\gt0, z\gt0\)</p><br>
+
+        <p>8. Expand</p>
+        <p>a) </p>
+        <p>b) \(\ln \frac{a^2\sqrt{b}}{c^3} = 2\ln a + \frac{1}{2}\ln b - 3\ln c\)</p>
+
+        <p>9. Simplify</p>
+        <p>a) \(\)</p>
+        <p>b) \(\frac{1}{3}\ln a - \frac{2}{3}\ln b + 2\ln 3 = \ln \frac{9a^\frac{1}{3}}{b^\frac{2}{3}}\)</p>
+
+
+        <p>\(\log_2 3\)</p>
+
+        log_2(log_2(log_2(log_2 x )))
+        log_2(log_2(log_2 (x>0)))
+        log_2(log_2(x>1))
+        log_2(x>2)
+        x>2
+
+        <br><br><br><br>
+        
+        </div>
+
+        <div id="lesson-8.5">
+        <h1>Solving Exponential Equations</h1>
+        <p>\(a^x = a^y,\ a\gt0, a\neq1, x = y\)</p>
+        <p>Exponential functions are 1-1 functions</p>
+
+        <p>1. Solve</p>
+        <p>a) \(2^x = 2^6,\ x=6\)</p>
+        <p>b) \(10^{2x-3} = 0.0001=10^-4,\ 2x-3 = -4, 2x=-1, x=-\frac{1}{2}\)</p>
+        <p>\(10^{2(-\frac{1}{2})-3} = 10^-4\)</p>
+        <p>c) \(2^{-x}=\sqrt[5]{16} = 2^\frac{4}{5}, -x=\frac{4}{5}, x=-\frac{4}{5}\)</p>
+        <p>d) \(8^x=\sqrt[3]{0.0625}=2^{-\frac{4}{3}}=2^{3x}=2^{-\frac{4}{3}},\ 3x=-\frac{4}{3},\ x=-\frac{4}{9}\)</p><br>
+
+        <p>2. Solve using change of variable</p>
+        <p>a) \(2^x + 2^{-x}=4.25=\frac{17}{4}\)</p>
+        <p>let \(y=2^x,\ y\gt0\)</p>
+        <p>\(y+\frac{1}{y}=\frac{17}{4}\)</p>
+        <p>\(\frac{y^2}{y}+\frac{1}{y}=\frac{17y}{4y}\)</p>
+        <p>\(\frac{4y^2}{4y}+\frac{4}{4y}=\frac{17y}{4y}\)</p>
+        <p>\(\frac{4y^2}{4y}+\frac{4}{4y}-\frac{17y}{4y}=0\)</p>
+        <p>\(4y^2-17y+4=0\)</p>
+        <p>\((4y-1)(y-4),\ y=\frac{1}{4}, 4\)</p><br>
+
+        <p>\(y=2^x=2^{-2}, x=-2; 2^x=2^2, x=2\)</p><br>
+        
+        <p>b) \(5*2^x-4^x+24=0\)</p>
+        <p>\(5*2^x-2^{2x}+24=0\)</p><br>
+
+        <p>let \(y=2^x,\ y\gt0\)</p>
+        <p>\(5y-y^2+24=0\)</p>
+        <p>\(y^2-5y-24=0\)</p>
+        <p>\((y+3)(y-8)\)</p>
+        <p>\(y=8, \cancel{3}\)</p>
+        <p>\(y=2^x=8=2^3,\ x=3\)</p><br>
+
+        <p>c) \(\frac{2^x-2^{-x}}{2^x+2^{-x}}=-\frac{63}{65}\)</p>
+        <p>\(65*(2^x-2^{-x})=63*(2^x+2^{-x})\)</p>
+        <p>\(65*2^x - 65*2^{-x} = -63*2^x - 63*2^{-x}\)</p>
+        <p>\(65*2^x + 63*2^x = 65*2^{-x} - 63*2^{-x} \)</p>
+        <p>\(128*2^x = 2*2^{-x}\)</p>
+        <p>\(2^{x+7} = 2^{-x+1}\)</p>
+        <p>\(x+7 = -x+1\)</p>
+        <p>\(2x=-6,\ x=-3\)</p><br>
+
+        <p>d) \(2^{x+1}+2^{2x}=2^x+2+\sqrt{2}\)</p>
+        <p>\(2^{x+1}+2^{2x}=2^x+2+2^\frac{1}{2}\)</p>
+        <p>let \(y=2^x,\ y\gt0\)</p>
+        <p>\(2y+y^2=y+2+2^\frac{1}{2}\)</p>
+        <p>\(y^2+y-2-2^\frac{1}{2}\)</p>
+        <p>\(m_1m_2=-2-\sqrt{2}\)</p>
+        <p>\(m_1+m_2=1\)</p>
+        <p>\(m_1=1+\sqrt{2}\)</p>
+        <p>\(m_2=-\sqrt{2}\)</p>
+        <p>\((y-\sqrt{2})(y+1+\sqrt{2})\)</p><br>
+
+        <p>\(y^2+y-2-\sqrt{2}=0\)</p>
+        <p>factor \((y^2-2) + (y-\sqrt{2})\)</p>
+        <p>\((y+\sqrt{2})(y-\sqrt{2}) + (y-\sqrt{2})=0\)</p>
+
+
+        <br>
+        <p>a) \(2^{3x-1}=5\)</p>
+        <p>\(2^3x-1=2^{\log_2 5}\)</p>
+        <p>\(3x-1=\log_2 5\)</p>
+        <p>\(x=\frac{1}{3}(1+\log_2 5)\)</p>
+        <p>\(\phantom{x}=\frac{1}{3}(\log_2 2 + \log_2 5)\)</p>
+        <p>\(\phantom{x}=\frac{1}{3}(\log_2 10)\)</p>
+        <p>\(\phantom{x}=\log_2 10^\frac{1}{3}\)</p>
+        <p>\(\phantom{x}=\log_2 \sqrt[3]{10}\)</p><br>
+
+        <p>Assume no changing of base</p>
+        <p>Apply \(\ln\) to both sides</p>
+        <p>\(\ln 2^{3x-1}=\ln 5\)</p>
+        <p>\((3x-1) \ln 2 = \ln 5\)</p>
+        <p>\(3x-1 = \frac{\ln 5}{\ln 2}\)</p>
+        <p>\(3x = 1+\frac{\ln 5}{\ln 2}\)</p>
+        <p>\(3x = \frac{\ln 10}{\ln 2}\)</p>
+        <p>\(x = \frac{1}{3}\frac{\ln 10}{\ln 2}\)</p>
+        <p>\(x = \frac{\ln \sqrt[3]{10}}{\ln 2}\)</p>
+        <p>\(x = \log_2 \sqrt[3]{10}\)</p><br>
+
+        <p>b) \(3^{x-1}=4^{x+1}\)</p>
+        <p>\(\ln 3^{x-1} = \ln 4^{x+1}\)</p>
+        <p>\((x-1)\ln 3 = (x+1)\ln 4\)</p>
+        <p>expand step \(\frac{x\ln 3 - \ln 3}{\ln 4} = x+1\)</p>
+        <p>\(x\ln 3 - \ln 3 = x\ln 4 + \ln 4\)</p>
+        <p>\(x(\ln 3 - \ln 4) = \ln 4 + ln 3\)</p>
+        <p>\(x = \frac{\ln 4 + ln 3}{\ln 3 - \ln 4}\)</p>
+        <p>\(x = \frac{\ln 12}{\ln \frac{3}{4}}\)</p>
+        <p>\(x = \ln_\frac{3}{4} 12\)</p><br>
+
+
+        <p>3. \(2^{x+2}-2^x=96\)</p>
+        <p>\(4 2^x-2^x=96\)</p>
+        <p>\(3 2^x=96\)</p>
+        <p>\(2^x=32\)</p>
+        <p>\(2^x=2^5\)</p>
+        <p>\(x=5\)</p><br>
+
+        <p>\((\frac{2}{3})^x(\frac{9}{8})^x=\frac{27}{64}\)</p>
+        <p>\((\frac{2}{3})^x(\frac{3^2}{2^3})^x = \frac{3^3}{2^6}\)</p>
+        <p>\(\frac{2^{x-3}}{3^{x-2x}}=\frac{3^3}{2^6}\)</p>
+        <p>\(2^{x+3}=3^{3-x}\)</p>
+        <p>\(\)</p>
+
+
+        <p>4. Give answer to 2 decimal places</p>
+        <p>Doubles every 10 min, starts at 200</p>
+        <p>let \(t\) be the time in minutes</p>
+        <p>let \(B\) be the number of bacteria</p>
+        <p>a) Find exponential function that represents # bacteria </p>
+        <p>\(B(t)=200*2^{\frac{t}{10}}\)</p><br>
+        
+        <p>b) Find B(1h)</p>
+        <p>\(B(1h) = B(60)=200*2^{\frac{60}{10}}\)</p>
+        <p>\(\phantom{B(1h) = B(60)}=200*2^6\)</p>
+        <p>\(\phantom{B(1h) = B(60)}=200*64\)</p>
+        <p>\(\phantom{B(1h) = B(60)}=12800\)</p><br>
+        
+        <p>c) Find time after which # bacteria is 123456</p>
+        <p>\(B(t) = 200*2^{\frac{t}{10}} = 123456\)</p><br>
+        <p>\(2^{\frac{t}{10}} = \frac{123456}{200}\)</p><br>
+        <p>\(\ln 2^{\frac{t}{10}} = \ln \frac{123456}{200}\)</p><br>
+        <p>\(\frac{t}{10} \ln 2 = \ln \frac{123456}{200}\)</p><br>
+        <p>\(t = \frac{617.28}{\ln 2 * 2000}\)</p><br>
+        <p>\(t = 92 \)</p><br>
+        <p>\(\)</p>
+        
+
+        <p>5. </p>
+        <p>a) Find exponential function</p>
+        <p>let \(t\) be the time in years</p>
+        <p>let \(m\) be the mass of the sample</p>
+        <p>\(m(t)=100 * \frac{1}{2}^\frac{t}{88}\)</p><br>
+        
+        <p>b) Find \(m(10)\)</p>
+        <p>\(m(10)=100 * \frac{1}{2}^\frac{10}{88}\)</p>
+        <p>\(\phantom{m(10)}=92.42555 = 92.43g\)</p><br>
+
+        <p>c) Find time after which mass = 3.21g</p>
+        <p>\(3.21 = 100*\frac{1}{2}^\frac{t}{88}\)</p>
+        <p>\(\ln \frac{3.21}{100} = \ln \frac{1}{2}^\frac{t}{88}\)</p>
+        <p>\(\ln \frac{3.21}{100} = \frac{t}{88} \ln \frac{1}{2}\)</p>
+
+        <br><br><br><br>
+        </div>
+
+        
         </div>
     </div>
 </body>
