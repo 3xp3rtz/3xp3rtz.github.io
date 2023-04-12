@@ -131,14 +131,35 @@
 
     <div class="hidden indent content" id="content-arrls">
         <h2>ArrayLists</h2>
-        <p>While arrays in Java are constrained to a set size, ArrayLists are able to add and remove elements, but only work with <code>Object</code>s. They can also search for objects and check whether a given item exists.</p>
+        <p>While arrays in Java are constrained to a set size, <code>ArrayList</code>s are able to add and remove elements, but only work with <code>Object</code>s. They can also search for objects and check whether a given item exists.</p>
 
         <div class="java-snippet">
             <code>
-                int[] newArray = new int[] {80, 75, 90, 94, 83};<br>
-                int[] newInitializedArray = {80, 75, 90, 94, 83}; // only works for uninitialized arrays<br>
+                ArrayList&lt;Integer&gt; intArr = new ArrayList&lt;Integer&gt;();<br>
+                ArrayList&lt;String&gt; intArr = new ArrayList&lt;String&gt;();<br>
+                ArrayList&lt;Object&gt; intArr = new ArrayList&lt;Object&gt;();<br>
             </code>
         </div><br>
+
+        <p>Since <code>ArrayList</code>s are themselves objects, you can even do <code>ArrayList</code>s of <code>ArrayList</code>s:</p>
+        <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre>
+    </div>
+
+
+    <div class="hidden indent content" id="content-sort">
+        <h2>Sorting and Searching</h2>
+        <p>There are many sorting algorithms for ordering </p>
+
+        <div class="java-snippet">
+            <code>
+                ArrayList&lt;Integer&gt; intArr = new ArrayList&lt;Integer&gt;();<br>
+                ArrayList&lt;String&gt; intArr = new ArrayList&lt;String&gt;();<br>
+                ArrayList&lt;Object&gt; intArr = new ArrayList&lt;Object&gt;();<br>
+            </code>
+        </div><br>
+
+        <p>Since <code>ArrayList</code>s are themselves objects, you can even do <code>ArrayList</code>s of <code>ArrayList</code>s:</p>
+        <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre>
     </div>
 
     </div>
