@@ -35,6 +35,7 @@
             <button class="indent" onclick="window.location.href='ics-notes.html?page=oop'"><a class="content-medium">Java OOP</a></button>
             <button class="indent" onclick="window.location.href='ics-notes.html?page=arr'"><a class="content-medium">Arrays</a></button>
             <button class="indent" onclick="window.location.href='ics-notes.html?page=arrls'"><a class="content-medium">ArrayLists</a></button>
+            <button class="indent" onclick="window.location.href='ics-notes.html?page=sort'"><a class="content-medium">Sorting</a></button>
         </div>
     <br></div>
     
@@ -136,30 +137,74 @@
         <div class="java-snippet">
             <code>
                 ArrayList&lt;Integer&gt; intArr = new ArrayList&lt;Integer&gt;();<br>
-                ArrayList&lt;String&gt; intArr = new ArrayList&lt;String&gt;();<br>
-                ArrayList&lt;Object&gt; intArr = new ArrayList&lt;Object&gt;();<br>
+                ArrayList&lt;String&gt; stringArr = new ArrayList&lt;String&gt;();<br>
+                ArrayList&lt;Object&gt; objArr = new ArrayList&lt;Object&gt;();<br>
             </code>
         </div><br>
 
         <p>Since <code>ArrayList</code>s are themselves objects, you can even do <code>ArrayList</code>s of <code>ArrayList</code>s:</p>
-        <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre>
+        <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre><br>
+
+        <p><code>ArrayList</code>s are useful for lists without a set size, or data structures such as a stack, which operations are to add and remove elements. This can be replicated using the <code>ArrayList</code> methods <code>add</code> and <code>pop</code> as follows:</p>
+        <div class="java-snippet">
+            <code>
+                ArrayList&lt;Integer&gt; stack = new ArrayList&lt;Integer&gt;();<br>
+                stack.add(10);<br>
+                stack.add(5);<br>
+                stack.add(32); // adding values onto the stack<br>
+                System.out.println(stack.pop()); // removing values from the stack
+            </code>
+        </div><br>
     </div>
 
 
     <div class="hidden indent content" id="content-sort">
         <h2>Sorting and Searching</h2>
-        <p>There are many sorting algorithms for ordering </p>
+        <p>There are many sorting algorithms for ordering items in a data structure. The most common methods include bubble sort, insertion sort, and selection sort. These methods, while not particularly fast, are intuitive and make sense on first glance.</p>
+
+        <h3>Bubble Sort</h3>
+        <p>Bubble sort works by repeatedly going through the array and swapping any two adjacent elements which are in the wrong order.</p>
 
         <div class="java-snippet">
             <code>
-                ArrayList&lt;Integer&gt; intArr = new ArrayList&lt;Integer&gt;();<br>
-                ArrayList&lt;String&gt; intArr = new ArrayList&lt;String&gt;();<br>
-                ArrayList&lt;Object&gt; intArr = new ArrayList&lt;Object&gt;();<br>
+                public void bubbleSort(int[] arr) {<br>
+                <tab/>for (int i = 0; i &lt; arr.length; i++) {<br>
+                <tab/><tab/>for (int j = i; j &lt; arr.length-1; j++) {<br>
+                <tab/><tab/><tab/>if (arr[j] &gt; arr[j+1]) { // if two elements are in the wrong order<br>
+                <tab/><tab/><tab/><tab/>int temp = arr[j+1];<br>
+                <tab/><tab/><tab/><tab/>arr[j+1] = arr[j];<br>
+                <tab/><tab/><tab/><tab/>arr[j] = temp; // swap them<br>
+                <tab/><tab/><tab/>}<br>
+                <tab/><tab/>}<br>
+                <tab/>}<br>
+                }
             </code>
         </div><br>
 
+        <h3>Insertion Sort</h3>
+        <p>Insertion sort works by going through the array and slowly placing each element into a sorted subarray until all elements are sorted.</p>
+        
+        <div class="java-snippet">
+            <code>
+                public void insertionSort(int[] arr) {<br>
+                <tab/>for (int i = 1; i &lt; arr.length-1; i++) {<br>
+                <tab/><tab/>int index = i-1;<br>
+                <tab/><tab/>int value = arr[i];<br>
+                <tab/><tab/>while (index > -1 && arr[index-1] > value) {<br>
+                <tab/><tab/><tab/>arr[index+1] = arr[index];<br>
+                <tab/><tab/><tab/>index--;<br>
+                <tab/><tab/>arr[index+1] = value;<br>
+                <tab/><tab/>}<br>
+                <tab/>}<br>
+                }
+            </code>
+        </div><br>
+        <p><a>https://www.javatpoint.com/insertion-sort-in-java</a></p>
+        
         <p>Since <code>ArrayList</code>s are themselves objects, you can even do <code>ArrayList</code>s of <code>ArrayList</code>s:</p>
         <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre>
+        
+
     </div>
 
     </div>
