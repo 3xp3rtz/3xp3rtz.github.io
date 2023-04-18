@@ -207,6 +207,56 @@
 
     </div>
 
+
+    <div class="hidden indent content" id="content-oop3">
+
+        <h2>Inheritance overview</h2>
+        <p>The general class is the parent class </p>
+        <p>The specialized (child) classes inherit all the properties of the general class</p>
+
+        <h2>Child-Parent Class Relation</h2>
+        <h3></h3>
+        <p></p>
+
+        <h2>Downcasting</h2>
+        <p>Downcasting is useful when a subclass has a method that a superclass does not have, and you need that superclass to </p>
+        <p></p>
+
+        <h2>Abstract Classes</h2>
+        <p>An abstract class is a superclass that represents an abstract concept which should not be instantiated. However, an abstract class can have constructors which can be called from constructors of subclasses. A class with no abstract methods is called <i>concrete</i>.</p>
+        <p>If a subclass of an abstract class does not provide an implementation code of <b>ALL</b> abstract methods it must also be declared abstract.</p>
+        <!-- <p>An abstract class is a superclass that represents an abstract concept which should not be instantiated. Their purpose is to be </p> -->
+
+
+        <h2>Interfaces</h2>
+        <p>An interface is similar to an abstract class, but has no fields or constructors and has <b>ALL</b> abstract methods. It is not necessary to write <code>public abstract</code> because all of the class's methods must be <code>public abstract</code>.</p>
+        <p>One must "officially" state that a class <code>implements</code> an interface.</p>
+
+        <div class="java-snippet">
+            <code>
+                public interface Edible {<br>
+                <tab/>String getFoodGroup();<br>
+                <tab/>int getCaloriesPerServing();<br>
+                }<br><br>
+
+                public class Pancake implements Edible {<br>
+                <tab/>...<br>
+                }<br><br>
+
+                public class Breakfast {<br>
+                    <tab/>private int myTotalCalories = 0;<br>
+                    <tab/>...<br>
+                    <tab/>public void eat (Edible obj, int servings) {<br>
+                    <tab/><tab/>myTotalCalories += obj.getCaloriesPerServing() * servings;<br>
+                    <tab/>}<br>
+                    <tab/>...<br>
+                }<br>
+            </code>
+        </div><br>
+        
+    </div>
+
+
     </div>
 
     <br><br><br><br>
