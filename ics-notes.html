@@ -180,6 +180,7 @@
                 }
             </code>
         </div><br>
+        <p><a href="https://www.javatpoint.com/bubble-sort-in-java">Source: Javatpoint Tutorial: Bubble Sort</a></p>
 
         <h3>Insertion Sort</h3>
         <p>Insertion sort works by going through the array and slowly placing each element into a sorted subarray until all elements are sorted.</p>
@@ -190,16 +191,16 @@
                 <tab/>for (int i = 1; i &lt; arr.length-1; i++) {<br>
                 <tab/><tab/>int index = i-1;<br>
                 <tab/><tab/>int value = arr[i];<br>
-                <tab/><tab/>while (index > -1 && arr[index-1] > value) {<br>
+                <tab/><tab/>while (index > -1 &amp;&amp; arr[index-1] > value) { // while value is smaller than next<br>
                 <tab/><tab/><tab/>arr[index+1] = arr[index];<br>
                 <tab/><tab/><tab/>index--;<br>
-                <tab/><tab/>arr[index+1] = value;<br>
                 <tab/><tab/>}<br>
+                <tab/><tab/>arr[index+1] = value;<br>
                 <tab/>}<br>
                 }
             </code>
         </div><br>
-        <p><a>https://www.javatpoint.com/insertion-sort-in-java</a></p>
+        <p><a href="https://www.javatpoint.com/insertion-sort-in-java">Source: Javatpoint Tutorial: Insertion Sort</a></p>
         
         <p>Since <code>ArrayList</code>s are themselves objects, you can even do <code>ArrayList</code>s of <code>ArrayList</code>s:</p>
         <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre>

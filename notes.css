@@ -60,7 +60,7 @@ img {
     display: flex;
     margin: 20px;
     border:rgba(160, 160, 160, 0.9) solid 2px;
-    background-image: linear-gradient(to bottom right, rgba(98, 255, 111), rgba(73, 179, 105, 0.9));
+    background-image: linear-gradient(to bottom right, rgb(184, 174, 219), rgba(32, 138, 224, 0.9));
     align-items: center;
     height: 70px;
 }
