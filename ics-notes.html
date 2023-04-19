@@ -255,6 +255,35 @@
             </code>
         </div><br>
         
+        <pre>
+        Parent = P
+        Child = C
+        Interface = I
+        CiI = child implementing interface
+        
+        
+        P method() {a}
+        C method() {b}
+        P p = new C();
+        p.method(); // b 
+        
+        C method() {a}
+        P p = new C();
+        p.method(); // error, method not def in P
+        
+        C1 c = new C2(); // error, child cannot access other child
+        
+        I i = new I(); // error, cannot instantiate instances
+        
+        I c = new CiI(); // legal
+        C d = (C)c;      // legal
+        
+        C @Override toString() {a}
+        Object o = new C();
+        o.toString(); // a
+        
+        </pre>
+        
     </div>
 
 
