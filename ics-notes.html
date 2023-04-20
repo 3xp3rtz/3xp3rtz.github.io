@@ -219,8 +219,9 @@
         <div class="table indent">
             \(
             \begin{array}{|c|c|c|c|c|}\hline
-            & \text{P -> P} & \text{C -> C} & \text{P -> C} & \text{C -> P} \\\hline
-            \text{Methods} & X & X & & X \\\hline
+            & \text{P:P} & \text{C:C} & \text{P:C} & \text{C:P} \\\hline
+            \text{Method Inheritance} & X & X & & X \\\hline
+            \text{Initialization} & X & X & X & \\\hline
 
             \text{A}
             \\\hline
@@ -277,12 +278,12 @@
                 </code>
         </div><br>
         
-        <p>You may have also observed that the method <code>getFreeTime()</code>, which was originally overrided by the child classes, now has the keyword <code>abstract</code>. This simply means that the implemnentation will be shown in the child (non-abstract) classes, but polymorphism is still applicable.</p>
+        <p>You may have also observed that the method <code>getFreeTime()</code>, which was originally overrided by the child classes and was defined as a blank function, now has the keyword <code>abstract</code>. This simply means that the implemnentation will be shown in the child (non-abstract) classes, but polymorphism is still applicable.</p>
         <br>
 
         <h2>Interfaces</h2>
         <p>An interface is similar to an abstract class, but has no fields or constructors and has <b>ALL</b> abstract methods. It is not necessary to write <code>public abstract</code> because all of the class's methods must be <code>public abstract</code>.</p>
-        <p>Interfaces are like abstract classes that don't pass down any variables, and instead can pass down <code>public static final</code> constants. One must "officially" state that a class <code>implements</code> an interface.</p>
+        <p>Interfaces are like abstract classes that don't pass down any variables, and instead can pass down <code>public static final</code> constants. One must "officially" state that a class <code>implements</code> an interface, however child classes automatically inherit interfaces from their parent classes.</p>
 
         <div class="java-snippet">
             <code>
@@ -332,7 +333,7 @@
         C @Override toString() {a}
         Object o = new C();
         o.toString(); // a
-        
+
         </pre>
         
     </div>

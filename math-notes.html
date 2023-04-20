@@ -1640,6 +1640,81 @@
         <br><br><br><br>
         </div>
 
+        <div id="lesson-9.2">
+        <h1>Partial Fraction Decomposition</h1>
+        <p>\(\frac{1}{x^2-9}\)</p>
+        <p>Degree numerator msut be &gt; Degree denominator</p>
+        <p>\(\frac{1}{(x+3)(x-3)}\) can be rewritten in the form \(\frac{A}{(x+3)}+\frac{B}{(x-3)}\)</p>
+        <p>\(\frac{1}{(x+3)(x-3)} = \frac{A(x+3) + B(x-3)}{(x+3)(x-3)}\)</p>
+        <p>\(1 = A(x+3) + B(x-3)\)</p>
+        <p>Find terms which are degrees of x</p>
+        <p>Terms with x^1: \(0=A+B\)</p>
+        <p>Terms with x^0: \(1=3A-3B\)</p><br>
+
+        <p>\(-A = B\)</p>
+        <p>\(1 = 3A - 3(-A) = 3A+3A=6A,\ A=\frac{1}{6}\)</p>
+        <p>\(B = -A = -\frac{1}{6}\)</p>
+        <p>\(\therefore \frac{1}{x^2-9} = \frac{1}{6(x+3)} - \frac{1}{6(x-3)}\)</p><br>
+        
+        <p>\(\frac{2x}{x^2+5x+6}=\frac{2x}{(x+3)(x+2)}=\frac{A}{x+3}+\frac{B}{x+2}\)</p>
+        <p>\(2x=A(x+2)+B(x+3)\)</p>
+        <p>Plug in \(x=-3:\ -6=-A,\)</p>
+        <p>Plug in \(x=-2:\ -4=B\)</p>
+        <p>\(A=6,\ B=-4\)</p><br>
+        
+        <p>Prove that f increasing, g increasing, f+g increasing</p>
+        <p>\(f(x)=x\in[a,b]\), \(f,\ g\) is increasing</p>
+        <p>for \(x_2 \gt x_1\)</p>
+        <p>\(f(x_2) \gt f(x_1)\)</p>
+        <p>\(g(x_2) \gt g(x_1)\)</p>
+        <p>\(f(x_2) + g(x_2) \gt f(x_1) + g(x_2)\)</p>
+        <p>\((f+g)(x_2) \gt (f+g)(x_1)\)</p>
+        <p>\(\therefore (f+g)\) is increasing</p><br>
+
+        <p>\(x \xrightarrow{f} y = f(x) \)</p>
+        <p>\(D_f \rightarrow R_f\)</p>
+        <p>\(x \xleftarrow{f^{-1}} y = f^{-1}(x)\)</p><br>
+
+        <p>\(y=f(x)\)</p>
+        <p>\(z=g(y)\)</p>
+        <p>\(z=g(f(x)) = g \circ f\)</p>
+        <p>\(x \xrightarrow{f} y \xrightarrow{g} z\)</p><br>
+        
+        <p>\(f \circ g\)</p>
+        <p>\(x \xrightarrow[g] y \xrightarrow{f} z\)</p><br>
+
+        <p>\(f(x)=\sqrt{4-x^2}\)</p>
+        <p>\(g(x)=\frac{1}{x-1}\)</p>
+        <p>Find \((g \circ f)(x) = g(f(x))\)</p>
+        <p>\(x \xrightarrow{f} y=\sqrt{4-x^2}\) (top half of circle)</p>
+        <p>\(D_f:\ -2 \leq x \leq 2;\ R_f: 0 \leq y \leq 2\)</p><br>
+        
+        <p>\(x \xrightarrow{g} y=\frac{1}{x-1}\)</p>
+        <p>\(D_g:\ x \neq 1;\ R_g:\ y \neq 0\)</p><br>
+
+        <p>\(D_(g \circ f) = \{x\in\mathbb{R} | -2\leq x\leq2 | x\neq\pm\sqrt{3}\}\)</p>
+        <p>\(R_(g \circ f) = \{y\in\mathbb{R} | y\leq-1 or y\geq1\}\)</p><br>
+
+        <p>\((f \circ g)(x) = f(g(x))\)</p>
+        <p>\(x \xrightarrow{g} y \xrightarrow{f} z\)</p>
+        <p>\(g(x),\ x\neq1,\ y\neq0\)</p>
+        <p>\(f(x),\ x\neq0,\ -2\leq y\leq2\)</p><br>
+        
+        <p>\(-2 \leq g(x) \leq 2:\ -2 \leq \frac{1}{x-1},\ ,\ x-1 \leq \frac{1}{-2}\)</p>
+        <p>\(D_{(f \circ g)} = \{x\in(-\infty, \frac{1}{2}] \cup [\frac{3}{2}, +infty)\}\)</p>
+        <p>\(R_{(f \circ g)} = \{y\in\mathbb{R} | 0\leq y\lt 2\}\)</p><br>
+
+        <p>\((g\circ g)(x) = g(g(x)) = g(\frac{1}{x-1}) = \frac{1}{\frac{1}{x-1}-1} = \frac{x-1}{2-x},\ x\neq2\)</p>
+        <p>\(g(x)=\frac{1}{x-1},\ x\neq1,\ y\neq0\)</p>
+        <p>\(1\neq\frac{1}{x-1},\ x\neq2\)</p>
+        <p>\(g(y)=\frac{1}{y-1},\ y\neq0,1,\ z\neq0,-1\)</p>
+
+        <p>\(D_{(g\circ g)} = \{x\in\mathbb{R} | x\neq1,2\}\)</p>
+        <p>\(R_{(g\circ g)} = \{y\in\mathbb{R} | x\neq0,-1\}\)</p>
+
+        <br><br><br><br>
+        </div>
+
 
 
 
