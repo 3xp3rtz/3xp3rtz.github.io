@@ -36,6 +36,7 @@
             <button class="indent" onclick="window.location.href='ics-notes.html?page=arr'"><a class="content-medium">Arrays</a></button>
             <button class="indent" onclick="window.location.href='ics-notes.html?page=arrls'"><a class="content-medium">ArrayLists</a></button>
             <button class="indent" onclick="window.location.href='ics-notes.html?page=sort'"><a class="content-medium">Sorting</a></button>
+            <button class="indent" onclick="window.location.href='ics-notes.html?page=oop3'"><a class="content-medium">Java OOP 3</a></button>
         </div>
     <br></div>
     
@@ -202,8 +203,6 @@
         </div><br>
         <p><a href="https://www.javatpoint.com/insertion-sort-in-java">Source: Javatpoint Tutorial: Insertion Sort</a></p>
         
-        <p>Since <code>ArrayList</code>s are themselves objects, you can even do <code>ArrayList</code>s of <code>ArrayList</code>s:</p>
-        <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre>
         
 
     </div>
@@ -211,13 +210,23 @@
 
     <div class="hidden indent content" id="content-oop3">
 
-        <h2>Inheritance overview</h2>
+        <h1>Inheritance Overview</h1>
         <p>The general class is the parent class </p>
         <p>The specialized (child) classes inherit all the properties of the general class</p>
 
         <h2>Child-Parent Class Relation</h2>
-        <h3></h3>
         <p></p>
+        <div class="table indent">
+            \(
+            \begin{array}{|c|c|c|c|c|}\hline
+            & \text{P -> P} & \text{C -> C} & \text{P -> C} & \text{C -> P} \\\hline
+            \text{Methods} & X & X & & X \\\hline
+
+            \text{A}
+            \\\hline
+            \end{array}
+            \)
+        </div><br>
 
         <h2>Downcasting</h2>
         <p>Downcasting is useful when a subclass has a method that a superclass does not have, and you need that superclass to </p>
@@ -225,13 +234,55 @@
 
         <h2>Abstract Classes</h2>
         <p>An abstract class is a superclass that represents an abstract concept which should not be instantiated. However, an abstract class can have constructors which can be called from constructors of subclasses. A class with no abstract methods is called <i>concrete</i>.</p>
-        <p>If a subclass of an abstract class does not provide an implementation code of <b>ALL</b> abstract methods it must also be declared abstract.</p>
-        <!-- <p>An abstract class is a superclass that represents an abstract concept which should not be instantiated. Their purpose is to be </p> -->
+        <p>An abstract class can be thought of as a blueprint which is always modified but never used itself. Child classes must have their own implementation of all parent abstract methods.</p>
+        <p>If a subclass of an abstract class does not provide an implementation code of <b>ALL</b> abstract methods it must also be declared abstract.</p><br>
 
+        <p>Take the following snippet as an example:</p>
+        <div class="java-snippet">
+            <code>
+                public class Student {<br>
+                <tab/>String name;<br>
+                <tab/>double mark;<br>
+                <tab/>public double getMark() { return mark; }<br>
+                <tab/>public double getFreeTime() {}<br>
+                }<br><br>
+                
+                public class ElementaryStudent extends Student {<br>
+                <tab/>...<br>
+                <tab/>public double getFreeTime() { ... }<br>
+                }<br><br>
+                
+                public class HighSchoolStudent extends Student {<br>
+                <tab/>...<br>
+                <tab/>public double getFreeTime() { ... }<br>
+                }<br><br>
+                
+                public class UniversityStudent extends Student {<br>
+                <tab/>...<br>
+                <tab/>public double getFreeTime() { ... }<br>
+                }<br>
+            </code>
+        </div><br>
+        
+        <p>The <code>Student</code> class is the parent class, then has children <code>ElementaryStudent</code>, <code>HighSchoolStudent</code>, and <code>UniversityStudent</code>. However, this model is only efficient if the <code>Student</code> class is never instantiated.</p>
+        <p>In case we expect not to use the original <code>Student</code> class and specifiy which child class any given <code>Student</code> object should be, this is where we can use an abstract class:</p>
+        <div class="java-snippet">
+            <code>
+                public abstract class Student {<br>
+                    <tab/>String name;<br>
+                    <tab/>double mark;<br>
+                    <tab/>public double getMark() { return mark; }<br>
+                    <tab/>public abstract double getFreeTime();<br>
+                    }<br><br>
+                </code>
+        </div><br>
+        
+        <p>You may have also observed that the method <code>getFreeTime()</code>, which was originally overrided by the child classes, now has the keyword <code>abstract</code>. This simply means that the implemnentation will be shown in the child (non-abstract) classes, but polymorphism is still applicable.</p>
+        <br>
 
         <h2>Interfaces</h2>
         <p>An interface is similar to an abstract class, but has no fields or constructors and has <b>ALL</b> abstract methods. It is not necessary to write <code>public abstract</code> because all of the class's methods must be <code>public abstract</code>.</p>
-        <p>One must "officially" state that a class <code>implements</code> an interface.</p>
+        <p>Interfaces are like abstract classes that don't pass down any variables, and instead can pass down <code>public static final</code> constants. One must "officially" state that a class <code>implements</code> an interface.</p>
 
         <div class="java-snippet">
             <code>

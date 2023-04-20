@@ -23,3 +23,12 @@ long div
                 \end{array}
                 \)
             </div><br>
+
+Java Snippet
+        <div class="java-snippet">
+            <code>
+                ArrayList&lt;Integer&gt; intArr = new ArrayList&lt;Integer&gt;();<br>
+                ArrayList&lt;String&gt; intArr = new ArrayList&lt;String&gt;();<br>
+                ArrayList&lt;Object&gt; intArr = new ArrayList&lt;Object&gt;();<br>
+            </code>
+        </div><br>
