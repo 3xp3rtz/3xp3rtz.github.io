@@ -203,8 +203,26 @@
         </div><br>
         <p><a href="https://www.javatpoint.com/insertion-sort-in-java">Source: Javatpoint Tutorial: Insertion Sort</a></p>
         
+        <h3>Selection Sort</h3>
+        <p>Selection sort works by going through the array finding the largest element, and adding it .</p>
+        <p>Take the following snippet as an example:</p>
+        <div class="java-snippet">
+            <code>
+                public void insertionSort(int[] arr) {<br>
+                <tab/>for (int i = 1; i &lt; arr.length-1; i++) {<br>
+                <tab/><tab/>int index = i-1;<br>
+                <tab/><tab/>int value = arr[i];<br>
+                <tab/><tab/>while (index > -1 &amp;&amp; arr[index-1] > value) { // while value is smaller than next<br>
+                <tab/><tab/><tab/>arr[index+1] = arr[index];<br>
+                <tab/><tab/><tab/>index--;<br>
+                <tab/><tab/>}<br>
+                <tab/><tab/>arr[index+1] = value;<br>
+                <tab/>}<br>
+                }
+            </code>
+        </div><br>
+        <p><a href="https://www.javatpoint.com/insertion-sort-in-java">Source: Javatpoint Tutorial: Insertion Sort</a></p>
         
-
     </div>
 
 
@@ -220,11 +238,11 @@
             \(
             \begin{array}{|c|c|c|c|c|}\hline
             & \text{P:P} & \text{C:C} & \text{P:C} & \text{C:P} \\\hline
-            \text{Method Inheritance} & X & X & & X \\\hline
-            \text{Initialization} & X & X & X & \\\hline
+            \text{Method Inheritance}   & X & X &   & X \\\hline
+            \text{Initialization}       & X & X & X &   \\\hline
+            \text{Method Parameter}     & X & X &   & X \\\hline
+            \text{Polymorphism}         &   &   & X & X \\\hline
 
-            \text{A}
-            \\\hline
             \end{array}
             \)
         </div><br>
@@ -301,7 +319,7 @@
                     <tab/>...<br>
                     <tab/>public void eat (Edible obj, int servings) {<br>
                     <tab/><tab/>myTotalCalories += obj.getCaloriesPerServing() * servings;<br>
-                    <tab/>}<br>
+                <tab/>}<br>
                     <tab/>...<br>
                 }<br>
             </code>
