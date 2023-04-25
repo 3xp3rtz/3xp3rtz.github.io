@@ -1704,7 +1704,7 @@
         <p>\(D_{(f \circ g)} = \{x\in(-\infty, \frac{1}{2}] \cup [\frac{3}{2}, +infty)\}\)</p>
         <p>\(R_{(f \circ g)} = \{y\in\mathbb{R} | 0\leq y\lt 2\}\)</p><br>
 
-        <p>\((g\circ g)(x) = g(g(x)) = g(\frac{1}{x-1}) = \frac{1}{\frac{1}{x-1}-1} = \frac{x-1}{2-x},\ x\neq2\)</p>
+        <p>\((g\circ g)(x) = g(g(x)) = g(\frac{1}{x-1}) = \frac{1}{\frac{1}{x-1}-1} = \frac{x-1}{2-x},\ x\neq2 \)</p>
         <p>\(g(x)=\frac{1}{x-1},\ x\neq1,\ y\neq0\)</p>
         <p>\(1\neq\frac{1}{x-1},\ x\neq2\)</p>
         <p>\(g(y)=\frac{1}{y-1},\ y\neq0,1,\ z\neq0,-1\)</p>
@@ -1714,7 +1714,20 @@
 
         <br><br><br><br>
         </div>
+        
+        
+        <div>
+        <h1>Culm</h1>
+        <p>combinations of func. due apr 28</p>
+        <p>hand in full project apr 28, bonus mark</p>
+        <p>B. sketch in box, work below</p>
+        <p>2: asked to sketch </p>
+        <p>cos^2 not a standard func</p>
+        <p>know how to sketch cos through its transformations</p>
+        <p>convert cos^2 into a cos function through double angle identity</p>
+        <p>find cos^2 x as a transformation of cos 2x</p>
 
+        <p>composition of func. due may 1</p>
 
         <div>
         <h1>Intro to Calculus</h1>
@@ -1722,6 +1735,8 @@
         <p>\(y=mx+b\)</p>
         <p>\(m=\frac{\text{rise}}{\text{run}}=\frac{y_2-y_1}{x_2-x_1}\)</p>
         <p>\(y-y_1=m(x-x_1)\)</p>
+        <br><br><br><br>
+        </div>
 
         <h1>The Slope of the Tangent</h1>
         <p>1. Line = \(2x-3y+6=0\)</p>
@@ -1752,7 +1767,98 @@
 
         <p></p>
 
+        <br><br><br><br>
         </div>
+
+
+        <div id="lesson-1.3">
+        <p>\(m=\frac{\Delta y}{\Delta x} \to \frac{\delta y}{\delta x} = \frac{dy}{dx}\)</p>
+        <p>Still rise over run!</p><br>
+
+        <p>Keep in mind which rate of change is being asked for</p>
+        <p>Over an interval \([x_1, x_2]\): <tab/>Average rate of change</p>
+        <p>AROC = \(\frac{f(x_2)-f(x_1)}{x_2-x_1}\)</p><br>
+
+        <p>At a certain point \((x, f(x))\): <tab/>Instantaneous rate of change</p>
+        <p>IROC = \(\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</p><br>
+
+        <p>Displacement</p>
+        <p>\(V_{AV}=\frac{S(t_2)-S(t_1)}{t_2-t_1}\)</p>
+        <p>\(V_{IN}=\lim\limits_{h\to0}\frac{S(t+h)-S(t)}{h}\)</p><br>
+
+        <h3>Practice</h3>
+        <p>1. \(f(x)=(x+1)^2\) over the interval [-1, 2]</p>
+        <p>AROC is \(\frac{f(2)-f(-1)}{2-(-1)}=\frac{9-0}{3}=3\)</p><br>
+
+        <p>2. A rock is launched vertically upward. Height of rock: \(s(t)=100t-10t^2\). Find average velocity over interval [1,2]</p>
+        <p>AROC is \(\frac{s(2)-s(1)}{2-1}=160-90=70\)</p>
+
+        <p>3. \(s(t)=t^2-4t\)</p>
+        <p>a) Find the IROC at t=3s</p>
+        <p>\(\lim\limits_{h\to0}\frac{s(t+h)-s(t)}{h}\)</p>
+        <p>\(\phantom{\lim\limits_{h\to0}}=\frac{t^2+h^2+2th-4t-4h-t^2+4t}{h}\)</p>
+        <p>\(\phantom{\lim\limits_{h\to0}}=\frac{h^2+2th-4h}{h}\)</p>
+        <p>\(\phantom{\lim\limits_{h\to0}}=h+2t-4\)</p><br>
+
+        <p>\(v(t)=\lim\limits_{h\to0} h+2t-4=2t-4\)</p>
+        <p>\(v(3)=2(3)-4=6-4=2\)</p>
+        
+        <p>b) Find the IROC at \(t=a\)</p>
+        <p>\(v(a)=\lim\limits_{h\to0} h+2a-4=2a-4\)</p><br>
+
+        <p>\(IRC=\lim\limits_{h\to0}\frac{V(4+h)-V(r)}{h}\)</p>
+        <p>\(V(r+h)=\frac{4\pi}{3}(r+h)^3\)</p>
+        <p>\(V(r)=\frac{4\pi}{3}(r)^3\)</p><br>
+
+        <p>\(DQ=\frac{4\pi}{3}\frac{(r+h)^3-r^3}{h}\)</p>
+        <p>\(\phantom{DQ}=\frac{4\pi}{3}\frac{(r+h-r)[(r+h)^2+(r+h)r + r^2]}{h}\)</p>
+        <p>\(\phantom{DQ}=\frac{4\pi}{3}[(r+h)^2+(r+h)r+r^2]\)</p>
+        <p>\(\phantom{DQ}=\frac{4\pi}{3}[r^2+2hr+h^2+r^2+rh+r^2]\)</p>
+        <p>\(\phantom{DQ}=\frac{4\pi}{3}[3r^2+3hr+h^2]\)</p>
+        <p>\(V(r)=\lim\limits_{h\to0}\frac{4\pi}{3}[3r^2+3hr+h^2]\)</p>
+        <p>\(\phantom{V(r)}=\frac{4\pi}{3}[3r^2+3(0)r+0^2]\)</p>
+        <p>\(\phantom{V(r)}=\frac{4\pi}{3}[3r^2]\)</p>
+        <p>\(\phantom{V(r)}=4\pi r^2\)</p><br><br>
+        
+
+        <p>Graph of \(f(x)\)</p>
+        <img src="images/limits.png">
+        <p>1. Limits from -</p>
+        <p>a) \(\lim\limits_{x\to-4^-}f(x)\): DNE (does not exist)</p>
+        <p>b) \(\lim\limits_{x\to-2^-}f(x)\): \(y\to2\)</p>
+        <p>c) \(\lim\limits_{x\to-1^-}f(x)\): \(y\to2\)</p>
+        <p>d) \(\lim\limits_{x\to3^-}f(x)\): \(y\to1\)</p><br>
+        
+        <p>2. Limits from +</p>
+        <p>a) \(\lim\limits_{x\to-1^+}f(x)\): \(y\to1\)</p>
+        <p>b) \(\lim\limits_{x\to3^+}f(x)\): \(\infty\)</p>
+        <p>c) \(\lim\limits_{x\to1^+}f(x)\): \(y\to3\)</p>
+        <p>d) \(\lim\limits_{x\to-2^+}f(x)\): \(y\to2\)</p><br>
+        
+        <p>Limits must approach the same value from both sides; DNE from either -> DNE</p>
+
+        <p>3. Limits from \(\pm\)</p>
+        <p>a) \(\lim\limits_{x\to-4}f(x)\): DNE</p>
+        <p>b) \(\lim\limits_{x\to-1}f(x)\): DNE</p>
+        <p>c) \(\lim\limits_{x\to3}f(x)\): DNE</p>
+        <p>d) \(\lim\limits_{x\to-3}f(x)\): \(y\to1\)</p>
+        <p>e) \(\lim\limits_{x\to-2}f(x)\): \(y\to2\)</p><br>
+        <p>e) \(\lim\limits_{x\to0}f(x)\): \(y\to1\)</p><br>
+
+        <p>4. Compute limit</p>
+        <p>a) \(\lim\limits_{x\to1^-}\frac{x^2}{x+1}\)</p>
+        <p>a) \(\lim\limits_{x\to1^-}\frac{x^2}{x+1}\)</p>
+
+
+        <p>5. \(f(x)=\{2x-3, x&lt;2;  0, x=2;  x^2-1, x&gt;2\}\)</p>
+        <p>a) Find \(\lim\limits_{x\to2}f(x)\):</p>
+        <p>\(\lim\limits_{x\to2^-}f(x)=1\):</p>
+        <p>\(\lim\limits_{x\to2^+}f(x)=3\):</p>
+        <p>\(1\neq3,\ \therefore \lim\limits_{x\to2}f(x)\) DNE</p>
+
+        <br><br><br><br>
+        </div>
+
 
     </div>
 </body>
