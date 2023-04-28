@@ -1860,6 +1860,106 @@
         </div>
 
 
+        <div>
+        <h2>In Class Problems</h2>
+        <p>1. Find \(a\) and the limit such that \(\lim\limits_{x\to2}\frac{2x^2+ax-2}{x^2-3x+2}\) exists</p>
+        <p>\(=\lim\limits_{x\to2}\frac{2x^2-ax-2}{x^2-3x+2}\)</p>
+        <p>\(=\frac{8-2a-2}{0}\)</p>
+        <p>\(=\frac{6-2a}{0},\ \to\frac{0}{0}\) indeterminate case</p>
+        <p>\(6-2a=0,\ 2a=6,\ a=3\)</p>
+        <p>\(=\lim\limits_{x\to2}\frac{2x^2-3x-2}{x^2-3x+2}\)</p>
+        <p>\(=\lim\limits_{x\to2}\frac{(2x+1)}{(x-1)}\)</p>
+        <p>\(a = -3\)</p>
+        <p>\(=\frac{5}{1}\)</p>
+        <p>\(=5\)</p><br>
+
+        <p>2. Find a and b such that \(\lim\limits_{x\to0}\frac{\sqrt{ax+2}-b}{x}=\sqrt{2}\)</p>
+        <p>\(=\lim\limits_{x\to0}\frac{\sqrt{ax+2}-b}{x}=\sqrt{2}\)</p>
+        <p>\(=\frac{\sqrt{2}-b}{0}=\sqrt{2}\)</p>
+        <p>\(\frac{0}{0} \to b=\sqrt{2}\)</p>
+        <p>\(=\lim\limits_{x\to0}\frac{\sqrt{ax+2}-b}{x}\frac{\sqrt{ax+2}+b}{\sqrt{ax+2}+b}=\sqrt{2}\)</p>
+        <p>\(=\lim\limits_{x\to0}\frac{ax+2-b^2}{x(\sqrt{ax+2}+b)}=\sqrt{2}\)</p>
+        <p>\(=\lim\limits_{x\to0}\frac{ax}{x(\sqrt{ax+2}+b)}=\sqrt{2}\)</p>
+        <p>\(=\lim\limits_{x\to0}\frac{a}{\sqrt{2}+\sqrt{2}}=\sqrt{2}\)</p>
+        <p>\(=\frac{a}{2\sqrt{2}}=\sqrt{2}\)</p>
+        <p>\(=a=(2\sqrt{2})\sqrt{2}\)</p>
+        <p>\(=a=4\)</p><br>
+        
+        <h1>Continuity</h1>
+        <p>A function \(y=f(x)\) is <i>continuous</i> at a number a if \(\lim\limits_{x\toa}f(x)=f(a)\), the function exists at \(f(a)\)</p>
+        <p>1. f(a) exists</p>
+        <p>2. \(\lim\limits_{x\toa}f(x)\) exists</p>
+        <p>3. \(\lim\limits_{x\toa}f(x) = f(a)\)</p><br>
+
+        <h2>Discontinuity</h2>
+        <p>\(f(x)\) "is discontinuous at a", "has a discontinuity at a"</p><br>
+
+        <h3>a) Removable or Point Discontinuity</h3>
+        <p><tab/>e.g. Hole</p>
+        <p><tab/>\(\lim\limits_{x\toa}f(x)\) exists</p>
+        <p><tab/>\(f(a)\) does not exist</p>
+        <p>"Removable" because you can fill in the hole by giving f(x) a value at x=a</p><br>
+        
+        <p><tab/>\(\lim\limits_{x\to a}f(x)\) exists</p>
+        <p><tab/>\(f(a)\) exists</p>
+        <p><tab/>\(f(a) \neq \lim\limits_{x\to a}f(x)\)</p>
+        <p>Can remove hole by redefining f(x) at x=a to be equal to the limit</p><br>
+
+        <p>Make \(y=f(x)=\frac{x^2-4}{x-2}\) continuous</p>
+        <p>\(f(x)={x=2, y=\lim\limits_{x\to2}\frac{x^2-4}{x-2};\ else \frac{x^2-4}{x-2}\)</p>
+
+        <h3>b) Jump Discontinuity/p></h3>
+        <p>Has a jump discontinuity if \(\lim\limits_{x\to a^-}f(x)\neq\lim\limits_{x\to a^+}f(x)\)</p>
+        <p>\(y=f(x)=\frac{|x-3|}{x-3}\)</p>
+        <p>\(f(x)=\{x\gt3,\ \frac{x-3}{x-3}=1;\ x\lt3,\ \frac{3-x}{x-3}=-1\}\)</p>
+        <p>\(\lim\limits_{x\to 3^-}\frac{|x-3|}{x-3}=-1\)</p>
+        <p>\(\lim\limits_{x\to 3^+}\frac{|x-3|}{x-3}=1\)</p>
+        <p>\(\lim\limits_{x\to 3^-}\frac{|x-3|}{x-3}\neq\lim\limits_{x\to 3^+}\frac{|x-3|}{x-3}=1\)</p>
+        <p>\(\therefore\) jump discontinuity</p>
+
+        <h3>c) Infinite Discontinuity</h3>
+        <p>Has an infinite discontinuity if at least one of the limits from left/right side is unbounded (\to\pm\infty)</p>
+        <p>\(\lim\limits_{x\to a}f(x)=\infty\)</p>
+        <p>Better to write \(\lim\limits_{x\to a}f(x)=\infty\) than DNE, because it gives more information</p><br>
+        <p>Find limit of \(f(x)=\frac{1}{x}\) at \(x=0\)</p>
+        <p>\(\lim\limits_{x\to0}\frac{1}{x}\)</p>
+        <p>\(\lim\limits_{x\to0^-}\frac{1}{x}=-\infty\)</p>
+        <p>\(\lim\limits_{x\to0^+}\frac{1}{x}=\infty\)</p>
+        <p>\(\therefore\lim\limits_{x\to0}\frac{1}{x}=\pm\infty\) (DNE)</p><br>
+        
+        <p>4. a) x=3</p>
+        <p>\(\lim\limits_{x\to3^-}f(x)=\lim\limits_{x\to3^+}f(x)=1\)</p>
+        <br>
+
+        <h2>Elementary Functions</h2>
+        <p>Elementary functions (polynomial, power, rational, trigonometric, exponential, logarithmic) are continuous over their domain</p><br>
+        
+        <p>Continuity of the function</p>
+        <p>\(\lim\limits_{x\to0^-}f(x)=x=0\)</p>
+        <p>\(\lim\limits_{x\to0^+}f(x)=x^2=0\)</p>
+        <p>\(f(0)=0^2=0\)</p>
+        <p>\(\therefore\) f(x) is continuous at x=0</p><br>
+
+        <p>\(\lim\limits_{x\to1^-}f(x)=x^2=1\)</p>
+        <p>\(\lim\limits_{x\to1^+}f(x)=x^3+1=2\)</p>
+        <p>\(\lim\limits_{x\to1^-}f(x)=x^2=1\neq\lim\limits_{x\to1^+}f(x)=x^3+1=2\)</p>
+        <p>\(\therefore\) there is a jump discontinuity at \(x=1\)</p><br>
+
+        <p>\(\therefore\ f(x)\) is continuous everywhere except x=1</p><br>
+
+        <p>4. Make c such that the function is continuous everywhere</p>
+        <p>\(\lim\limits_{x\to2^-}=\lim\limits_{x\to2^+}\)</p>
+        <p>\(\lim\limits_{x\to2^-}=x+c=2+c\)</p>
+        <p>\(\lim\limits_{x\to2^+}=cx^2+1=4c+1\)</p>
+        <p>\(f(2)=cx^2+1=4c+1\)</p>
+        <p>\(f(x)\) is continuous at \(x=2\) if \(2+c=4c+1=4c+1,\ 1=3c,\ \frac{1}{3}=c\)</p>
+        <p>\(\therefore f(x)\) is continuous everywhere if \(c=\frac{1}{3}\)</p>
+
+
+        <br><br><br><br>
+        </div>
+
+
     </div>
 </body>
 
