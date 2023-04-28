@@ -1968,17 +1968,17 @@
         <p>\(=a=4\)</p><br>
         
         <h1>Continuity</h1>
-        <p>A function \(y=f(x)\) is <i>continuous</i> at a number a if \(\lim\limits_{x\toa}f(x)=f(a)\), the function exists at \(f(a)\)</p>
+        <p>A function \(y=f(x)\) is <i>continuous</i> at a number a if \(\lim\limits_{x\to a}f(x)=f(a)\), the function exists at \(f(a)\)</p>
         <p>1. f(a) exists</p>
-        <p>2. \(\lim\limits_{x\toa}f(x)\) exists</p>
-        <p>3. \(\lim\limits_{x\toa}f(x) = f(a)\)</p><br>
+        <p>2. \(\lim\limits_{x\to a}f(x)\) exists</p>
+        <p>3. \(\lim\limits_{x\to a}f(x) = f(a)\)</p><br>
 
         <h2>Discontinuity</h2>
         <p>\(f(x)\) "is discontinuous at a", "has a discontinuity at a"</p><br>
 
         <h3>a) Removable or Point Discontinuity</h3>
         <p><tab/>e.g. Hole</p>
-        <p><tab/>\(\lim\limits_{x\toa}f(x)\) exists</p>
+        <p><tab/>\(\lim\limits_{x\to a}f(x)\) exists</p>
         <p><tab/>\(f(a)\) does not exist</p>
         <p>"Removable" because you can fill in the hole by giving f(x) a value at x=a</p><br>
         
@@ -2036,6 +2036,103 @@
         <p>\(f(2)=cx^2+1=4c+1\)</p>
         <p>\(f(x)\) is continuous at \(x=2\) if \(2+c=4c+1=4c+1,\ 1=3c,\ \frac{1}{3}=c\)</p>
         <p>\(\therefore f(x)\) is continuous everywhere if \(c=\frac{1}{3}\)</p>
+
+
+        <br><br><br><br>
+        </div>
+
+        <div>
+        <h1>Derivative Functions</h1>
+        <p>Given \(f(x)\), the derivative function is a new function \(f'(x)\) defined at \(x\) by \(f'(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</p>
+
+        <h2>Differentiability</h2>
+        <p>A function \(y=f(x)\) is called differentiable at \(x\) if \(f'(x)\) exists</p>
+        <p>A function \(y=f(x)\) is differentiable over an open interval (a,b) if the function is differentiable in every number in that interval</p>
+        <p>A function is defined over \(f\), differentiable over the domain \(f'\).</p>
+
+        <h2>Notation</h2>
+        <p>Newton Notation: \(\dot{y} = f'(x)\)</p>
+        <p>Lagrange Notation: \(y' = f'(x)\)</p>
+        <p>Second derivative: (N) \(\ddot{y} = f''(x)\)</p>
+        <p>Second derivative: (L) \(y'' = f''(x)\)</p>
+        <p>"y prime", "f prime at x"</p><br>
+        <p>More confusing with more variables</p>
+
+        <p>Leibnitz Notation: \(\frac{dy}{dx}=\frac{d}{dx}f(x)\)</p>
+        <p>"d y by d x", "d by d x of f at x"</p><br>
+        <p>Leibnitz Notation: \(\frac{d}{dx}(\frac{dy}{dx}) = \frac{d^2y}{dx^2}\)</p>
+        <p>More useful for future operations</p>
+
+        <p>\(f'(a)=\frac{dy}{dx}|_{x=a}\)</p><br>
+
+        <h1>First Principles</h1>
+        <p>Differentiation: the process to find the derivative of a function</p>
+        <p>First Principles: the process of differentiation by computing the limit</p>
+        <p>\(f'(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</p><br>
+
+        <p>1. \(f(x)=2x-x^3\)</p>
+        <p>\(f'(x)=2-3x^2\)</p><br>
+        
+        <p>\(f'(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</p>
+        <p>\(f(x+h)=2(x+h)-(x+h)^3\)</p>
+        <p>\(f(x)=2x-x^3\)</p>
+        <p>diff of cubes: (a-b)(a^2+ab+b^2)</p>
+        <p>\(DQ=\frac{2h-h\[(x+h)^2+(x+h)x+x^2\]}{h}\)</p>
+        <p>\(\phantom{f(x+h)-f(x)}=2-\[(x+h)^2+(x+h)x+x^2\]\)</p>
+        <p>\(\lim\limits_{h\to0}2-\[(x+h)^2+(x+h)x+x^2\]\)</p>
+        <p>\(=2-\[x^2+(x)x+x^2\]\)</p>
+        <p>\(=2-3x^2\)</p><br>
+        
+        <p>b) \(f(x)=\frac{-3}{x^2}\)</p>
+        <p>\(f'(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</p>
+        <p>\(f(x+h)=\frac{-3}{(x+h)^2}\)</p>
+        <p>\(f(x)=\frac{-3}{x^2}\)</p>
+        <p>\(DQ=\frac{\frac{-3}{(x+h)^2}+\frac{3}{x^2}}{h}\)</p>
+        <p>\(\phantom{DQ}=-3\frac{\frac{1}{(x+h)^2}-\frac{1}{x^2}}{h}\)</p>
+        <p>\(\phantom{DQ}=-3\frac{x^2-(x+h)^2}{h x^2(x+h)^2}\)</p>
+        <p>\(\phantom{DQ}=-3\frac{(2x+h)(-h)}{h x^2(x+h)^2}\)</p>
+        <p>\(\phantom{DQ}=3\frac{(2x+h)}{x^2(x+h)^2}\)</p>
+        <p>\(\phantom{DQ}=\frac{3(2x+h)}{x^2(x+h)^2}\)</p>
+        <p>\(\lim\limits_{h\to0}\frac{3(2x+h)}{x^2(x+h)^2}\)</p>
+        <p>\(=\frac{3(2x)}{x^2(x)^2}\)</p>
+        <p>\(=\frac{6x}{x^4}\)</p>
+        <p>\(=\frac{6}{x^3}\)</p><br>
+
+        <p>c) \(f(x)=\sqrt{ax+b}\)</p>
+        <p>\(f'(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</p>
+        <p>\(f(x+h)=\sqrt{a(x+h)+b}\)</p>
+        <p>\(f(x)=\sqrt{ax+b}\)</p>
+        <p>\(DQ=\frac{\sqrt{a(x+h)+b}-\sqrt{ax}+b}{h}\)</p>
+        <p>\(DQ=\frac{\sqrt{a(x+h)+b}-\sqrt{ax+b}}{h}\times\frac{\sqrt{a(x+h)+b}+\sqrt{ax+b}}{\sqrt{a(x+h)+b}+\sqrt{ax+b}}\)</p>
+        <p>\(DQ=\frac{a(x+h)+b-(ax+b)}{h\sqrt{a(x+h)+b}+\sqrt{ax+b}}\)</p>
+        <p>\(DQ=\frac{ax+ah+b-ax-b}{h\sqrt{a(x+h)+b}+\sqrt{ax+b}}\)</p>
+        <p>\(DQ=\frac{ah}{h\sqrt{a(x+h)+b}+\sqrt{ax+b}}\)</p>
+        <p>\(DQ=\frac{a}{\sqrt{a(x+h)+b}+\sqrt{ax+b}}\)</p>
+        <p>\(\lim\limits_{h\to0}=\frac{a}{\sqrt{a(x+h)+b}+\sqrt{ax+b}}\)</p>
+        <p>\(=\frac{a}{\sqrt{ax+b}+\sqrt{ax+b}}\)</p>
+        <p>\(=\frac{a}{2\sqrt{ax+b}}\)</p><br>
+
+        <h2>Non-Differentiability</h2>
+        <p>If a function is not continuous, it is not differentiable</p>
+        <p>*Some continuous functions are not differentiable</p>
+        
+        <h2>Differentiability Point</h2>
+        <p>\(y=f(x)\) is differentiable at \(x=a\)</p>
+        <p></p>
+        <p>\(\)</p>
+
+        <h2>Corner Point</h2>
+        <p>A point where there are multiple tangent lines at that point</p>
+        <p>e.g. tangent from left side \(\neq\) tangent from right side</p>
+        <p>\(P(a, f(a)) \)</p>
+
+        <h2>Infinite Slop Point</h2>
+        <p>A point where the tangent line is vertical and the function is increasing or decreasing around that point</p>
+        <p>e.g. x^1/3</p>
+        <p>\(P(a, f(a)) \)</p>
+
+        <p>Power Rule: \(ax^b -> abx^{b-1}\)</p>
+
 
 
         <br><br><br><br>
