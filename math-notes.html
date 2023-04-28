@@ -1831,7 +1831,7 @@
         
         <p>2. Limits from +</p>
         <p>a) \(\lim\limits_{x\to-1^+}f(x)\): \(y\to1\)</p>
-        <p>b) \(\lim\limits_{x\to3^+}f(x)\): \(\infty\)</p>
+        <p>b) \(\lim\limits_{x\to3^+}f(x)\): \(\infty\), therefore DNE</p>
         <p>c) \(\lim\limits_{x\to1^+}f(x)\): \(y\to3\)</p>
         <p>d) \(\lim\limits_{x\to-2^+}f(x)\): \(y\to2\)</p><br>
         
@@ -1855,6 +1855,88 @@
         <p>\(\lim\limits_{x\to2^-}f(x)=1\):</p>
         <p>\(\lim\limits_{x\to2^+}f(x)=3\):</p>
         <p>\(1\neq3,\ \therefore \lim\limits_{x\to2}f(x)\) DNE</p>
+
+        <br><br><br><br>
+        </div>
+        
+        <div>
+        <h1>Properties of Limits</h1>
+        <h2>Indeterminate Cases</h2>
+        <p>\(1^\infty\) is indeterminate</p>
+        <p>\(\lim\limits_{n\to\infty}(1+\frac{1}{n})^n=e\)</p>
+        <p>\(\lim\limits_{n\to\infty}(1+\frac{2}{n})^n=e^2\)</p>
+        <p>\(\lim\limits_{n\to\infty}(1+\frac{1}{3n})^n=e^\frac{1}{3}\)</p>
+        <p>Should approach \(1^\infty\), and should equal 1, but can equal \(e,\ e^2\), etc.</p><br>
+
+        <p>If the function does not exist as it approaches some n from some side s, the limit \(\lim\limits_{x\to n^s}\) DNE</p><br>
+        <p>Assuming \(\lim\limits_{x\to a}f(x)\) and \(\lim\limits_{x\to a}g(x)\) exist:</p>
+        <p>1. \(\lim\limits_{x\to a}k = k\)</p>
+        <p>2. \(\lim\limits_{x\to a}x = a\)</p>
+        <p>3. \(\lim\limits_{x\to a}f(x) \pm g(x) = \lim\limits_{x\to a}f(x) \pm \lim\limits_{x\to a}g(x)\)</p>
+        <p>4. \(\lim\limits_{x\to a}c f(x) = c \lim\limits_{x\to a}f(x)\)</p><br>
+        
+        <p>5. \(\lim\limits_{x\to a}\frac{f(x)}{g(x)} = \frac{\lim\limits_{x\to a}f(x)}{\lim\limits_{x\to a}g(x)},\ \lim\limits_{x\to a}g(x)\neq0\)</p>
+        <p>6. \(\lim\limits_{x\to a}f(x)g(x) = \[\lim\limits_{x\to a}f(x)\]\[\lim\limits_{x\to a}g(x)\]\)</p>
+        <p>7. \(\lim\limits_{x\to a}\[f(x)\]^n = \[\lim\limits_{x\to a}f(x)\]^n\)</p>
+        <p>8. smth polynomial \(\lim\limits_{x\to a}\[f(x)\]^n = \[\lim\limits_{x\to a}f(x)\]^n\)</p>
+        
+
+        <p>Ex 1. \(\lim\limits_{x\to3}f(x) = -2\), \(\lim\limits_{x\to3}g(x)=1\)</p>
+        <p>Evaluate \(\lim\limits_{x\to3}\frac{2f(x)+g(x)}{-4\sqrt{g(x)}}\)</p>
+        <p>\(\quad = \frac{\lim\limits_{x\to3}\[2f(x)+g(x)\]}{\lim\limits_{x\to3}\[-4\sqrt{g(x)}\]}\)</p>
+        <p>\(\quad = \frac{\lim\limits_{x\to3}\[2f(x)\] + \lim\limits_{x\to3}g(x)}{\lim\limits_{x\to3}\[-4\sqrt{g(x)}\]}\)</p>
+
+        <h2>Substitution</h2>
+        <p>After substituting, you can stop writing the limits</p>
+        <p>\(\lim\limits_{x\to2}\frac{x^2-2x+1}{x-1}\)</p>
+        <p>\(= \frac{2^2-2(2)+1}{2-1}\)</p>
+        <p>\(= \frac{4-4+1}{1}\)</p>
+        <p>\(= \frac{1}{1}\)</p>
+        <p>\(= 1\)</p><br>
+
+        <h2>Factoring</h2>
+        <p>\(\lim\limits_{x\to1}\frac{x^2+x-2}{x-1}\)</p>
+        <p>\(= \frac{(x+2)(x-1)}{x-1}\)</p>
+        <p>\(= (x+2)\)</p>
+        <p>\(\therefore \lim\limits_{x\to1}\frac{x^2+x-2}{x-1}=3\)</p><br>
+        
+        <h2>Radical Conjugates</h2>
+        <p>\(\lim\limits_{x\to0}\frac{\sqrt{x+4}-2}{x}\)</p>
+        <p>\(=\frac{\sqrt{0+4}-2}{0}=\frac{0}{0}\), indeterminate</p>
+        <p>\(\lim\limits_{x\to0}\frac{\sqrt{x+4}-2}{x}\times\frac{\sqrt{x+4}+2}{\sqrt{x+4}+2}\)</p>
+        <p>\(=\lim\limits_{x\to0}\frac{x+4-4}{x\sqrt{x+4}+2}\)</p>
+        <p>\(=\lim\limits_{x\to0}\frac{x}{x\sqrt{x+4}+2}\)</p>
+        <p>\(=\lim\limits_{x\to0}\frac{1}{\sqrt{x+4}+2}\)</p>
+        <p>\(=\frac{1}{\sqrt{0+4}+2}\)</p>
+        <p>\(=\frac{1}{2+2}\)</p>
+        <p>\(=\frac{1}{4}\)</p><br>
+        
+        <h2>Change of Variables</h2>
+        <p>By changing the variable, the process of cancelling the common factor may be simplified</p>
+        <p>If the change of variable is \(u=g(x)\), then as \(x\to a,\ u\to g(a)\)</p><br>
+        
+        <p>\(\lim\limits_{x\to1}\frac{\sqrt{x}-1}{\sqrt[3]{x}-1}\)</p>
+        <p>\(=\lim\limits_{x\to1}\frac{x^\frac{1}{2}-1}{x^\frac{1}{3}-1}\)</p>
+        <p>Substitute \(u=x^\frac{1}{6},\ x=u^6\)</p>
+        <p>As \(x\to1,\ u\to1\)</p>
+        <p>Must have the variable in the limit the same as the variable in the equation</p>
+        <p>\(=\lim\limits_{u\to1}\frac{u^3-1}{u^2-1}\)</p>
+        <p>\(=\lim\limits_{u\to1}\frac{(u-1)(u^2+u+1)}{(u-1)(u+1)}\)</p>
+        <p>\(=\lim\limits_{u\to1}\frac{(u^2+u+1)}{(u+1)}\)</p>
+        <p>\(=\frac{(1^2+1+1)}{(1+1)}\)</p>
+        <p>\(=\frac{3}{2}\)</p><br>
+        
+        <p>\(\lim\limits_{x\to4}\frac{x^\frac{3}{2}-8}{x-4}\)</p>
+        <p>\(=\lim\limits_{x\to4}\frac{x^\frac{3}{2}-8}{x-4}\)</p>
+        <p>Substitute \(u=x^\frac{1}{2}, x=u^2\)</p>
+        <p>As \(x\to4,\ u\to2\)</p>
+        <p>\(=\lim\limits_{u\to2}\frac{u^3-8}{u^2-4}\)</p>
+        <p>\(=\lim\limits_{u\to2}\frac{(u-2)(u^2+2u+4)}{(u-2)(u+2)}\)</p>
+        <p>\(=\lim\limits_{u\to2}\frac{(u^2+2u+4)}{(u+2)}\)</p>
+        <p>\(=\frac{(2^2+2(2)+4)}{(2+2)}\)</p>
+        <p>\(=\frac{12}{4}\)</p>
+        <p>\(=3\)</p>
+
 
         <br><br><br><br>
         </div>
