@@ -35,8 +35,8 @@
             <button class="indent" onclick="window.location.href='ics-notes.html?page=oop'"><a class="content-medium">Java OOP</a></button>
             <button class="indent" onclick="window.location.href='ics-notes.html?page=arr'"><a class="content-medium">Arrays</a></button>
             <button class="indent" onclick="window.location.href='ics-notes.html?page=arrls'"><a class="content-medium">ArrayLists</a></button>
-            <button class="indent" onclick="window.location.href='ics-notes.html?page=sort'"><a class="content-medium">Sorting</a></button>
-            <button class="indent" onclick="window.location.href='ics-notes.html?page=oop3'"><a class="content-medium">Java OOP 3</a></button>
+            <button class="indent" onclick="window.location.href='ics-notes.html?page=sort'"><a class="content-medium">Sort & Search</a></button>
+            <button class="indent" onclick="window.location.href='ics-notes.html?page=bib'"><a class="content-medium">Bibliography</a></button>
         </div>
     <br></div>
     
@@ -75,180 +75,161 @@
                 }
             </code>
         </div>
-        <i><tab/>An example of a class for a student</i>
+        <i><tab/>An example of a class for a student</i><br><br><br>
 
-        <h2 id='classes'>Classes</h2>
+        <hr><br id="class">
+
+        <h2>Classes</h2>
         <p>Classes are the blueprint of blueprints in Java: they provide a structure which your own custom design can follow. Classes are a type of <code>Object</code> in Java, which means they can be used in existing methods such as <code>.equals</code>, or incorporated in arrays and ArrayLists (see more on ArrayLists <a href="?page=arrls">here</a>). These such integrations can help with keeping track of and comparing different instances of your classes.</p>
         <p>The header for creating a new class goes as follows: a <code>public</code> or <code>private</code> scope keyword depending on whether you want to be able to access it from elsewhere (usually using public for access from a driver class); the keyword <code>class</code>, followed by the name of your class. That would look something like this:</p>
         <pre>        <code>public class Computer { // public class, accessible from other classes</code></pre>
-        <pre>        <code>private class Computer { // private class, accessible from parent classes</code></pre>
-
-    </div>
-
-
-
-    <div class="hidden indent content" id="content-arr">
-        <h2>Arrays</h2>
-        <p>Arrays are a more compact way to handle similar groups of data of the same type. Instead of having 5 separate variables to hold 5 numbers, you can instead have an array of length 5, where each element in the array corresponds to one of these numbers. </p>
-        <pre>        <code>averages = [80, 75, 90, 94, 83]</code></pre>
-        <p>In Java, there are several types of arrays: primitive arrays, which hold Java's built-in data types like <code>int</code> and <code>char</code>, and <code>Object</code> arrays, which can be filled with instances of built-in or user-created classes, such as an array of <code>Student</code>s, or even an array of arrays!</p>
-        <pre>        <code>grid = [[1, 3, 2, 2, 5], [3, 5, 4, 4, 3], [2, 1, 5, 1, 2]]</code></pre>
+        <pre>        <code>private class Computer { // private class, accessible from parent classes</code></pre><br>
         
-        <h3>Initialization</h3>
-        <p>There are several ways to create an array. For this demonstration, I will be using an integer array to keep things simple. The most basic way to do so is by using the following syntax: <code>int[] array = new int[len];</code> This will initialize a new array of integers of length <code>len</code>, each of which are set to 0 by default. So if I wanted to make an array named <code>arr</code> with length 23, I would write:</p>
-        <pre>        <code>int[] arr = new int[23];</code></pre>
-        <pre>        <code>arr = [0, 0, 0, ..., 0]; // initialized with all 0s</code></pre>
-        <p>To access elements of the array, we use square brackets to surround the index of the object which we are requesting, 0-indexed, meaning the first object is in the 0th place, the second object in the 1st, and so on.</p>
-        <pre>        <code>System.out.println(arr[0]); // prints the 1st item in the list</code></pre>
-        <pre>        <code>System.out.println(arr[3]); // prints the 4th item in the list</code></pre>
-        <pre>        <code>System.out.println(arr[15]); // prints the 16th item in the list</code></pre>
-
-        <h3>Initializing an Array with Values</h3>
-        <p>The most basic way to fill the array is to set each item individually:</p>
+        <p>Classes also usually come with at least 1 constructor, the way to create a new instance of that object. Constructors are usually responsible for setting the initial values for the instance's attributes, which can look like the following:</p>
         <div class="java-snippet">
             <code>
-                int[] averages = new int[5];<br>
-                averages[0] = 80;<br>
-                averages[1] = 75;<br>
-                averages[2] = 90;<br>
-                averages[3] = 94;<br>
-                averages[4] = 83;<br>
+                public class Student {<br>
+                <tab/>String name;<br>
+                <tab/>double mark;<br>
+                <tab/>public Student() { // default constructor<br>
+                <tab/><tab/>name = "David";<br>
+                <tab/><tab/>mark = 90.0; // sets name and mark to some default value<br>
+                <tab/>}<br><br>
+
+                <tab/>public Student(String n) { // accepts some String input<br>
+                <tab/><tab/>name = n; // sets the name to the String parameter provided<br>
+                <tab/><tab/>mark = 90.0; // however, still sets the mark to some default value<br>
+                <tab/>}<br><br>
+
+                <tab/>public Student(String n, double m) { // accepts a String and double input<br>
+                <tab/><tab/>name = n;<br>
+                <tab/><tab/>mark = m; // sets both name and mark to the parameters provided<br>
+                <tab/>}<br><br>
+                
+                <tab/>public static void main(String[] args) { // main method <br>
+                <tab/><tab/>Student s1 = new Student(); <tab/><tab/><tab/><tab/><tab/><tab/>// first constructor: no input<br>
+                <tab/><tab/>Student s2 = new Student("Steve"); <tab/><tab/><tab/>// second constructor: name input<br>
+                <tab/><tab/>Student s3 = new Student("Gary", 95.5); <tab/>// third constructor: name and mark input<br>
+                <tab/>}<br>
+                
+                }
             </code>
-        </div><br>
-        <p>While this method works, it is extremely tedious and becomes very inefficient for arrays of size 100, or 1000 and beyond. This leads to another way to fill the array upon initialization: using an array literal, which looks like this:</p>
+        </div>
+        <i><tab/>A short demo of different constructors</i><br><br><br>
 
+        <hr><br id="attr">
+
+        <h2>Attributes</h2>
+        <p>Attributes are the pieces of information which each class holds. For example, the <code>Student</code> class from before had attributes <code>age</code>, <code>name</code>, and <code>average</code>.</p>
+        <p>Attributes in classes are declared using the <code>private</code> keyword, such that other classes cannot access and manipulate the variable from elsewhere, and access is provided using <code>get</code> and <code>set</code> methods. These are <code>public</code> methods defined within the class to return and change the value of that private variable which are available to other classes.</p>
+        <p>Without these <code>get</code> and <code>set</code> methods, the instance's variables can be manipulated from almost anywhere which can access the instance, which from a security standpoint is very unsafe, but more importantly difficult to trace.</p>
         <div class="java-snippet">
             <code>
-                int[] newArray = new int[] {80, 75, 90, 94, 83};<br>
-                int[] newInitializedArray = {80, 75, 90, 94, 83}; // only works for uninitialized arrays<br>
+                public class Student {<br>
+                <tab/><b>private</b> String name;<br>
+                <tab/><b>private</b> double mark;<br><br>
+
+                <tab/><i>/**  other methods and constructors not shown  */</i><br><br>
+
+                <tab/><b>public</b> double getMark() {<br>
+                <tab/><tab/>return mark;<br>
+                <tab/>}<br><br>
+
+                <tab/><b>public</b> void setMark(double newMark) {<br>
+                <tab/><tab/>mark = newMark;<br>
+                <tab/>}<br>
+                }<br>
             </code>
-        </div><br>
+        </div>
+        <i><tab/>An example of get/set methods for the <code>mark</code> variable</i><br><br><br>
 
-        <h2>Parallel Arrays</h2>
-        <p>Parallel arrays are a way to organize information by maintaining arrays which hold information for a certain data point in the same index.</p>
-        
-    </div>
+        <hr><br id="met">
 
-
-
-    <div class="hidden indent content" id="content-arrls">
-        <h2>ArrayLists</h2>
-        <p>While arrays in Java are constrained to a set size, <code>ArrayList</code>s are able to add and remove elements, but only work with <code>Object</code>s. They can also search for objects and check whether a given item exists.</p>
-
+        <h2>Methods</h2>
+        <p>Methods are certain behaviour or actions the instance of the class can perform. The examples above demonstrate the <code>get</code> and <code>set</code> methods, but methods can be much more specific to the class. For example, a <code>Pet</code> class could have a few methods:</p>
         <div class="java-snippet">
             <code>
-                ArrayList&lt;Integer&gt; intArr = new ArrayList&lt;Integer&gt;();<br>
-                ArrayList&lt;String&gt; stringArr = new ArrayList&lt;String&gt;();<br>
-                ArrayList&lt;Object&gt; objArr = new ArrayList&lt;Object&gt;();<br>
-            </code>
-        </div><br>
+                public class Pet {<br>
+                <tab/>private String name;<br>
+                <tab/>private double food;<br>
+                <tab/>private double maxFood;<br><br>
+                
+                <tab/><i>/** other methods and constructors not shown*/</i><br><br>
 
-        <p>Since <code>ArrayList</code>s are themselves objects, you can even do <code>ArrayList</code>s of <code>ArrayList</code>s:</p>
-        <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre><br>
+                <tab/>public String getName() { return name; }<br>
+                <tab/>public double getFood() { return food; }<br>
+                <tab/>public double getMaxFood() { return maxFood; } // simple get methods<br><br>
 
-        <p><code>ArrayList</code>s are useful for lists without a set size, or data structures such as a stack, which operations are to add and remove elements. This can be replicated using the <code>ArrayList</code> methods <code>add</code> and <code>pop</code> as follows:</p>
-        <div class="java-snippet">
-            <code>
-                ArrayList&lt;Integer&gt; stack = new ArrayList&lt;Integer&gt;();<br>
-                stack.add(10);<br>
-                stack.add(5);<br>
-                stack.add(32); // adding values onto the stack<br>
-                System.out.println(stack.pop()); // removing values from the stack
-            </code>
-        </div><br>
-    </div>
+                <tab/>public void <b>feed</b>(double foodAmount) { // feeds the pet a certain amount of food<br>
+                <tab/><tab/>food += foodAmount;<br>
+                <tab/><tab/>if (food > maxFood) food = maxFood;<br>
+                <tab/><tab/>System.out.println(name + " was fed some food :3");<br>
+                <tab/>}<br><br>
 
-
-    <div class="hidden indent content" id="content-sort">
-        <h2>Sorting and Searching</h2>
-        <p>There are many sorting algorithms for ordering items in a data structure. The most common methods include bubble sort, insertion sort, and selection sort. These methods, while not particularly fast, are intuitive and make sense on first glance.</p>
-
-        <h3>Bubble Sort</h3>
-        <p>Bubble sort works by repeatedly going through the array and swapping any two adjacent elements which are in the wrong order.</p>
-
-        <div class="java-snippet">
-            <code>
-                public void bubbleSort(int[] arr) {<br>
-                <tab/>for (int i = 0; i &lt; arr.length; i++) {<br>
-                <tab/><tab/>for (int j = i; j &lt; arr.length-1; j++) {<br>
-                <tab/><tab/><tab/>if (arr[j] &gt; arr[j+1]) { // if two elements are in the wrong order<br>
-                <tab/><tab/><tab/><tab/>int temp = arr[j+1];<br>
-                <tab/><tab/><tab/><tab/>arr[j+1] = arr[j];<br>
-                <tab/><tab/><tab/><tab/>arr[j] = temp; // swap them<br>
-                <tab/><tab/><tab/>}<br>
+                <tab/>public boolean <b>play</b>() { // makes the pet play, returns whether the pet is too hungry to play<br>
+                <tab/><tab/>if (food &lt; 5) {<br>
+                <tab/><tab/><tab/>System.out.println(name + " is too hungry to play...");<br>
+                <tab/><tab/><tab/>return false;<br>
                 <tab/><tab/>}<br>
+                <tab/><tab/>food -= 5;<br>
+                <tab/><tab/>System.out.println(name + " is playing around! ^-^");<br>
+                <tab/><tab/>return true;<br>
                 <tab/>}<br>
-                }
+                }<br>
             </code>
-        </div><br>
-        <p><a href="https://www.javatpoint.com/bubble-sort-in-java">Source: Javatpoint Tutorial: Bubble Sort</a></p>
+        </div>
+        <i><tab/>Methods Demo</i><br><br>
+        <p>All methods need to have some return type; whether it's an <code>int</code>, <code>String</code>, <code>double</code>, an <code>Object</code> like an array of integers, <code>int[]</code>, or even no return type, in which case we use <code>void</code>. Without a return type, there will likely be an error where the compiler read your method as a constructor for a class with your method's name, or outright say that your method needs a return type.</p>
+        <img src="images/method_return_type_error_program.png" width="40%" height="auto">
+        <img src="images/method_return_type_error_out.png" width="auto" height="auto"><br><br><br>
 
-        <h3>Insertion Sort</h3>
-        <p>Insertion sort works by going through the array and slowly placing each element into a sorted subarray until all elements are sorted.</p>
-        
-        <div class="java-snippet">
-            <code>
-                public void insertionSort(int[] arr) {<br>
-                <tab/>for (int i = 1; i &lt; arr.length-1; i++) {<br>
-                <tab/><tab/>int index = i-1;<br>
-                <tab/><tab/>int value = arr[i];<br>
-                <tab/><tab/>while (index > -1 &amp;&amp; arr[index-1] > value) { // while value is smaller than next<br>
-                <tab/><tab/><tab/>arr[index+1] = arr[index];<br>
-                <tab/><tab/><tab/>index--;<br>
-                <tab/><tab/>}<br>
-                <tab/><tab/>arr[index+1] = value;<br>
-                <tab/>}<br>
-                }
-            </code>
-        </div><br>
-        <p><a href="https://www.javatpoint.com/insertion-sort-in-java">Source: Javatpoint Tutorial: Insertion Sort</a></p>
-        
-        <h3>Selection Sort</h3>
-        <p>Selection sort works by going through the array finding the largest element, and adding it .</p>
-        <p>Take the following snippet as an example:</p>
-        <div class="java-snippet">
-            <code>
-                public void selectionSort(int[] arr) {<br>
-                <tab/>for (int i = 0; i &lt; arr.length-1; i++) {<br>
-                <tab/><tab/>int index = i;<br>
-                <tab/><tab/>for (int j = i+1; j &lt; arr.length; j++)<br>
-                <tab/><tab/><tab/>if (arr[j] &lt; arr[index])<br>
-                <tab/><tab/><tab/><tab/>index = j;<br>
-                <tab/><tab/>int temp = arr[i];<br>
-                <tab/><tab/>arr[i] = arr[index];<br>
-                <tab/><tab/>arr[index] = temp;<br>
-                <tab/>}<br>
-                }
-            </code>
-        </div><br>
-        <p><a href="https://www.javatpoint.com/selection-sort-in-java">Source: Javatpoint Tutorial: Selection Sort</a></p>
-        
-    </div>
-
-
-    <div class="hidden indent content" id="content-oop3">
-
-        <h1>Inheritance Overview</h1>
-        <p>The general class is the parent class </p>
-        <p>The specialized (child) classes inherit all the properties of the general class</p>
-
-        <h2>Child-Parent Class Relation</h2>
+        <!-- <h2>Child-Parent Class Relation</h2>
         <p></p>
         <div class="table indent">
             \(
             \begin{array}{|c|c|c|c|c|}\hline
             & \text{P:P} & \text{C:C} & \text{P:C} & \text{C:P} \\\hline
-            \text{Method Inheritance}   & X & X &   & X \\\hline
-            \text{Initialization}       & X & X & X &   \\\hline
-            \text{Method Parameter (E, V)}     & X & X &   & X \\\hline
-            \text{Polymorphism}         &   &   & X & X \\\hline
+            \text{Method Inheritance}       & X & X &   & X \\\hline
+            \text{Initialization}           & X & X & X &   \\\hline
+            \text{Method Parameter (E, V)}  & X & X &   & X \\\hline
+            \text{Polymorphism}             &   &   & X & X \\\hline
 
             \end{array}
             \)
+        </div><br> -->
+
+        <hr><br id="inh">
+
+        <h2>Inheritance</h2>
+        <p>Inheritance is specialization into a more specific structure from a larger, more general blueprint. For example, let's say you have a <code>Pet</code> class. This class handles all kinds of pets just fine, but what about if you want to create a lot of <code>Pet</code>s as dogs? Instead of rewriting all of the code from the <code>Pet</code> class in a new <code>Dog</code> class, we can use inheritance.</p>
+        <p>To be more specific, one class can <i>inherit</i> qualities from another class, a relationship usually signified between a "parent" and a "child" class, where the child inherits qualities from a parent class. One such example can be found below:</p>
+        
+        <div class="java-snippet">
+            <code>
+                public class Pet {<br>
+                <tab/>private String name;<br>
+                <tab/>private double age;<br>
+                <tab/>public double getMark() { return mark; }<br>
+                <tab/>public double getFreeTime() {}<br>
+                }<br><br>
+                
+                public class Dog extends Pet {<br>
+                <tab/>...<br>
+                <tab/>public double getFreeTime() { ... }<br>
+                }<br>
+            </code>
         </div><br>
 
-        <h2>Downcasting</h2>
-        <p>Downcasting is useful when a subclass has a method that a superclass does not have, and you need that superclass to </p>
+
+        <hr><br id="poly">
+
+        <h2>Polymorphism</h2>
+        <p>Let's say you want to create an object</p>
+        <p></p>
+
+        <h3>Upcasting/Downcasting</h3>
+        <p>Downcasting is useful when a subclass has a method that a superclass does not have, and you need access to that child method; however, downcasting can only be done if the child class is instantiated as an instance of the parent class:</p>
+        <pre>        <code>Parent c = new Child(); // assuming Child extends Parent </code></pre>
         <p></p>
 
         <h2>Abstract Classes</h2>
@@ -356,6 +337,173 @@
         
     </div>
 
+
+
+    <div class="hidden indent content" id="content-arr">
+        <h2>Arrays</h2>
+        <p>Arrays are a more compact way to handle similar groups of data of the same type. Instead of having 5 separate variables to hold 5 numbers, you can instead have an array of length 5, where each element in the array corresponds to one of these numbers. </p>
+        <pre>        <code>averages = [80, 75, 90, 94, 83]</code></pre>
+        <p>In Java, there are several types of arrays: primitive arrays, which hold Java's built-in data types like <code>int</code> and <code>char</code>, and <code>Object</code> arrays, which can be filled with instances of built-in or user-created classes, such as an array of <code>Student</code>s, or even an array of arrays!</p>
+        <pre>        <code>grid = [[1, 3, 2, 2, 5], [3, 5, 4, 4, 3], [2, 1, 5, 1, 2]]</code></pre>
+        
+        <h3>Initialization</h3>
+        <p>There are several ways to create an array. For this demonstration, I will be using an integer array to keep things simple. The most basic way to do so is by using the following syntax: <code>int[] array = new int[len];</code> This will initialize a new array of integers of length <code>len</code>, each of which are set to 0 by default. So if I wanted to make an array named <code>arr</code> with length 23, I would write:</p>
+        <pre>        <code>int[] arr = new int[23];</code></pre>
+        <pre>        <code>arr = [0, 0, 0, ..., 0]; // initialized with all 0s</code></pre>
+        <p>To access elements of the array, we use square brackets to surround the index of the object which we are requesting, 0-indexed, meaning the first object is in the 0th place, the second object in the 1st, and so on.</p>
+        <pre>        <code>System.out.println(arr[0]); // prints the 1st item in the list</code></pre>
+        <pre>        <code>System.out.println(arr[3]); // prints the 4th item in the list</code></pre>
+        <pre>        <code>System.out.println(arr[15]); // prints the 16th item in the list</code></pre>
+
+        <h3>Initializing an Array with Values</h3>
+        <p>The most basic way to fill the array is to set each item individually:</p>
+        <div class="java-snippet">
+            <code>
+                int[] averages = new int[5];<br>
+                averages[0] = 80;<br>
+                averages[1] = 75;<br>
+                averages[2] = 90;<br>
+                averages[3] = 94;<br>
+                averages[4] = 83;<br>
+            </code>
+        </div><br>
+        <p>While this method works, it is extremely tedious and becomes very inefficient for arrays of size 100, or 1000 and beyond. This leads to another way to fill the array upon initialization: using an array literal, which looks like this:</p>
+
+        <div class="java-snippet">
+            <code>
+                int[] newArray = new int[] {80, 75, 90, 94, 83};<br>
+                int[] newInitializedArray = {80, 75, 90, 94, 83}; // only works for uninitialized arrays<br>
+            </code>
+        </div><br>
+
+        <h2>Parallel Arrays</h2>
+        <p>Parallel arrays are a way to organize information by maintaining arrays which hold information for a certain data point in the same index.</p>
+        
+    </div>
+
+
+
+    <div class="hidden indent content" id="content-arrls">
+        <h2>ArrayLists</h2>
+        <p>While arrays in Java are constrained to a set size, <code>ArrayList</code>s are able to add and remove elements, but only work with <code>Object</code>s. They can also search for objects and check whether a given item exists.</p>
+
+        <div class="java-snippet">
+            <code>
+                ArrayList&lt;Integer&gt; intArr = new ArrayList&lt;Integer&gt;();<br>
+                ArrayList&lt;String&gt; stringArr = new ArrayList&lt;String&gt;();<br>
+                ArrayList&lt;Object&gt; objArr = new ArrayList&lt;Object&gt;();<br>
+            </code>
+        </div><br>
+
+        <p>Since <code>ArrayList</code>s are themselves objects, you can even do <code>ArrayList</code>s of <code>ArrayList</code>s:</p>
+        <pre>        <code>ArrayList&lt;ArrayList&lt;String&gt;&gt; intArr = new ArrayList&lt;ArrayList&lt;String&gt;&gt;();</code></pre><br>
+
+        <p><code>ArrayList</code>s are useful for lists without a set size, or data structures such as a stack, which operations are to add and remove elements. This can be replicated using the <code>ArrayList</code> methods <code>add</code> and <code>pop</code> as follows:</p>
+        <div class="java-snippet">
+            <code>
+                ArrayList&lt;Integer&gt; stack = new ArrayList&lt;Integer&gt;();<br>
+                stack.add(10);<br>
+                stack.add(5);<br>
+                stack.add(32); // adding values onto the stack<br>
+                System.out.println(stack.pop()); // removing values from the stack
+            </code>
+        </div><br>
+    </div>
+
+
+    <div class="hidden indent content" id="content-sort">
+        <h1>Sorting</h1>
+        <p>There are many sorting algorithms for ordering items in a data structure. The most common methods include bubble sort, insertion sort, and selection sort. These methods, while not particularly fast, are intuitive and make sense on first glance.</p>
+
+        <h3>Bubble Sort</h3>
+        <p>Bubble sort works by repeatedly going through the array and swapping any two adjacent elements which are in the wrong order.</p>
+
+        <div class="java-snippet">
+            <code>
+                public void bubbleSort(int[] arr) {<br>
+                <tab/>for (int i = 0; i &lt; arr.length; i++) {<br>
+                <tab/><tab/>for (int j = i; j &lt; arr.length-1; j++) {<br>
+                <tab/><tab/><tab/>if (arr[j] &gt; arr[j+1]) { // if two elements are in the wrong order<br>
+                <tab/><tab/><tab/><tab/>int temp = arr[j+1];<br>
+                <tab/><tab/><tab/><tab/>arr[j+1] = arr[j];<br>
+                <tab/><tab/><tab/><tab/>arr[j] = temp; // swap them<br>
+                <tab/><tab/><tab/>}<br>
+                <tab/><tab/>}<br>
+                <tab/>}<br>
+                }
+            </code>
+        </div><br>
+        <p><a href="https://www.javatpoint.com/bubble-sort-in-java">Source: Javatpoint Tutorial: Bubble Sort</a></p>
+
+        <h3>Insertion Sort</h3>
+        <p>Insertion sort works by going through the array and slowly placing each element into a sorted subarray until all elements are sorted.</p>
+        
+        <div class="java-snippet">
+            <code>
+                public void insertionSort(int[] arr) {<br>
+                <tab/>for (int i = 1; i &lt; arr.length-1; i++) {<br>
+                <tab/><tab/>int index = i-1;<br>
+                <tab/><tab/>int value = arr[i];<br>
+                <tab/><tab/>while (index > -1 &amp;&amp; arr[index-1] > value) { // while value is smaller than next<br>
+                <tab/><tab/><tab/>arr[index+1] = arr[index];<br>
+                <tab/><tab/><tab/>index--;<br>
+                <tab/><tab/>}<br>
+                <tab/><tab/>arr[index+1] = value;<br>
+                <tab/>}<br>
+                }
+            </code>
+        </div>
+        <p><a href="https://www.javatpoint.com/insertion-sort-in-java">Source: Javatpoint Tutorial: Insertion Sort</a></p>
+        
+        <h3>Selection Sort</h3>
+        <p>Selection sort works by going through the array finding the smallest element in an unsorted part of the array, and adding it to the front of the array, behind all already sorted elements.</p>
+        <p>Take the following snippet as an example:</p>
+        <div class="java-snippet">
+            <code>
+                public void selectionSort(int[] arr) {<br>
+                <tab/>for (int i = 0; i &lt; arr.length-1; i++) {<br>
+                <tab/><tab/>int index = i;<br>
+                <tab/><tab/>for (int j = i+1; j &lt; arr.length; j++) // finding the smallest element<br>
+                <tab/><tab/><tab/>if (arr[j] &lt; arr[index])<br>
+                <tab/><tab/><tab/><tab/>index = j;<br>
+                <tab/><tab/>int temp = arr[i];<br>
+                <tab/><tab/>arr[i] = arr[index];<br>
+                <tab/><tab/>arr[index] = temp; // swap the smallest element with the first element of the unsorted array<br>
+                <tab/>}<br>
+                }
+            </code>
+        </div>
+        <p><a href="https://www.javatpoint.com/selection-sort-in-java">Source: Javatpoint Tutorial: Selection Sort</a></p><br>
+        
+        <h1>Searching</h1>
+        <p>Once we have a sorted data structure, we can use the sorted nature in order to search and find elements of our choosing. 
+            The most obvious example is binary search, which is a sort of "higher-lower" searching approach to find a given element 
+            within a sorted array. The algorithm could be implemented as follows:</p>
+            
+        <div class="java-snippet">
+            <code>
+                // recursive implementation
+                public int binarySearch(int[] arr, int target, int l, int r) {<br>
+                <tab/>if (r &lt; l) return -1;<br>
+                <tab/>if (r == l) return arr[r] == arr[l];<br>
+                <tab/><tab/>for (int j = i+1; j &lt; arr.length; j++) // finding the smallest element<br>
+                <tab/><tab/><tab/>if (arr[j] &lt; arr[index])<br>
+                <tab/><tab/><tab/><tab/>index = j;<br>
+                <tab/><tab/>int temp = arr[i];<br>
+                <tab/><tab/>arr[i] = arr[index];<br>
+                <tab/><tab/>arr[index] = temp; // swap the smallest element with the first element of the unsorted array<br>
+                <tab/>}<br>
+                }
+            </code>
+        </div>
+        <p><a href="https://www.javatpoint.com/selection-sort-in-java">Source: Javatpoint Tutorial: Selection Sort</a></p><br>
+
+    </div>
+
+    <div class="hidden indent content" id="content-bib">
+    <h1>Bibliography</h1>
+    <p><a href="codecademy.com/learn/learn-java/modules/learn-java-inheritance-and-polymorphism/cheatsheet">Polymorphism and Inheritance Cheatsheet</a></p>
+    </div>
 
     </div>
 

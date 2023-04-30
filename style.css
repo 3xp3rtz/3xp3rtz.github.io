@@ -224,7 +224,7 @@ body {
 
 .content-block {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     text-align: left;
     height: 200px;
     margin: 10px;
@@ -237,7 +237,7 @@ body {
 }
 
 .content-block p {
-    /* padding-left: 12px; */
+    padding-top: 12px;
 }
 
 .content-block img {
