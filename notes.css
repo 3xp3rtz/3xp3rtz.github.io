@@ -115,7 +115,7 @@ img {
 
 .content .java-snippet {
     margin-top: 10px;
-    background-image: linear-gradient(to right,rgba(165, 42, 247, 0.6),rgba(208, 55, 246, 0.9),rgba(165, 42, 247, 0.6));
+    background-image: linear-gradient(to right,rgba(107, 0, 179, 0.76), rgba(245, 53, 252, 0.719), rgba(125, 0, 209, 0.774));
     display: block;
     border: 3px solid rgb(171, 140, 206);
     padding: 10px;

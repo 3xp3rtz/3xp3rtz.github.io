@@ -75,7 +75,20 @@
                 }
             </code>
         </div>
-        <i><tab/>An example of a class for a student</i><br><br><br>
+        <i><tab/>An example of a class for a student</i><br><br>
+        <h2>Scope</h2>
+        <p>Scope describes the access a given method, variable, class, or other datatype has from other contexts. These are useful for limiting what external programs can access and modify information, such as trying to keep information secret.</p><br>
+        
+        <div class="table indent">
+            \(\qquad\qquad
+            \begin{array}{|c|c|c|c|}
+            \hline\text{Scope}& \text{Class} & \text{Subclass} & \text{World}\\
+            \hline\text{public}& \text{X} & \text{X} & \text{X}\\\hline
+            \hline\text{protected}& \text{X} & \text{X} & \text{}\\\hline
+            \hline\text{private}& \text{X} & \text{} & \text{}\\\hline
+            \end{array}
+            \)
+        </div><br><br>
 
         <hr><br id="class">
 
@@ -146,7 +159,7 @@
         <hr><br id="met">
 
         <h2>Methods</h2>
-        <p>Methods are certain behaviour or actions the instance of the class can perform. The examples above demonstrate the <code>get</code> and <code>set</code> methods, but methods can be much more specific to the class. For example, a <code>Pet</code> class could have a few methods:</p>
+        <p>Methods are certain behaviour or actions the instance of the class can perform. The examples above demonstrate the <code>get</code> and <code>set</code> methods, but methods can be much more specific to the class. For example, a <code>Pet</code> class could have a few methods implementated as follows:</p>
         <div class="java-snippet">
             <code>
                 public class Pet {<br>
@@ -178,47 +191,49 @@
                 }<br>
             </code>
         </div>
-        <i><tab/>Methods Demo</i><br><br>
+        <i><tab/>A short demonstration on more complex behaviour by a method</i><br><br>
         <p>All methods need to have some return type; whether it's an <code>int</code>, <code>String</code>, <code>double</code>, an <code>Object</code> like an array of integers, <code>int[]</code>, or even no return type, in which case we use <code>void</code>. Without a return type, there will likely be an error where the compiler read your method as a constructor for a class with your method's name, or outright say that your method needs a return type.</p>
         <img src="images/method_return_type_error_program.png" width="40%" height="auto">
         <img src="images/method_return_type_error_out.png" width="auto" height="auto"><br><br><br>
 
-        <!-- <h2>Child-Parent Class Relation</h2>
-        <p></p>
-        <div class="table indent">
-            \(
-            \begin{array}{|c|c|c|c|c|}\hline
-            & \text{P:P} & \text{C:C} & \text{P:C} & \text{C:P} \\\hline
-            \text{Method Inheritance}       & X & X &   & X \\\hline
-            \text{Initialization}           & X & X & X &   \\\hline
-            \text{Method Parameter (E, V)}  & X & X &   & X \\\hline
-            \text{Polymorphism}             &   &   & X & X \\\hline
-
-            \end{array}
-            \)
-        </div><br> -->
-
         <hr><br id="inh">
 
         <h2>Inheritance</h2>
-        <p>Inheritance is specialization into a more specific structure from a larger, more general blueprint. For example, let's say you have a <code>Pet</code> class. This class handles all kinds of pets just fine, but what about if you want to create a lot of <code>Pet</code>s as dogs? Instead of rewriting all of the code from the <code>Pet</code> class in a new <code>Dog</code> class, we can use inheritance.</p>
-        <p>To be more specific, one class can <i>inherit</i> qualities from another class, a relationship usually signified between a "parent" and a "child" class, where the child inherits qualities from a parent class. One such example can be found below:</p>
+        <p>Inheritance is specialization into a more specific structure from a larger, more general blueprint. For example, let's say you have a <code>Pet</code> class. This class handles all kinds of pets just fine, but what about if you want to create a lot of <code>Pet</code>s as dogs? Instead of rewriting all of the code from the <code>Pet</code> class in a new <code>Dog</code> class, or specifying a definition of a <code>Dog</code> repeatedly, we can use <i>inheritance</i>.</p>
+        <p>Inheritance is when one class <i>inherits</i> qualities from another class, a relationship usually signified between a "parent" and a "child" class, where the child class inherits qualities from a parent class. One such example can be found below:</p>
         
         <div class="java-snippet">
             <code>
-                public class Pet {<br>
+                public class Pet { // the parent class<br>
                 <tab/>private String name;<br>
-                <tab/>private double age;<br>
-                <tab/>public double getMark() { return mark; }<br>
-                <tab/>public double getFreeTime() {}<br>
-                }<br><br>
+                <tab/>private int age;<br><br>
                 
-                public class Dog extends Pet {<br>
-                <tab/>...<br>
-                <tab/>public double getFreeTime() { ... }<br>
+                <tab/>public Pet(String n, int a) {<br>
+                <tab/><tab/>name = n;<br>
+                <tab/><tab/>age = a;<br>
+                <tab/>}<br><br>
+
+                <tab/>public String getName() { return "Pet " + name; }<br>
+                <tab/>public int getAge() { return age; }<br>
+                <tab/>public void eat(double food) { ... }<br>
+                }<br><br><br>
+                
+                public class Dog extends Pet { // the child class<br>
+                <tab/>private int loudness;<br><br>
+
+                <tab/>public Dog(String name, int age, int loud) {<br>
+                <tab/><tab/>super(name, age);<br>
+                <tab/><tab/>loudness = loud;<br>
+                <tab/>}<br><br>
+
+                <tab/>public String getName() { return name + " the Dog" }<br>
+                <tab/>public void bark() { ... }<br>
                 }<br>
             </code>
-        </div><br>
+        </div>
+        <i><tab/>A sample implementation of a <code>Dog</code> class as a child class of the <code>Pet</code> class</i><br>
+        <p>The most obvious difference between the <code>Dog</code> class and any other class is the existence of <code>extends Pet</code>. This is the syntax to extend a class, or to inherit from it methods, constructors, etc.</p>
+        <p>Despite inheriting the class, the <code>Dog</code> class is unable to access the <code>private</code> variables and methods in <code>Pet</code> as they are not in an accessible scope.</p>
 
 
         <hr><br id="poly">
