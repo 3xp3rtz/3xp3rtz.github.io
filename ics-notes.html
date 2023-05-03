@@ -227,19 +227,27 @@
                 <tab/>}<br><br>
 
                 <tab/>public String getName() { return name + " the Dog" }<br>
-                <tab/>public void bark() { ... }<br>
+                <tab/>public void bark() { ... }<br><br>
+
+                <tab/>public static void main(String[] args) {<br>
+                <tab/><tab/>Dog d = new Dog("Henry", 4, 3);<br>
+                <tab/><tab/>System.out.println(d.getAge()); // inherited parent method<br>
+                <tab/><tab/>System.out.println(d.bark()); // child method<br>
+                <tab/><tab/>System.out.println(d.getName()); // overridden method<br>
+                <tab/>}<br>
                 }<br>
             </code>
         </div>
         <i><tab/>A sample implementation of a <code>Dog</code> class as a child class of the <code>Pet</code> class</i><br>
         <p>The most obvious difference between the <code>Dog</code> class and any other class is the existence of <code>extends Pet</code>. This is the syntax to extend a class, or to inherit from it methods, constructors, etc.</p>
-        <p>Despite inheriting the class, the <code>Dog</code> class is unable to access the <code>private</code> variables and methods in <code>Pet</code> as they are not in an accessible scope.</p>
+        <p>Despite inheriting the class, the <code>Dog</code> class is unable to access the <code>private</code> variables and methods in <code>Pet</code> as they are not in an accessible scope. However, it can still access <code>protected</code>, <code>public</code>, and variables/methods without an explicit scope keyword from its parent class.</p>
+        <p>For example, with the call to <code>d.getAge()</code>, there is no <code>getAge()</code> implemented in the <code>Dog</code> class, yet the code segment does not error. In fact, it calls the <code>getAge()</code> method from its parent class, <code>Pet</code>. </p>
 
 
         <hr><br id="poly">
 
         <h2>Polymorphism</h2>
-        <p>Let's say you want to create an object</p>
+        <p>Let's say you want to create an object which </p>
         <p></p>
 
         <h3>Upcasting/Downcasting</h3>
@@ -284,12 +292,12 @@
         <div class="java-snippet">
             <code>
                 public abstract class Student {<br>
-                    <tab/>String name;<br>
-                    <tab/>double mark;<br>
-                    <tab/>public double getMark() { return mark; }<br>
-                    <tab/>public abstract double getFreeTime();<br>
-                    }<br><br>
-                </code>
+                <tab/>String name;<br>
+                <tab/>double mark;<br>
+                <tab/>public double getMark() { return mark; }<br>
+                <tab/>public abstract double getFreeTime();<br>
+                }<br><br>
+            </code>
         </div><br>
         
         <p>You may have also observed that the method <code>getFreeTime()</code>, which was originally overrided by the child classes and was defined as a blank function, now has the keyword <code>abstract</code>. This simply means that the implemnentation will be shown in the child (non-abstract) classes, but polymorphism is still applicable.</p>
@@ -321,7 +329,7 @@
             </code>
         </div><br>
         
-        <pre>
+        <!-- <pre>
         Parent = P
         Child = C
         Interface = I
@@ -348,7 +356,7 @@
         Object o = new C();
         o.toString(); // a
 
-        </pre>
+        </pre> -->
         
     </div>
 

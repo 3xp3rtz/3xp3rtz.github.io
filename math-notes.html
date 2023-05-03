@@ -2139,6 +2139,206 @@
         </div>
 
 
+        <div>
+        <h1>First Principles</h1>
+        <p>\(f'(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</p>
+        <p>Escape \(\frac{0}{0}\) indeterminate case using substitution, rational conjugate</p>
+        
+        <p>Power function (not exponential)</p>
+        <p>\(f(x)=x^n\)</p>
+        <p>\(DQ: \frac{(x+h)^n-x^n}{h}\)</p>
+        <p>\(DQ: \frac{((x+h)-x)((x+h)^{n-1}+(x+h)^{n-2}x+(x+h)^{n-3}x^2+...+(x+h)x^{n-2}+x^{n-1})}{h}\)</p>
+        <p>\(DQ: \frac{h((x+h)^{n-1}+(x+h)^{n-2}x+(x+h)^{n-3}x^2+...+(x+h)x^{n-2}+x^{n-1})}{h}\)</p>
+        <p>\(DQ: (x+h)^{n-1}+(x+h)^{n-2}x+(x+h)^{n-3}x^2+...+(x+h)x^{n-2}+x^{n-1}\)</p>
+        <p>\(\lim\limits_{h\to0}(x+h)^{n-1}+(x+h)^{n-2}x+(x+h)^{n-3}x^2+...+(x+h)x^{n-2}+x^{n-1}\)</p>
+        <p>\(=x^{n-1}+x^{n-2}x+x^{n-3}x^2+...+(x)x^{n-2}+x^{n-1}\)</p>
+        <p>\(=nx^{n-1}\)</p><br>
+
+        <p>\((x^n)'=nx^{n-1}\)</p>
+        <p>\(\frac{d}{dx}x^n=nx^{n-1}\)</p>
+        <p>Useful specific cases</p>
+        <p>\((1)'=0\)</p>
+        <p>\((x)'=1\)</p>
+        <p>\((\sqrt{x})'=\frac{1}{2\sqrt{x}}\)</p><br>
+
+        <p>Differentiate</p>
+        <p>\((1)'=0\)</p>
+        <p>\((x)'=1\)</p>
+        <p>\((x^5)'=5x^4\)</p>
+        <p>\((\frac{1}{x})'=(x^-1)'=-x^-2=-\frac{1}{x^2}\)</p>
+        <p>\((\frac{1}{x^7})'=(x^-7)'=-\frac{7}{x^8}\)</p><br>
+
+
+        <p>Positive exponents</p>
+        <p>\((x^{2023})'=2023x^{2022}\)</p>
+        <p>\((x^{-2023})'=-2023x^{-2022}\)</p>
+        <p>\((\frac{1}{x^{2023}})'=-\frac{2023}{x^{2024}}\)</p>
+        <p>\((\frac{1}{x^n})'=-\frac{n}{x^{n+1}}\)</p><br>
+        
+        <p>\((\sqrt{x})'=-\frac{1}{2\sqrt{x}}\)</p>
+        <p>\((\sqrt[3]{x})'=-\frac{1}{3\sqrt[3]{x^2}}\)</p>
+        <p>\((\sqrt[4]{x^3})'=-\frac{3}{4\sqrt[4]{x}}\)</p>
+        <p>\((x^{\pi})'=\pi x^{\pi-1}\)</p><br>
+
+        <h2>Constant Function Rule</h2>
+        <p>\((nx^0)'=0\)</p>
+        <p>\((-2)'=0\)</p>
+        <p>\((\pi)'=0\)</p>
+        <p>\((\pi^e+\phi)'=0\)</p>
+        <p>\((\text{any constant})'=0\)</p>
+
+        <h2>Constant Multiple Rule</h2>
+        <p>Let \(g(x)=cf(x)\). Then:</p>
+        <p>\(cf(x)'=cf'(x)\)</p>
+
+        <p>\((-2x^3)'=-2(3x^2)\)</p>
+        <p>\((\frac{-3}{x^2})'=-3(-\frac{2}{x^3})\)</p>
+        <p>\(\phantom{(\frac{-3}{x^2})'}=\frac{6}{x^3}\)</p>
+        <p>\(\)</p><br>
+        
+        <p></p>
+        <p>\([f(x)\pm g(x)]=f'(x)\pm g'(x)\)</p>
+        <p>\(\frac{d}{dx}[f(x)\pm g(x)]\)</p><br>
+        <p>\(f(x)=2-3x+4x^2-3x^7\)</p>
+        <p>\(\phantom{f(x)}=3+8x-21x^6\)</p><br>
+
+        <p>\(g(x)=\frac{1}{x}-\frac{2}{x^2}+\frac{4}{x^5}\)</p>
+        <p>\(\phantom{g(x)}=-\frac{1}{x^2}+2\frac{2}{x^3}-4\frac{5}{x^6}\)</p>
+        <p>\(\phantom{g(x)}=-\frac{1}{x^2}+\frac{4}{x^3}-\frac{20}{x^6}\)</p><br>
+
+        <p>\(h(x)=\frac{\sqrt{x}-\sqrt[3]{x}}{x}\)</p>
+        <p>\(h'(x)=(\frac{\sqrt{x}}{x}-\frac{\sqrt[3]{x}}{x})'\)</p>
+        <p>\(\phantom{h'(x)}=(\frac{1}{\sqrt{x}})'-(\frac{1}{\sqrt[3]{x^2}})'\)</p>
+        <p>\(\phantom{h'(x)}=-\frac{1}{2x\sqrt{x}}+\frac{2}{3x\sqrt[3]{x^2}}\)</p><br>
+
+
+        <h2>Tangent Line</h2>
+        <p>To find the equation of the tangent line at point \((a, f(a))\)</p>
+        <p>1. find derivative \(f'(x)\)</p>
+        <p>2. find slope of the tangent line using \(m=f'(a)\)</p>
+        <p>3. use slope point formula to get equation of tangent</p>
+        <p>\(\qquad y-f(a)=m(x-a)\)</p><br>
+
+        <p>Find tangent at (1,0) of \(f(x)=x^2-\frac{1}{x}\)</p>
+        <p>\(f'(x)=2x+\frac{1}{x^2}\)</p>
+        <p>\(f'(1)=2+1=3\)</p>
+        <p>\(y-f(a)=m(x-a)\)</p>
+        <p>\(y-f(1)=3(x-1) = 3x-3\)</p><br>
+
+        <p>Find tangent line of slope (m=2) to the graph of \(f(x)=2\sqrt{x}\)</p>
+        <p>\(f'(x)=2\frac{2}{\sqrt{x}}=\frac{1}{\sqrt{x}}\)</p>
+        <p>\(f'(x)=2=\frac{1}{\sqrt{x}}\)</p>
+        <p>\(\phantom{f'(x)}=2\sqrt{x}=1\)</p>
+        <p>\(\phantom{f'(x)}=\sqrt{x}=\frac{1}{2}\)</p>
+        <p>\(\phantom{f'(x)}=x=\frac{1}{4}\)</p>
+        <p>\(f(\frac{1}{4})=\)</p>
+
+
+        <br>
+        <p>Find points on the graph of \(f(x)=2x^3-3x^2+1\) where tangent line is horizontal</p>
+        <p>\(f'(x)=6x^2-6x=0\ (\text{horizontal line})\)</p>
+        <p>\(0=6(x)(x-1),=\ x=0,1\)</p>
+        <p>Points: \((0, 1),\ (1, 0)\)</p><br>
+
+        <p>Multiplicity of point at \(x=0\): </p><br>
+
+
+        <h2>Normal Line vs. Tangent Line</h2>
+        <p>If \(m_T\) is the slope of the tangent line, then slope of the normal line \(m_N\) is given by negative reciprocal of \(m_T\ (m_N=-\frac{1}{m_T})\)</p>
+        <p>Find equation of normal line at (1,3) of \(f(x)=x+\frac{2}{x}\)</p>
+        <p>\(f'(x)=1-\frac{2}{x^2}\)</p>
+        <p>\(m_T = f'(1)=-1\)</p>
+        <p>\(m_N = -\frac{1}{-1}=1\)</p>
+        <p>\(y-3=x-1\)</p>
+        <p>\(\therefore\ y=x+2\)</p><br>
+
+        <p>Differentiability of following</p>
+        <p>a) \(f(x)=\sqrt[3]{x}\)</p>
+        <p>As \(x\to0\), \(f'(x)\to\infty\)</p>
+
+
+        <br><br><br><br>
+        </div>
+
+        <div>
+        <h1>Product Rule</h1>
+        <p>\(p(x)=f(x)g(x)\)</p>
+        <p>\(\phantom{p(x)}=\lim\limits_{h\to0}\frac{p(x+h)-p(x)}{h}\)</p>
+        <p>\(\phantom{p(x)}=\lim\limits_{h\to0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h}\)</p><br>
+        
+        <p>\(f'(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</p>
+        <p>\(g'(x)=\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h}\)</p><br>
+        
+        <p>\(p(x)=\lim\limits_{h\to0}\frac{f(x+h)g(x+h)-f(x)g(x)-f(x)g(x+h)+f(x)g(x+h)}{h}\)</p>
+        <p>\(\phantom{p(x)}=\lim\limits_{h\to0}\frac{[f(x+h)g(x+h)-f(x)g(x+h)]+[f(x)g(x+h)-f(x)g(x)]}{h}\)</p>
+        <p>\(\phantom{p(x)}=\lim\limits_{h\to0}\frac{[f(x+h)-f(x)]g(x+h)+f(x)[g(x+h)-g(x)]}{h}\)</p>
+        <p>\(\phantom{p(x)}=\lim\limits_{h\to0}\frac{[f(x+h)-f(x)]g(x+h)}{h} + \lim\limits_{h\to0}\frac{f(x)[g(x)+g(x+h)]}{h}\)</p>
+        <p>\(\phantom{p(x)}=\lim\limits_{h\to0}\frac{[f(x+h)-f(x)]g(x+h)}{h} + \lim\limits_{h\to0}\frac{f(x)[g(x)+g(x+h)]}{h}\)</p>
+        <!-- <p>\(\)</p> -->
+        <p>\(=f'(x)g(x)+f(x)g'(x)\)</p><br>
+        
+        <p>\(f(x)=(x^3-20)(x^2-3x+7)\)</p>
+        <p>\(\phantom{f(x)}=(x^3-20)(x^2-3x+7)' + (x^3-20)'(x^2-3x+7)\)</p>
+        <p>\(\phantom{f(x)}=(x^3-20)(2x-3)' + (3x^2)'(x^2-3x+7)\)</p><br>
+
+        <!-- <p>Using product rule, \(\)</p> -->
+
+        <p>\(y=(x^2+1)(2x^3-x)\)</p>
+        <p>\(y=2x(2x^3-x) + (x^2+1)(6x^2-1)\)</p><br>
+
+        <p>Find tangent of \(f(x)=y=(x+\sqrt{x})(x^2+\frac{1}{x})\) at (1,4)</p>
+        <p>\(f'(x)=(x+\sqrt{x})(x^2+\frac{1}{x})\)</p>
+        <p>\(f'(x)=(1+\frac{1}{2\sqrt{x}})(x^2+\frac{1}{x}) + (x+\sqrt{x})(2x-\frac{1}{x^2})\)</p>
+        <p>\(f'(1)=(1+\frac{1}{2(1)})(1+1) + (1+1)(2-1)\)</p>
+        <p>\(f'(1)=3 + 2 = 5\)</p>
+        <p>\(y-4 = 5(x-1)\)</p>
+        <p>\(y = 5x-1\)</p><br>
+        
+        <p>\(y=f(x)=\sqrt[3]{x}(x-1)\)</p>
+        <p>\(f'(x)=(\sqrt[3]{x})(x-1)\)</p>
+        <p>\(f'(x)=(\frac{1}{3\sqrt[3]{x^2}})(x-1) + \sqrt[3]{x}\)</p>
+        <p>\(f'(x)=\frac{1}{3\sqrt[3]{x^2}}[(x-1) + 3x^\frac{2}{3}x^\frac{1}{3}]\)</p>
+        <p>\(f'(x)=\frac{1}{3\sqrt[3]{x^2}}[(x-1) + 3x]\)</p>
+        <p>\(f'(x)=\frac{1}{3}\frac{4x-1}{3\sqrt[3]{x^2}}\)</p><br>
+
+        <p>Due to the \(x^2\), denominator always +</p>
+        <p>\(\lim\limits_{x\to0^-}f'(x)=\frac{-}{+}\to-\infty\)</p>
+        <p>\(\lim\limits_{x\to0^+}f'(x)=\frac{-}{+}\to-\infty\)</p>
+        <p>Local extrema: tangent = 0, behaviour must change (dec. -> inc.), -> local min</p><br>
+
+        <h2>Product of 3 Functions</h2>
+        <p>\((fgh)'=f'gh+fg'h+fgh'\)</p>
+        <p>\((fgh)'=(fg)'h + fgh' = (f'g + fg')h+fgh'\)</p><br>
+
+        <p>Differentiate \((\sqrt{x}+1)(x-x^2)(1-\frac{1}{x})\)</p>
+        <p>\(=(\frac{1}{2\sqrt{x}})(x-x^2)(1-\frac{1}{x}) + (\sqrt{x}+1)(1-2x)(1-\frac{1}{x}) + (\sqrt{x}+1)(x-x^2)(\frac{1}{x^2})\)</p><br>
+
+        <h2>Generalized Power Rule</h2>
+        <p>If \(f\) is differentiable at \(x\), then so is \(f^n\) and:</p>
+        <p>\(([f(x)]^n)'=n[f(x)]^{n-1}f'(x)\)</p>
+        <p>\((f^n)'=nf^{n-1}f'\)</p>
+        <p>\(\frac{d}{dx}[f(x)]^n=n[f(x)]^{n-1}\frac{d}{dx}f(x)\)</p><br>
+
+        <p>\([f(x)]^2=f'f + ff'=2ff'\)</p>
+        <p>\([f(x)]^3=f'ff + ff'f + fff'=3fff'\)</p>
+        <p>\([f(x)]^6=f'fffff + ff'ffff + fff'fff + ffff'ff + fffff'f + ffffff' = 6ffffff'\)</p>
+        <p>\([f(x)]^n=nf^{n-1}f'\)</p><br>
+
+        <p>\(y=(x^2-3x)^{15}\)</p>
+        <p>\(y=15(x^2-3x)^{14}(2x-3)\)</p><br>
+        
+        <p>\(s(t)\) is position in terms of time</p>
+        <p>7. \(s(t)=t^2(2-3t)^3\) find vel at \(t=1\)</p>
+        <p>\(s(t)=(2t)(2-3t)^3 + (t^2)[(2-3t)^3]'\)</p>
+        <p>\(\phantom{s(t)}=(2t)(2-3t)^3 + (t^2)[3(2-3t)^2(-3)]\)</p>
+        <p>\(s(1)=(2)(-1)^3 + (1)[3(-1)^2(-3)]\)</p>
+        <p>\(\phantom{s(1)}=-2 + 3(-3)\)</p>
+        <p>\(\phantom{s(1)}=-11 m/s\)</p><br>
+        
+        <br><br><br><br>
+        </div>
+
+
     </div>
 </body>
 
