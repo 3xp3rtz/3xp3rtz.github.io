@@ -2747,13 +2747,456 @@
 
 
         <div id="vectors-6.5">
-        <h1></h1>
-        <p></p>
-        
-        
+        <h1>Vectors in \(\text{R}^2\) and \(\text{R}^3\)</h1>
+
+        <p>Vectors can be represented as \((||\vec{v}||, \theta)\), where \(\theta\) is the angle between the vector and the positive x-axis</p>
+        <p>\(||\vec{v}|| = \sqrt{v_x^2 + v_y^2}\)</p>
+        <p>\(\tan\theta = \frac{vy}{vx}\)</p>
+        <p>\(v_x = ||\vec{v}||\cos\theta\)</p>
+        <p>\(v_y = ||\vec{v}||\sin\theta\)</p>
+        <p>Polar coordinates to Cartesian coordinates</p><br>
+
+        <h2>Standard Unit Vectors</h2>
+        <p>\(||\vec{i}||\): positive x-axis, mag 1</p>
+        <p>\(||\vec{j}||\): positive y-axis, mag 1</p>
+        <p>\(||\vec{k}||\): positive z-axis, mag 1</p><br>
+
+        <h2>3D Coordinates</h2>
+        <p>\(\vec{v} = (V_x,\ V_y,\ V_z)\)</p>
+        <p>\(\alpha,\ \beta,\ \gamma\) are angles between \(\vec{v}\) and \(V_x,\ V_y,\ V_z\), respectively</p>
+        <p>Direction angles, are not coplanar</p><br>
+
+        <p>\(\cos\alpha = \frac{V_x}{||\vec{V}||}\)</p>
+        <p>\(\cos\beta = \frac{V_y}{||\vec{V}||}\)</p>
+        <p>\(\cos\gamma = \frac{V_z}{||\vec{V}||}\)</p><br>
+        <p>\(\cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1\)</p><br>
+
+        <p>\(\vec{v} = (\alpha,\ \beta,\ \gamma)\)</p>
+
+
+        <p>\(||\vec{a}|| = 20\)</p>
+        <p>\(\alpha = \)</p>
+
+        <br><br>
+        <p>Find direction angles of \(\vec{u} = -2\vec{i} = 3\vec{j} - \vec{k}\)</p>
+        <p>\(||\vec{u}|| = \sqrt{4 + 9 + 1} = \sqrt{14}\)</p><br>
+
+        <p>\(\cos\alpha = \frac{u_x}{||\vec{u}|| = \frac{-2}{\sqrt{14}}}\)</p>
+        <p>\(\alpha \approx 122.31^{\circ}\)</p>
+        <p>\(\cos\beta = \frac{u_y}{||\vec{u}|| = \frac{3}{\sqrt{14}}}\)</p>
+        <p>\(\beta \approx 36.70^{\circ}\)</p>
+        <p>\(\cos\gamma = \frac{u_z}{||\vec{u}|| = \frac{1}{\sqrt{14}}}\)</p>
+        <p>\(\gamma \approx 105.50^{\circ}\)</p>
 
         <br><br><br><br>
         </div>
+
+        
+
+
+        <div>
+        <h1></h1>    
+
+        <p>Median: line that joins a vertex and the midpoint of its opposite side</p>
+        <p>Centroid: intersection of medians</p>
+        <p>Centroid of a triangle = \((\frac{x_a + x_b + x_c}{3}, \frac{y_a, y_b, y_c}{3})\)</p>
+        
+        <p>Centroid of vectors = \(\vec{MA} + \vec{MB} + \vec{MC} = \vec{O}\)</p>
+        <p>Prove that the centroid splits the line segment AB into two equal and opposite vectors</p>
+        <p>&lt;-----------o----------&gt;</p>
+        <p><pre>            M</pre></p><br>
+        <p>\(\vec{MA} + \vec{MB} = \vec{O}\)</p>
+        <p>\(\vec{OA} - \vec{OM} + \vec{OB} - \vec{OM} = 0\)\)</p>
+        <p>\(\vec{OA} + \vec{OB} = 2\vec{OB}\)\)</p>
+        <p>\(\vec{OB} = \frac{\vec{OA} + \vec{OB}}{2}\)</p><br>
+
+        <p>\((x_m, y_m) = \frac{1}{2}(x_a + x_b, y_a + y_b)\)</p>
+        <p>\((x_m, y_m, z_m) = \frac{1}{2}(x_a + x_b, y_a + y_b, z_a + z_b)\)</p><br>
+
+        <p>\(\vec{MA} + \vec{MB} + \vec{MC} = \vec{0}\)</p>
+        <p>\(\vec{OA} - \vec{OM} + \vec{OB} - \vec{OM} + \vec{OC} - \vec{OM} = \vec{0}\)</p>
+        <p>\(\vec{OA} + \vec{OB} + \vec{OC} = 3\vec{OM}\)</p>
+        <p>\(\vec{OM} = \frac{1}{3}(\vec{OA} + \vec{OB} + \vec{OC})\)</p><br>
+
+        <p>Centroid of ABC: M; midpoint of BC: N; MN = AN/3</p>
+        <p>Prove \(\vec{MN} = \frac{1}{3}\vec{AN}\)</p>
+        <p>(1) \(\vec{MN} + \vec{NC} = \vec{MC}\)</p>
+        <p>(2) \(\vec{MN} + \vec{NB} = \vec{MB}\)</p>
+        <p>(3) \(\vec{AM} + \vec{MN} = \vec{AN}\)</p>
+        <p>Add (1), (2), (3): \(3\vec{MN} + \vec{NC} + \vec{NB} + \vec{AM} = \vec{MC} + \vec{MB} + \vec{AN}\)</p>
+        <p>\(3\vec{MN} + \vec{NC} + \vec{NB} - \vec{MA} = \vec{MC} + \vec{MB} + \vec{AN}\)</p>
+        <p>\(3\vec{MN} = \vec{MA} + \vec{MC} + \vec{MB} + \vec{AN}\)</p>
+        <p>\(3\vec{MN} = \vec{AN}\)</p><br>
+
+        <h2>Parallel Vectors</h2>
+        <p>Two vectors are parallel if there exists a \(\lambda\) where \(\vec{a} = \lambda\vec{b}\)</p>
+        <p>\(\vec{a} = (-1, 2, -3),\ \vec{b} = (2, -4, 6)\)</p>
+        <p>\(\vec{a} = -2\vec{b}\)</p><br>
+
+        <p>A------B------C</p>
+        <p>\(\vec{AB} = \lambda\vec{AC}\)</p>
+        <p>A----B, C----D</p>
+        <p>\(\vec{AB} = \lambda\vec{CD}\)</p><br>
+
+        <p>\(\vec{a},\ \vec{b},\ \vec{c}\) are coplanar (aka linear dependent) (on the same plane) if:</p>
+        <p>\(\vec{c} = \lambda\vec{a} + \mu\vec{b}\)</p><br>
+
+        <p>Prove that \(\vec{a} = (-1, 2, -3),\ \vec{b} = (2, 0, -1),\ \vec{c} = (-7, 6, -7)\) are linear dependent</p>
+        <p>\(\vec{c} = \lambda\vec{a} + \mu\vec{b}\)</p>
+        <p>Split into components</p>
+        <p>\(-7 = -\lambda + 2\mu\)</p>
+        <p>\(6 = 2\lambda\)</p>
+        <p>\(-7 = -3\lambda - \mu\)</p><br>
+        
+        <p>\(3 = \lambda\)</p>
+        <p>\(-7 = -3 + 2\mu\)</p>
+        <p>\(-4 = 2\mu\)</p>
+        <p>\(-2 = \mu\)</p><br>
+        
+        <p>Check: \(-7 = -3(3) - (-2) = -9 + 2 = -7\)</p><br>
+        <p>\(\therefore\ \vec{a},\ \vec{b},\ \vec{c}\) are coplanar (linear dependent).</p><br><br>
+        
+        
+        <p>1. \(\vec{a} = -\vec{i} + 3\vec{j} - 2\vec{k}\)</p>
+        <p>a) Write in components form: \(\vec{a} = (-1, 3, -2)\)</p>
+        <p>b) Magnitude: \(||\vec{a}|| = \sqrt{(-1)^2 + 3^2 + (-2)^2} = \sqrt{14}\)</p><br>
+
+        <p>2. Find sum of vector \(\vec{a} = -2\vec{i} + 5\vec{j} - \vec{k},\ \vec{b} = (2,0,-3)\)</p>
+        <p>\(\vec{a} + \vec{b} = 0\vec{i} + 5\vec{j} - 4\vec{k} = (0,5,-4)\)</p><br>
+
+        <p>3. Find the magnitude of difference \(\vec{a} - \vec{b}\)</p>
+        <p>\(\vec{a} = \vec{i} - \vec{j},\ \vec{b} = (1,2,-1)\)</p>
+        <p>\(\vec{a} - \vec{b} = (0, 3, -1)\)</p>
+        <p>\(||\vec{a} - \vec{b}|| = \sqrt{0+9+1} = \sqrt{10}\)</p><br>
+
+        <p>4. Find \(\vec{d} = \vec{a} - 2\vec{b} + 3\vec{c}\)</p>
+        <p>\(\vec{a} = (1,-2,0),\ \vec{b} = (0,-2,-3),\ \vec{c} = (-1,0,2)\)</p>
+        <p>\(\vec{d} = (1 - 0 - 3, -2 + 4 + 0, 0 + 6 + 6) = (-2, 2, 12)\)</p>
+        <p>\(\therefore \vec{d} = (-2,2,12) = -2\vec{i} + 2\vec{j} + 12\vec{k}\)</p><br>
+
+        <p>Triangle ABC</p>
+        <p>\(A(-1,-4,1),\ B(2,-3,0),\ C(-4,1,2)\)</p>
+        <p>a) Find centroid of M: \(M = ((-1+2-4)/3, (-4-3+1)/3, (1+0+2)/3) = (-1,-2,1)\)</p>
+        <p>b) Show that \(\vec{MA} + \vec{MB} + \vec{MC} = 0\)</p>
+        <p>\(\)</p>
+
+        <p>c) Find midpoint N of AB</p>
+
+
+
+
+        <p>7. ABCDEFGH is a parallelepiped</p>
+        <p>\(A(0,1,3),\ B(1,0,2),\ C(1,2,0),\ E(4,4,4)\)</p>
+        
+        <pre>
+                    _-H._
+                  E` /   `=_
+                 / `/=._    ;-G
+                /  /    `'F` /
+               /  /      /  /
+              /  /      /  /
+             /_-D._    /  /
+            A`     `=_/  /
+             `'=._   /;-C
+                  `'B`
+        </pre>
+
+        <p>Find all other vertices</p>
+        <p>\(\vec{OD} = \vec{OA} + \vec{AD} = \vec{OA} + \vec{BC}\)</p>
+        <p>\(\vec{OD} = (0,1,3) + (0,2,-2) = (0,3,1)\)</p><br>
+
+        <p>\(\vec{OF} = \vec{OB} + \vec{BF} = \vec{OB} + \vec{AE}\)</p>
+        <p>\(\vec{OF} = (1,0,2) + (4,3,1) = (5,3,3)\)</p><br>
+        
+        <p>\(\vec{OG} = \vec{OC} + \vec{CG} = \vec{OC} + \vec{AE}\)</p>
+        <p>\(\vec{OG} = (1,2,0) + (4,3,1) = (5,5,1)\)</p><br>
+
+        <p>\(\vec{OH} = \vec{OD} + \vec{DH} = \vec{OD} + \vec{AE}\)</p>
+        <p>\(\vec{OH} = (0,3,1) + (4,3,1) = (4,6,2)\)</p><br>
+
+
+        <p></p>
+
+
+        <br><br><br><br>
+        </div>
+
+
+        <div id="vectors-7.1">
+        <h1>Forces</h1>
+        <p>Forces are vectors: magnitude and direction</p>
+        <p>Measured in Newtons (N)</p>
+        <p>Can be manipulated like a vector</p>
+
+        <h2>Geometric Vectors</h2>
+        <p>Added tail to tip: "cosine/sine laws"</p>
+        <p>Plotted on a graph (NESW)</p>
+
+        <p>Multiple vectors</p>
+        <p>Added in parts: "components"</p>
+        <p>Plotted on x-y plane (y+, x+, y-, x-)</p><br>
+
+        <p>Sum of vectors: resultant \(\vec{R}\)</p>
+        <p>\(\vec{R} = \vec{F_1} + \vec{F_2} + ... + \vec{F_n}\)</p><br>
+
+        <p>1. Add two forces \(\vec{F_1} = 1000N[N30^{\circ}E],\ \vec{F_2} = 2000N[E]\)</p>
+        <p>\(||\vec{R}||^2 = ||\vec{F_1}||^2 + ||\vec{F_2}||^2 + 2||\vec{F_1}||||\vec{F_2}||\cos 60\)</p>
+        <p>\(||\vec{R}||^2 = 1000^2 + 2(1000)^2 + 4(1000)^2(\frac{1}{2})\)</p>
+        <p>\(||\vec{R}||^2 = 1000000(1 + 4 + 2) = 7(1000000)\)</p>
+        <p>\(||\vec{R}|| = 1000\sqrt{7}\)</p><br>
+
+        <p>\(\frac{\sin\alpha}{||\vec{F_1}||} = \frac{\sin 120}{||\vec{F_1 + F_2}||}\)</p>
+        <p>\(\sin\alpha = \frac{\sin 120 ||\vec{F_1}||}{||\vec{F_1 + F_2}} = \frac{\sqrt{3} x 1000N}{2\sqrt{7} x 1000N} = \frac{\sqrt{3}}{2\sqrt{7}}\)</p>
+        <p>\(\alpha = \sin^{-1}\frac{\sqrt{3}}{2\sqrt{7}} = 19.1^{\circ}\)</p><br>
+
+        <p>Find sum of vectors:</p>
+        <img src="images/vectors-7.1.1.png">
+        <p>\(\vec{F_1} = [10, 0]\)</p>
+        <p>\(\vec{F_2} = [-5, 0]\)</p>
+        <p>\(\vec{F_3} = [0, 10]\)</p>
+        <p>\(\vec{F_4} = [\frac{15}{2}, \frac{15\sqrt{3}}{2}]\)</p>
+        <p>\(\vec{F_5} = [\frac{25\sqrt{3}}{4}, -\frac{25}{4}]\)</p>
+        <p>\(\vec{F_6} = [-\frac{15\sqrt{2}}{4}, -\frac{15\sqrt{2}}{4}]\)</p>
+        <p>\(\vec{R} = [\frac{25}{2} + \frac{25\sqrt{3}}{4} - \frac{15\sqrt{3}}{4}, 10 + \frac{15\sqrt{3}}{2} - \frac{25}{4} - \frac{15\sqrt{2}}{4}]\)</p>
+        <p>\(\vec{R} = []\)</p>
+
+
+        <h2>Equilibrium</h2>
+        <p>A resultant vector is at equilibrium if (\vec{R} = \vec{0}\)</p>
+
+        <img src="images/vectors-7.1.12.png">
+        <p>\(\vec{T_3} = 100N\)</p>
+        <p>\(\vec{T_1} + \vec{T_2} + \vec{T_3} = \vec{0}\)</p>
+        <p>\(\frac{100N}{\sin 80} = \frac{T_2}{\sin 40} = \frac{T_1}{\sin 60}\)</p>
+        <p>\(T_1 = \frac{100 \sin 60}{\sin 80},\ T_2 = \frac{100 \sin 40}{\sin 80}\)</p><br>
+
+        <p>\(\vec{T_1} = [-T_1 \cos 50, T_1 \sin 50]\)</p>
+        <p>\(\vec{T_2} = [T_2 \cos 30, T_2 \sin 30]\)</p>
+        <p>\(\vec{T_3} = [0, -100]\)</p>
+        <p>\(0 = -T_1 \cos 50 + T_2 \cos 30\)</p>
+        <p>\(0 = T_1 \sin 50 + T_2 \sin 30 - 100\)</p>
+        <p>\(0 = T_2 \cos 30 \sin 50 + T_2 \sin 30 \cos 50 - 100 \cos 50\)</p>
+        <p>\(0 = T_2 (\cos 30 \sin 50 + \sin 30 \cos 50) - 100 \cos 50\)</p>
+        <p>\(T_2 (\sin 80) = 100 \sin 40\)</p>
+        <p>\(T_2 = \frac{100 \sin 40}{\sin 80}\)</p>
+
+        <h2>Equilibrant</h2>
+        <p>The equilibrant, denoted by \(\vec{E}\) makes the equation \(\vec{R} + \vec{E} = \vec{0}\)</p>
+        <p>\(\vec{F_1} = [20, 0]\)</p>
+        <p>\(\vec{F_2} = [0, -15]\)</p>
+        <p>\(\vec{F_3} = [-10\sqrt{3}, 10]\)</p>
+        <p>\(\vec{R} = [20 - 10\sqrt{3}, -5]\)</p>
+        <p>\(\vec{E} = [-20 + 10\sqrt{3}, 5]\)</p>
+
+        <br><br><br><br>
+        </div>
+
+
+        <div id="vectors-7.2">
+        <h1>Relative Velocity</h1>
+
+        <p>Two trains</p>
+        <p>\(d = 500km\)</p>
+        <p>\(\vec{v_1} = 90km/h [W]\)</p>
+        <p>\(\vec{v_2} = 110km/h [E]\)</p>
+        <p>\(\vec{V} = 200km/h [W]\) from \(v_1\)</p><br>
+
+        <p>How far does v travel before the trains meet?</p>
+        <p>Relative to \(v_1,\ \vec{v_2} = 200km/h [E]\)</p>
+        <p>\(\vec{v_2'}\) = 200km/h</p>
+        <p>Time before \(v_2\) hits \(v_1\): \(d/\vec{v_2'} = \frac{500km}{200km/h} = 2.5h\)</p>
+        <p>For 2.5 hours, V will move \(200km/h,\ 200km/h x 2.5h = 500km\)</p>
+
+        <p>\(\vec{V_A} = \vec{V_{AO}}\)</p>
+        <p>\(\vec{V_B} = \vec{V_{BO}}\)</p>
+        <p>\(\vec{V_{AB}} = \vec{V_A} - \vec{V_B}\)</p><br>
+
+
+        <p>2. A car is travelling at \(\vec{V_c} = 100km/h[E]\), motorcycle \(\vec{V_m} = 80km/h[W]\), truck \(\vec{V_t} = 120km/h[N]\), and SUV \(\vec{V_s} = 100km/h[SW]\).</p>
+        <p>Find relative velocity of car to:</p>
+        
+        <p>a) motorcycle: \(\vec{V_cm} = 100km/h[E] - 80km/h[W] = [100, 0] - [-80, 0] = [180, 0] = 180km/h[E]\)</p>
+        <p>b) truck: \(\vec{V_ct} = 100km/h[E] - 120km/h[N] = [100, 0] - [0, 120] = [100, -120] = \sqrt{24400}[\tan^{-1}\frac{120}{100}] = 20\sqrt{61}[S50.2^{\circ}E]\)</p>
+        <p>c) SUV: \(\vec{V_cs} = 100km/h[E] - 100km/h[SW] = [100, 0] - [-50\sqrt{2}, -50\sqrt{2}] = [100, 0] + [50\sqrt{2}, 50\sqrt{2}] = [100 + 50\sqrt{2}, 50\sqrt{2}] = 184.78km/h[\tan^{-1}\frac{}{}]\)</p><br>
+
+        <h2>Boat Velocity</h2>
+        <p>Boat velocity relative to ground is vector sum between boat velocity relative to water \(\vec{V_bw}\) + water velocity relative to ground \(\vec{V_wg}\)</p>
+        <p>\(\vec{V_bg} = \vec{V_bw} + \vec{V_wg}\)</p>
+
+        <h2>Plane Velocity</h2>
+        <p>Plane velocity relative to ground is vector sum between plane velocity relative to air \(\vec{V_pa}\) + air velocity relative to ground \(\vec{V_ag}\)</p>
+        <p>\(\vec{V_pg} = \vec{V_pa} + \vec{V_ag\)</p><br>
+
+        <p>3. River flows eastward at 4m/s. Motorboat heads downstream the river between two towns 50km apart along south bank of river. If motorboat speed in still water is 12m/s, find:</p>
+        <p>a) speed of motorboat relative to ground when travelling downstream</p>
+        <p>\(\vec{V_mg} = \vec{V_mw} + \vec{V_wg} = [4, 0] + [12, 0] = [16, 0] = 16m/s[E],\ \therefore \vec{V_bg} = 16m/s[E]\)</p>
+        <p>b) time required to cover the distance between the towns downstream</p>
+        <p>\(t = 50km / 16m/s = 50000m / 16m/s = 3125s = 52 min 5 sec\)</p>
+        
+        <p>c) speed of motorboat relative to ground when travelling upstream</p>
+        <p>\(\vec{V_mg} = \vec{V_mw} + \vec{V_wg} = [4, 0] + [-12, 0] = [-8, 0] = 8m/s[W],\ \therefore \vec{V_bg} = 8m/s[W]\)</p>
+        <p>d) time required to cover the distance between the towns upstream</p>
+        <p>\(t = 50km / 8m/s = 50000m / 8m/s = 6250s = 104 min 10 sec = 1 hour 44 min 10 sec\)</p><br>
+
+
+        <p>4. Plane scheduled to travel from airport A to B \(\vec{AB} = 600km[060^{\circ}]\). Speed of plane relative to air = \(300km/h\), strong wind \(100km/h\) blowing eastward.</p>
+        <p>b) What direction should the pilot head the plane?</p>
+        <p>Angle across \(V_ag = \beta;\ \frac{\sin\beta}{100} = \frac{\sin 30}{300},\ \sin\beta = \frac{100 \sin 30}{300} = \frac{1}{6};\ \beta = 9.59^{\circ}\)</p>
+        <p>Direction \(\theta = 60^{\circ} - \beta = 30+9.6^{\circ} \approx 40^{\circ}\)</p>
+        <p>c) Speed of plane relative to ground?</p>
+        <p>\(\frac{\vec{V_pg}}{\sin(180 - \theta)} = \frac{300}{\sin 30},\ \vec{V_pg} = \frac{300 \sin 140.4}{\sin 30} = 382.4km/h[E39.6^{\circ}N]\)</p>
+        <p>d) Trip length: \(600/382.4 = 1.57h\)</p><br>
+
+        <p>5. River 800m wide flows eastward at 10m/s. Peter is driving motorboat heading always perpendicular to the current. Speed of the motorboat in still water is 20m/s.</p>
+
+        <pre>
+              V_r
+            |----|
+        _____________
+            |    /
+            |   /
+        800m|  / d
+            |0/
+        ____|/_______
+        </pre>
+        
+        <p>b) Speed of boat relative to ground: \(\sqrt{20^2 + 10^2} = 10\sqrt{5}m/s\)</p>
+        <p>c) Time to cross river: 800/10\sqrt{5} = 35.78 s</p>
+        <p>d) How much downstream does Peter reach the opposite bank?</p>
+        <p>\(t x \vec{V_r} = 35.78s x 10m/s = 357.8m\)</p>
+
+
+        <br><br><br><br>
+        </div>
+
+
+        <div id="vectors-7.3">
+        <h1>Dot Product</h1>
+        <p>The dot product of two geometric vectors \(\vec{a}\) and \(\vec{b}\) with angle \(\theta\) betewen them is a scalar defined by:</p>
+        <p>\(\vec{a}\cdot\vec{b} = ||\vec{a}||||\vec{b}||\cos\theta\) (by convention, \(0^{\circ}\leq\theta\leq180^{\circ}\))</p><br>
+
+        <p>1. \(||\vec{u}|| = 4,\ ||\vec{v}|| = 6,\ \angle(\vec{u},\vec{v}) = 120^{\circ}\), find \(\vec{u}\cdot\vec{v}\)</p>
+        <p>\(\vec{u}\cdot\vec{v} = 4(6)\cos\theta = 24\cos 120 = -12\)</p><br>
+
+        <p>2. Find angle between two unit vectors with dot product \(\frac{1}{\sqrt{2}}\)</p>
+        <p>\(\vec{a}\cdot\vec{b} = ||\vec{a}||||\vec{b}||\cos\theta\)</p>
+        <p>\(\cos\theta = \frac{1}{\sqrt{2}}\div(||\vec{a}||||\vec{b}||) = \frac{1}{\sqrt{2}}\)</p>
+        <p>\(\theta = \cos^{-1}\frac{1}{\sqrt{2}} = 45^{\circ}\)</p><br>
+
+        <p>\(-||\vec{a}||||\vec{b}||\leq\vec{a}\cdot\vec{b}\leq||\vec{a}||||\vec{b}||\)</p>
+        <p>U.V. squared: \(\vec{i}\cdot\vec{i} = 1\)</p>
+        <p>U.V. x different U.V.: \(\vec{i}\cdot\vec{j} = 0\)</p>
+        <p>Vector squared: \(\vec{a}\cdot\vec{a} = ||\vec{a}||^2\)</p><br>
+
+        <h3>\(||\vec{a}+\vec{b}||^2\)</h3>
+        <div class="table indent">
+            \(
+            \begin{array}{c|c}
+            \text{LS} & \text{RS}\\\hline
+            ||\vec{a}+\vec{b}||^2 & ||\vec{a}||^2 + ||\vec{b}||^2 + 2||\vec{a}||||\vec{b}||\cos\theta\\
+            (\vec{a} + \vec{b})\cdot(\vec{a} + \vec{b}) \\
+            \vec{a}\cdot\vec{a} + \vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{a} + \vec{b}\cdot\vec{b} \\
+            ||\vec{a}||^2 + ||\vec{a}||||\vec{b}||\cos\theta + ||\vec{b}||||\vec{a}||\cos\theta + ||\vec{b}||^2 \\
+            ||\vec{a}||^2 + ||\vec{b}||^2 + 2||\vec{a}||||\vec{b}||\cos\theta
+            \end{array}
+            \)
+            <p>L.S. = R.S.</p>
+        </div><br>
+
+        <h3>\((\vec{a}+\vec{b})\cdot(\vec{a}-\vec{b})\)</h3>
+        <p>\(=\vec{a}\cdot\vec{a} - \vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{a} - \vec{b}\cdot\vec{b}\)</p>
+        <p>\(=||\vec{a}||^2 - ||\vec{a}||||\vec{b}||\cos\theta + ||\vec{b}||||\vec{a}||\cos\theta - ||\vec{b}||^2\)</p><br>
+        <p>\(=||\vec{a}||^2 - ||\vec{b}||^2\)</p><br>
+
+        <p>4. \(2\vec{a} + \vec{b}\) and \(\frac{\vec{a}}{2}-\vec{b}\) are perpendicular, \(2||\vec{b}|| = 3||\vec{a}||\); find \(\theta = \angle(\vec{a}, \vec{b})\)</p>
+        <p>\((2\vec{a}+\vec{b})\cdot(\frac{\vec{a}}{2}-\vec{b}) = 0\)</p>
+        <p>\(0=||\vec{a}||^2 - 2\vec{a}\cdot\vec{b} + \frac{1}{2}\vec{b}\cdot\vec{a} - ||\vec{b}||^2\)</p>
+        <p>\(0=||\vec{a}||^2 - \frac{3}{2}||\vec{a}||||\vec{b}||\cos\theta - ||\vec{b}||^2\)</p>
+        <p>\(2||\vec{b}|| = 3||\vec{a}||,\ \frac{||\vec{a}||}{||\vec{b}||} = \frac{2}{3}\)</p>
+
+        <p>\(0=\frac{||\vec{a}||^2}{||\vec{b}||^2} - \frac{3}{2}\frac{||\vec{a}||||\vec{b}||\cos\theta}{||\vec{b}||^2} - \frac{||\vec{b}||^2}{||\vec{b}||}\)</p>
+        <p>\(0=\frac{4}{9} - \frac{3}{2}\frac{2}{3}\cos\theta - 1 = 0\)</p>
+        <p>\(\cos\theta = -\frac{5}{9}\)</p>
+        <p>\(\theta = \cos^{-1}\frac{5}{9} = 123.75^{\circ}\)</p><br>
+
+        <br><br><br><br>
+        </div>
+
+        <div id="vectors-7.4">
+        <h1>Dot Product of Algebraic Vectors</h1>
+        <p>\(\vec{a} = (a_x, a_y, a_z) = a_x\vec{i} + a_y\vec{j} + a_z\vec{k})\)</p>
+        <p>\(\vec{b} = (b_x, b_y, b_z) = b_x\vec{i} + b_y\vec{j} + b_z\vec{k})\)</p>
+        <p>\(\vec{a}\cdot\vec{b} = (a_x\vec{i} + a_y\vec{j} + a_z\vec{k})\cdot(b_x\vec{i} + b_y\vec{j} + b_z\vec{k})\)</p>
+        <p>\(\phantom{\vec{a}\cdot\vec{b}} = (a_x b_x)(\vec{i}\cdot\vec{i}) + (a_x b_y)(\vec{i}\cdot\vec{j}) + (a_x b_z)(\vec{i}\cdot\vec{k}) + (b_x a_x)(\vec{j}\cdot\vec{i}) + ... 
+                (a_x b_y)(\vec{i}\cdot\vec{j}) + (a_x b_z)(\vec{i}\cdot\vec{k}) + (a_x b_x)(\vec{i}\cdot\vec{i}) + (a_x b_y)(\vec{i}\cdot\vec{j}) + (a_x b_z)(\vec{i}\cdot\vec{k})\)</p>
+        <p>\(\phantom{\vec{a}\cdot\vec{b}} = \)</p>
+
+        <br>
+
+        <p>\(\cos\theta = \frac{\vec{a}\cdot\vec{b}}{||\vec{a}||||\vec{b}||} = \frac{a_x b_x + a_y b_y + a_z b_z}{\sqrt{a_x^2 + a_y^2 + a_z^2} \sqrt{b_x^2 + b_y^2 + b_z^2}}\)</p><br>
+
+        <p>\(\vec{u} = (1, -2, 3)\)</p>
+        <p>\(\cos\alpha = \frac{u_x}{||\vec{u}||},\ \cos\beta = \frac{u_y}{||\vec{u}||},\ \cos\gamma = \frac{u_z}{||\vec{u}||},\ \)</p>
+        <p>\(\cos\alpha = \frac{\vec{u}\cdot\vec{i}}{||\vec{u}||||\vec{i}||} = \frac{\vec{u}}{||\vec{u}||}\)</p><br>
+
+
+        <p>\(\cos\theta = 1,\ \Rightarrow \vec{a}\uparrow\uparrow\vec{b}\)</p>
+        <p>\(\cos\theta = -1,\ \Rightarrow \vec{a}\uparrow\downarrow\vec{b}\)</p>
+        <p>\(\cos\theta = 0,\ \Rightarrow \vec{a}\perp\vec{b}\)</p>
+        <p>\(\cos\theta \gt 0,\ \Rightarrow 0 \lt \theta \lt 90\)</p>
+        <p>\(\cos\theta \lt 0,\ \Rightarrow 90 \lt \theta \lt 180\)</p><br>
+
+        <p>2. Find angle between \(\vec{a},\ \vec{b}\)</p>
+        <p>a) \(\vec{a} = (1,-2,-1),\ \vec{b} = (0, -1, 2)\)</p>
+        <p>\(\cos\theta = \frac{\vec{a}\cdot\vec{b}}{||\vec{a}||||\vec{b}||}\)</p>
+        <p>\(\cos\theta = \frac{1(0) + -2(-1) + -1(2)}{\sqrt{1^2 + (-2)^2 + (-1)^2} \sqrt{0^2 + (-1)^2 + 2^2}}\)</p>
+        <p>\(\cos\theta = \frac{0}{\sqrt{30}} = 0,\ \therefore \theta = 90^{\circ}\)</p><br>
+
+        <p>b) \(\)</p>
+
+
+
+        <p>3. Find a non-zero perpendicular vector to each of the vectors \(\vec{a} = (1,5,-1),\ \vec{b} = (-3,1,2)\)</p>
+        <p>\(\vec{a}\cdot\vec{v} = 0,\ \vec{b}\cdot\vec{v}\)</p>
+        <p>\(V_x + 5V_y - V_z = 0,\ -3V_x + V_y + 2V_z = 0\)</p>
+        <p>\(V_x + 5V_y = V_z)</p>
+        <p>\(-3V_x + V_y = -2V_z\)</p>
+        <p>\(3V_x - 3V_x + 15V_y + V_y = 3V_z - 2V_z\)</p>
+        <p>\(16V_y = V_z\)</p>
+        <p>\(5V_y - 5V_y + V_x + 15V_x = V_z + 10V_z\)</p>
+        <p>\(16V_x = 11V_z\)</p>
+        <p>\(\vec{V} = (\frac{11}{16}V_z, \frac{1}{16}V_z, V_z)\) = V_z(\frac{11}{16}, \frac{1}{16}, 1, V_z \in\mathbb{R}\)</p><br>
+
+        <p>4. \(A(0,1,2),\ B(1,0,2),\ (-1,2,0)\), find \(\angle A\)</p>
+        <p>\(\cos\angle A = \frac{\vec{AB}\cdot\vec{AC}}{||\vec{AB}||||\vec{AC}||} = \frac{-1-1+0}{\sqrt{2}\sqrt{6}} = -\frac{2}{\sqrt{12}} = -\frac{1}{\sqrt{3}}\)</p>
+        <p>\(\angle A = \cos^{-1}(-\frac{1}{\sqrt{3}}) = 125.26^{\circ}\)</p><br>
+
+
+        <p>5. </p>
+
+
+        <p>6. What values of k \(\vec{a} = (k,-2,3),\ \vec{b} = (2,2k-6,6)\) make \(\vec{a}\) and \(\vec{b}\)</p>
+        <p>a) perpendicular (orthogonal)?</p>
+        <p>\(\cos\theta = 0 = \frac{\vec{a}\cdot\vec{b}}{||\vec{a}||||\vec{b}||} = \frac{2k-4k+12+18}{\sqrt{k^2 + 13}\sqrt{40 + 4k^2 - 24k + 36}}\)</p>
+        <p>\(2k-4k+12+18 = 0,\ 2k = 30,\ k = 15\)</p><br>
+
+        <p>b) parallel (collinear)?</p>
+        <p>\(\vec{a} = \lambda\vec{b}\)</p>
+        <p>\(k = 2\lambda\)</p>
+        <p>\(-2 = 2k\lambda - 6\lambda\)</p>
+        <p>\(3 = \lambda 6\)</p>
+        <p>\(\lambda = \frac{1}{2}\)</p>
+        <p>\(-2 = k - 3,\ k = 1\)</p>
+        <p>Check: \(-2 = 1 - 3 = -2\)</p>
+        <p>\(\therefore k = 1\)</p><br>
+
+        <p>c) in opposite direction?</p>
+        <p>\(\vec{a}\uparrow\downarrow\vec{b}\) when \(\vec{a} = \lambda{b}\) for \(\lambda\lt0\), but \(\lambda\gt0\ \therefore k\) DNE</p>
+
+        <br><br><br><br>
+        </div>
+
+
 
 
     </div>
