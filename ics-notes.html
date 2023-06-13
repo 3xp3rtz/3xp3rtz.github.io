@@ -26,7 +26,7 @@
 
 <body onload="loadPage()">
     <!-- nav bar -->
-    <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop#classes">Classes</a></li><li><a href="ics-notes.html?page=oop#attributes">Attributes</a></li><li><a href="ics-notes.html?page=oop#methods">Methods</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Primitive Arrays</a></li><li><a href="#" nowrap>Object Arrays</a></li><li><a href="#" nowrap>2D Arrays</a></li></ul></li><li class="nav-elem"><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a href="https://github.com/3xp3rtz" target="_blank">My GitHub</a></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li><li class="nav-bar-elem"><a>Fun Widgets</a><ul class="nav-child"><li><a href="/game-of-life.html">Game of Life</a></li><li><a href="/mahjong.html">HK-Style Mahjong</a></li></ul></li></ul></div>
+    <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop#class">Classes</a></li><li><a href="ics-notes.html?page=oop#attr">Attributes</a></li><li><a href="ics-notes.html?page=oop#met">Methods</a></li><li><a href="ics-notes.html?page=oop#poly">Polymorphism</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=arr#init" nowrap>Initialization</a></li><li><a href="ics-notes.html?page=arr#parallel" nowrap>Parallel Arrays</a></li><li><a href="ics-notes.html?page=arr#2darr" nowrap>2D Arrays</a></li></ul></li><li class="nav-elem"><a href="ics-notes.html?page=arrls">ArrayLists</a></li><li class="nav-elem"><a href="ics-notes.html?page=recur">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li><li class="nav-bar-elem"><a>Fun Widgets</a><ul class="nav-child"><li><a href="https://doodle.maclyonsden.com/valentines2023/" target="_blank">Lovesick Loveride</a></li><li><a href="/game-of-life.html">Game of Life</a></li><li><a href="/mahjong.html">HK-Style Mahjong</a></li></ul></li><li class="nav-bar-elem"><a href="achievements.html">Achievements</a></li><li class="nav-bar-elem" style="padding-inline:0px;"><a class="no-pad" href="https://github.com/3xp3rtz" target="_blank"><img src="images/github-mark-white.png" style="padding-top:4px;"></a></li></ul></div>
     <script src="ics-notes.js"></script>
 
     <div id="ics-note-nav" class="content indent note-nav">
@@ -391,19 +391,50 @@
             </code>
         </div><br>
         <p>While this method works, it is extremely tedious and becomes very inefficient for arrays of size 100, or 1000 and beyond. This leads to another way to fill the array upon initialization: using an array literal, which looks like this:</p>
-
+        
         <div class="java-snippet">
             <code>
                 int[] newArray = new int[] {80, 75, 90, 94, 83};<br>
                 int[] newInitializedArray = {80, 75, 90, 94, 83}; // only works for uninitialized arrays<br>
             </code>
         </div><br>
-
+        
+        <hr><br id="parallel">
+        
         <h2>Parallel Arrays</h2>
         <p>Parallel arrays are a way to organize information by maintaining arrays which hold information for a certain data point in the same index.</p>
-        
+        <div class="java-snippet">
+            <code>
+                int[] students = {345310214, 323910324, 369851240, 321823359};<br>
+                int[] ages = {15, 14, 16, 16};<br>
+                double[] averages = {93.2, 94.4, 98.6, 94.5};<br>
+                for (int i = 0; i &lt; students.length; i++) {<br>
+                    System.out.println("The student " + students[i] + ", age " + ages[i] + ", has an average of " + averages[i]);<br>
+                }
+            </code>
+        </div><br>
+        <p>In the example above, information is stored in separate arrays, however the information for any given student is stored in the same index of the other arrays as the index of the student within the <code>students</code> array.</p><br>
     </div>
+        
 
+    <div class="hidden indent content" id="content-recur">
+        <h1>Recursion</h1>
+        <p>Recursion is essentially a snippet of code which calls itself (often conditionally, to avoid an infinite loop). A function performs certain actions then calls that same function within itself.</p>
+        
+        <div class="java-snippet">
+            <code>
+                public int factorial(int iters) {<br>
+                    if (iters &gt; 1) return iters * factorial(iters-1);<br>
+                    return 1;<br>
+                }<br><br>
+
+                System.out.println(factorial(5)); // prints the 5 factorial, 120
+            </code>
+        </div><br>
+
+        <p>The code snippet above performs the factorial function (the multiplication of the first n numbers) recursively, as you can see it calls itself within the if statement. The usage for recursion can be very useful for tasks of recursive nature, which includes the Fibonacci sequence, factorials, GCD, and more.</p>
+        <p>Recursion can also help in other cases, such as traversing a graph using methods like BFS (breadth-first search) and DFS (depth-first search).</p>
+    </div>
 
 
     <div class="hidden indent content" id="content-arrls">

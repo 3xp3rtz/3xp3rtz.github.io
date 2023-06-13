@@ -21,7 +21,7 @@
 
 <body onload="loadPage()">
     <!-- nav bar -->
-    <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop#classes">Classes</a></li><li><a href="ics-notes.html?page=oop#attributes">Attributes</a></li><li><a href="ics-notes.html?page=oop#methods">Methods</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="#" nowrap>Primitive Arrays</a></li><li><a href="#" nowrap>Object Arrays</a></li><li><a href="#" nowrap>2D Arrays</a></li></ul></li><li class="nav-elem"><a href="#">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a href="https://github.com/3xp3rtz" target="_blank">My GitHub</a></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li><li class="nav-bar-elem"><a>Fun Widgets</a><ul class="nav-child"><li><a href="/game-of-life.html">Game of Life</a></li><li><a href="/mahjong.html">HK-Style Mahjong</a></li></ul></li></ul></div>
+    <div class="nav-bar" id="nav-bar"><ul id="nav-options"><li class="nav-bar-elem"><a href="index.html">Home</a></li><li class="nav-bar-elem"><a href="ics-notes.html">ICS4U Notes</a><ul class="nav-child"><li class="nav-elem"><a href="ics-notes.html?page=oop">Java OOP<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=oop#class">Classes</a></li><li><a href="ics-notes.html?page=oop#attr">Attributes</a></li><li><a href="ics-notes.html?page=oop#met">Methods</a></li><li><a href="ics-notes.html?page=oop#poly">Polymorphism</a></li></ul></li><li class="nav-elem"><a href="#">Arrays<span class="expand">»</span></a><ul class="nav-child"><li><a href="ics-notes.html?page=arr#init" nowrap>Initialization</a></li><li><a href="ics-notes.html?page=arr#parallel" nowrap>Parallel Arrays</a></li><li><a href="ics-notes.html?page=arr#2darr" nowrap>2D Arrays</a></li></ul></li><li class="nav-elem"><a href="ics-notes.html?page=arrls">ArrayLists</a></li><li class="nav-elem"><a href="ics-notes.html?page=recur">ArrayLists</a></li></ul></li><li class="nav-bar-elem"><a>Other Notes</a><ul class="nav-child"><li><a href="chem-notes.html">Chem Notes</a></li><li><a href="math-notes.html">Math Notes</a></li><li><a href="tej-notes.html">TEJ Notes</a></li></ul></li><li class="nav-bar-elem"><a>Fun Widgets</a><ul class="nav-child"><li><a href="https://doodle.maclyonsden.com/valentines2023/" target="_blank">Lovesick Loveride</a></li><li><a href="/game-of-life.html">Game of Life</a></li><li><a href="/mahjong.html">HK-Style Mahjong</a></li></ul></li><li class="nav-bar-elem"><a href="achievements.html">Achievements</a></li><li class="nav-bar-elem" style="padding-inline:0px;"><a class="no-pad" href="https://github.com/3xp3rtz" target="_blank"><img src="images/github-mark-white.png" style="padding-top:4px;"></a></li></ul></div>    
     <script src="math-notes.js"></script>
 
     <div id="math-note-nav" class="content indent note-nav">
@@ -3193,6 +3193,218 @@
         <p>c) in opposite direction?</p>
         <p>\(\vec{a}\uparrow\downarrow\vec{b}\) when \(\vec{a} = \lambda{b}\) for \(\lambda\lt0\), but \(\lambda\gt0\ \therefore k\) DNE</p>
 
+
+        <br><br><br><br>
+        </div>
+
+        <div id="vectors-7.5">
+        <h1>Scalar Projection</h1>
+        <p>The length of the shadow that \(\vec{b}\) would make on \(\vec{a}\) if there was a light source above \(\vec{b}\)</p>
+        <p>Tail to tail</p>
+        <p>\(SProj(\vec{a}\ \text{onto}\ \vec{b} = ||\vec{a}||\cos\theta,\ \theta = \angle\vec{a}\vec{b})\)</p>
+        <p>\(\vec{a}\cdot\vec{b} = ||\vec{a}||||\vec{b}||\cos\theta\)</p>
+        <p>\(SProj(\vec{b}\ onto\ \vec{a} = \frac{\vec{b}\cdot\vec{a}}{||\vec{a}||}\)</p><br>
+
+        <p>1. \(||\vec{a}|| = 10,\ ||\vec{b}|| = 16,\ \theta = 120^\circ\). Find SProj:</p>
+        <p>a) \(\vec{a}\ onto\ \vec{b} = ||\vec{a}||\cos\theta = 10\cos120^\circ = -5\)</p>
+        <p>b) \(\vec{b}\ onto\ \vec{a} = ||\vec{b}||\cos\theta = 16\cos120^\circ = -8\)</p><br>
+
+        <p>2. Find the scalar projection of the vector \(\vec{a}\) onto:</p>
+        <p>a) itself: \(||\vec{a}||\)</p>
+        <p>b) opposite vector \(-\vec{a}\): \(-||\vec{a}||\)</p><br>
+
+        <p>Cartesian Coordinate system: \(\vec{a}\), the scalar components \((a_x, a_y, a_z\) are the scalar projections of \(\vec{a}\ onto\ \vec{i}, \vec{j}, \vec{k}\)</p>
+        <p>\(SProj(\vec{a}\ onto\ \vec{i}) = \frac{\vec{a}\cdot\vec{i}}{||\vec{i}||} = \frac{(a_x, a_y, a_z)\cdot(1,0,0)}{1} = a_x\)</p>
+
+        <p>3. Given vector \(\vec{a} = (2, -3, 4)\), find:</p>
+        <p>a) \(\vec{a}\ onto\ \vec{i}: a_x = 2\)</p>
+        <p>b) \(\vec{a}\ onto\ \vec{i}-\vec{j} = \frac{\vec{a}\cdot(\vec{i}-\vec{j})}{||\vec{i}-\vec{j}||} = \frac{(2,-3,4)\cdot(1,-1,0)}{\sqrt{1^2 + (-1)^2}} = \frac{2+3+0}{\sqrt{2}} = \frac{5}{\sqrt{2}}\)</p>
+        <p>c) \(\vec{a}\ onto\ \vec{b},\ \vec{b} = -\vec{i} + 2\vec{j} + \vec{k}\)</p>
+        <p>\(\vec{a}\ onto\ \vec{b} = \frac{\vec{a}\cdot\vec{b}}{||\vec{b}||} = \frac{(2,-3,4)\cdot(-1,2,1)}{\sqrt{(-1)^2 + 2^2 + 1^2}} = \frac{-2 - 6 + 4}{\sqrt{6}} = \frac{4}{\sqrt{6}}\)</p>
+        <p>d) \(\vec{i}\ onto\ \vec{a} = \frac{\vec{i}\cdot\vec{a}}{||\vec{a}||} = \frac{2}{\sqrt{2^2 + (-3)^2 + 4^2}} = \frac{2}{\sqrt{29}}\)</p><br>
+
+        <h1>Vector Projection</h1>
+        <p>\(VProj(\vec{b}\ onto\ \vec{a}) = SProj(\vec{b}\ \onto\ \vec{a})\ \text{unit vector of}\ \vec{a}\)</p>
+        <p>\(\phantom{VProj(\vec{b}\ \onto\ \vec{a})} = ||\vec{b}||\cos\theta \frac{\vec{a}}{||\vec{a}||}\)</p>
+        <p>\(\phantom{VProj(\vec{b}\ \onto\ \vec{a})} = \frac{\vec{b}\cdot\vec{a}}{||\vec{a}||}\frac{\vec{a}}{||\vec{a}||} = \frac{\vec{b}\cdot\vec{a}}{||\vec{a}||^2}\vec{a}\)</p>
+        <p>\(VProj(\vec{a}\ onto\ \vec{b}) = \frac{\vec{a}\cdot\vec{b}}{||\vec{b}||^2}\vec{b}\)</p><br>
+
+        <p>4. \(\vec{a} = (0, 1, -2),\ \vec{b} = (-1, 0, 3)\). Find:</p>
+        <p>a) \(VProj(\vec{a}\ onto\ \vec{b}) = \frac{\vec{a}\cdot\vec{b}}{||\vec{b}||^2}\vec{b}\)</p>
+        <p>\(= \frac{(0, 1, -2)\cdot(-1, 0, 3)}{(-1)^2 + 0^2 + 3^2}(-1, 0, 3) = \frac{-6}{10}(-1, 0, 3) = (\frac{3}{5}, 0, -\frac{9}{5})\)</p>
+        <p>b) \(VProj(\vec{b}\ onto\ \vec{a}) = \frac{-6}{5}(0, 1, -2) = (0, -\frac{6}{5}, \frac{12}{5})\)</p>
+        <p>c) \(VProj(\vec{a}\ onto\ \vec{k}) = \frac{-2}{1}(0, 0, 1) = (0, 0, -2)\)</p>
+        <p>d) \(VProj(\vec{i}\ onto\ \vec{a}) = \frac{0}{5}(0, 1, -2) = (0, 0, 0) = \vec{0}\)</p><br>
+
+        <p>5. Find an expression using the dot product of the vector components of the vector \(\vec{a}\) along to the vector \(\vec{b}\) and along to a direction perpendicular to the direction of the vector \(\vec{b}\) but in the same plane containing the vectors \(\vec{a},\ \vec{b}\).</p>
+        <p>\(\vec{b_{||} = VProj(\vec{b}\ onto\ \vec{a} = \frac{\vec{b}\cdot\vec{a}}{||\vec{a}||^2}\vec{a}\)</p>
+        <p>\(\vec{b_\perp} = \vec{b}-\vec{b_{||}} = \vec{b}-\frac{\vec{b}\circ\vec{a}}{||\vec{a}||^2}\vec{a}\)</p><br>
+
+        <p>Find the height of a triangle ABC (CD)</p>
+        <p>\(A(2,0,0),\ B(0,0,2),\ C(0,2,0)\)</p>
+        <p>\(\vec{DC} = \vec{AC} - \vec{AD} = VProj(\vec{AC}\ onto\ \vec{AB})\)</p>
+        <p>\(\vec{AB} = (-2, 0, 2),\ \vec{AC} = (-2, 2, 0)\)</p>
+        <p>\(\vec{AD} = \frac{\vec{AC}\cdot\vec{AB}}{||\vec{AB}||^2\vec{AB}} = \frac{4}{8}(-2,0,2) = (-1,0,1)\)</p>
+        <p>\(\vec{CD} = (-2, 2, 0) - (-1, 0, 1) = (-1, 2, -1)\)</p>
+        <p></p>
+
+        <br><br><br><br>
+        </div>
+
+
+        <div id="vectors-7.6">
+        <h1>Cross Product</h1>
+        <p>Cross product between two vectors \(\vec{a},\ \vec{b}\) is a new vector \(\vec{a}\times\vec{b}\) which has the following properties:</p>
+        <p>\(||\vec{a}\times\vec{b}|| = ||\vec{a}||||\vec{b}||\sin\alpha\ (\alpha = \angle(\vec{a}, \vec{b}))\)</p>
+        <p>\(\vec{a}\times\vec{b}\) is perpendicular to both \(\vec{a}, \vec{b}\) (perpendicular from the plane formed out of \(\vec{a}, \vec{b}\))</p>
+        <p>\(\vec{a}, \vec{b}, \vec{a}\times\vec{b}\) form a right-handed system</p><br>
+
+        <p>Vector facing towards you: \(\cdot\) tip of arrow</p>
+        <p>Vector facing away from you: \(\times\) fletching of arrow</p>
+
+        <h2>Special Cases</h2>
+        <p>\(\vec{a} || \vec{b} (\alpha = 0, 180), \vec{a}\times\vec{b} = \vec{0}\)</p>
+        <p>\(\vec{a} \perp \vec{b} (\alpha = 90), ||\vec{a}\times\vec{b}|| = ||\vec{a}||||\vec{b}||\) (maximum)</p>
+        <p>\(\vec{a} = \vec{b}, \vec{a}\times\vec{a} = \vec{0}\)</p><br>
+
+        <p>1. Find magnitude of \(\vec{a}\times\vec{b}, ||\vec{a}|| = 2, ||\vec{b}|| = 3, \angle(\vec{a}, \vec{b})\)</p>
+        <p>\(||\vec{a}\times\vec{b}|| = ||\vec{a}||||\vec{b}||\sin\alpha = 3(2)\frac{\sqrt{3}}{2} = 3\sqrt{3}\)</p>
+
+        <h2>Cross Product of Unit Vectors</h2>
+        <p>\(\vec{a} = a_x\vec{i} + a_y\vec{j} + a_z\vec{k}\)</p>
+        <p>\(\vec{i}\times\vec{i} = \vec{0}\)</p>
+        <p>\(\vec{j}\times\vec{j} = \vec{0}\)</p>
+        <p>\(\vec{k}\times\vec{k} = \vec{0}\)</p>
+
+        <p>Alphabetical order: positive cross product (i -> j -> k)</p>
+        <p>\(\vec{i}\times\vec{j} = \vec{k}\)</p>
+        <p>\(\vec{j}\times\vec{k} = \vec{i}\)</p>
+        <p>\(\vec{k}\times\vec{i} = \vec{j}\)</p>
+
+        <p>Non-alphabetical order: negative cross product (i &lt;- j &lt;- k)</p>
+        <p>\(\vec{i}\times\vec{k} = \vec{j}\)</p>
+        <p>\(\vec{j}\times\vec{i} = \vec{k}\)</p>
+        <p>\(\vec{k}\times\vec{j} = \vec{i}\)</p><br>
+
+        <p>\((a_x\vec{i} + a_y\vec{j} + a_z\vec{k}) \times (b_x\vec{i} + b_y\vec{j} + b_z\vec{k})\)</p>
+        <p>\(= a_x b_x\vec{0} + a_x b_y\vec{k} - a_x b_z\vec{j} - a_y b_x\vec{k} + a_y b_y\vec{0} + a_y b_z\vec{i} + a_z b_x\vec{j} - a_z b_y\vec{i} + a_z b_z\vec{0}\)</p>
+        <p>\(= a_x b_y\vec{k} - a_x b_z\vec{j} - a_y b_x\vec{k} + a_y b_z\vec{i} + a_z b_x\vec{j} - a_z b_y\vec{i}\)</p>
+        <p>\(= \vec{i}(a_y b_z - a_z b_y) + \vec{j}(a_z b_x - a_x b_z) + \vec{k}(a_x b_y - a_y b_x)\)</p>
+        <div class="table indent">
+            \(
+            \vec{i}\begin{array}{|c c|}
+            a_y & a_z \\
+            b_y & b_z
+            \end{array}
+            -
+            \vec{j}\begin{array}{|c c|}
+            a_x & a_z \\
+            b_x & b_z
+            \end{array}
+            +
+            \vec{k}\begin{array}{|c c|}
+            a_x & a_y \\
+            b_x & b_y
+            \end{array}
+            =
+            \begin{array}{|c c c|}
+            \vec{i} & \vec{j} & \vec{k} \\
+            a_x & a_y & a_z \\
+            b_x & b_y & b_z
+            \end{array}
+            \)
+        </div><br>
+        <p>\(\begin{array}|c c| a & b \\ c & d = ad - bc\)</p><br>
+
+        <p>2. a) Find cross product of \(\vec{a}=(1,-2,0), \vec{b}=(0,-1,2)\)</p>
+        <p>\(\vec{a}\times\vec{b} = \vec{i}(a_y b_z - a_z b_y) - \vec{j}(a_x b_z - a_z b_x) + \vec{k}(a_y b_z - a_z b_y)\)</p>
+        <p>\(\phantom{\vec{a}\times\vec{b}} = \vec{i}(-4-0) - \vec{j}(2-0) + \vec{k}(0-1)\)</p>
+        <p>\(\phantom{\vec{a}\times\vec{b}} = (-4,-2,-1)\)</p><br>
+
+        <p>c) (-1,1,-2), (-2,-1,3)</p>
+        <p>\(= (3-2, 3+4, 1+2) = (1,7,3)\)</p>
+
+        <h2>Properties of Cross Product</h2>
+        <p>\(\vec{a}\times\vec{b} = -\vec{b}\times\vec{a}\) (anti-commutative)</p>
+        <p>\(\lambda(\vec{a}\times\vec{b}) = \lambda\vec{a} \times \vec{b} = \vec{a} \times \lambda\vec{a}\)</p>
+        <p>\(\vec{a} \times (\vec{b} + \vec{c}) = \vec{a}\times\vec{b} + \vec{a}\times\vec{c}\) (distributive)</p>
+        <p>\(\vec{a}\times\vec{b} = 0 \iff \vec{a} = \vec{0}, \vec{b} = \vec{0}, or \vec{a} || \vec{b}\)</p>
+        <p>\(\vec{a}\times\vec{0} = 0\)</p>
+        <p>\(\vec{a}\times\vec{b} = 0\)</p><br>
+
+        <p>Cross product has higher priority than addition/subtraction</p>
+        <p>3. Prove using cross product</p>
+        <p>a) \((\vec{a}-\vec{b})\times(\vec{a}+\vec{b})\)</p>
+        <p>\(= \vec{0} + \vec{a}\times\vec{b} - \vec{b}\times\vec{a} + \vec{0}\)</p>
+        <p>\(= \vec{a}\times\vec{b} + \vec{a}\times\vec{b} = 2\vec{a}\times\vec{b}\)</p><br>
+
+        <p>b) \((\vec{a}\times\vec{b})\cdot(\vec{a}\times\vec{b}) + (\vec{a}\cdot\vec{b})(\vec{a}\cdot\vec{b}) = (\vec{a}\cdot\vec{a})(\vec{b}\cdot\vec{b})\)</p>
+        <p>\(= ||\vec{a}\times\vec{b}||^2 + (\vec{a}\cdot\vec{b})^2\)</p>
+        <p>\(= ||\vec{a}||^2||\vec{b}||^2\cos^2\theta + ||\vec{a}||^2||\vec{b}||^2\sin^2\theta\)</p>
+        <p>\(= ||\vec{a}||^2 + ||\vec{b}||^2\)</p>
+        <p>\(= (\vec{a}\cdot\vec{a})(\vec{b}\cdot\vec{b})\)</p><br>
+
+        <p>c) \(\vec{a}\cdot(\vec{b}\times\vec{c})=\vec{b}\cdot(\vec{c}\times\vec{a})=\vec{c}\cdot(\vec{a}\times\vec{b})\)</p>
+        <p>\((a_x, a_y, a_z)\cdot(b_y c_z - b_z c_y, b_x c_z - b_z c_x, b_x c_y - b_y c_x)\)</p>
+        <p>\(= (a_x b_y c_z - a_x b_z c_y - a_y b_x c_z + a_y b_z c_x + a_z b_x c_y - a_z b_y c_x))\)</p>
+        <p>\((b_x, b_y, b_z)\cdot(c_y a_z - c_z a_y, c_x a_z - c_z a_x, c_x a_y - c_y a_x)\)</p>
+        
+        <!-- <p>\(||\vec{a}||||\vec{b}\times\vec{c}||\cos\theta = ||\vec{b}||||\vec{c}\times\vec{a}||\cos\theta = ||\vec{c}||||\vec{a}\times\vec{b}||\cos\theta\)</p> -->
+
+        <p>d) \(\vec{a}\times(\vec{b}\times\vec{c}) = (\vec{c}\cdot\vec{a})\vec{b} - (\vec{b}\cdot\vec{a})\vec{c}\)</p>
+
+        <p>4. Find unit vector perpendicular to \(\vec{a} = (0,1,1), \vec{b} = (1,1,0)\)</p>
+        <p>\(\vec{a}\times\vec{b} = (0-1, -0+1, 0-1) = (-1, 1, -1)\)</p>
+        <p>\(\vec{u} = \frac{\vec{a}\times\vec{b}}{||\vec{a}\times\vec{b}||} = (-\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}])\)</p><br>
+
+        <p>5. Identify as scalar, vector, or meaningless</p>
+        <p>a) \(\vec{a}+\vec{b}\times\vec{c}\): V + (V) = vector</p>
+        <p>b) \(\vec{a}+\vec{b}\cdot\vec{c}\): V + (S) = meaningless</p>
+        <p>c) \(\vec{a}\times\vec{b} - \vec{b}\times\vec{c}\): V - V = vector</p>
+        <p>d) \((\vec{b}\cdot\vec{c})\vec{a}\): S(V) = vector</p>
+        <p>e) \((\vec{b}\cdot\vec{c})\times\vec{a}: S x V = meaningless\)</p>
+        <p>f) \((\vec{b}\cdot\vec{c})(\vec{a}\times\vec{b})\): S(V) = vector</p>
+        <p>g) \((\vec{b}\cdot\vec{c})(\vec{a}\times\vec{b}) - (\vec{b}+\vec{c})\times(\vec{c}\times\vec{b})\): S(V) - V x V = V - V = vector</p>
+        <p>h) \((\vec{b}\cdot\vec{c}) - \vec{a}\cdot(\vec{b}\times\vec{c})\): S - V.V = S-S = scalar</p>
+
+        <br><br><br><br>
+        </div>
+
+
+        <div id="vectors-7.7">
+        <h1>Applications of Dot/Cross Product</h1>
+        <p>1. Box is pulled 100m by 500N at an angle of 30*. Calculate work</p>
+        <p>\(W = F d \cos\theta = (100m) (500N) \cos 30 = \)</p><br>
+
+        <p>2. Object with weight 50N is moved along ABCA</p>
+        <p>a) \(W_{AB} = (0, 50)\cdot(6, 0) = 0 J\)</p>
+        <p>b) \(W_{BC} = (0, 50)\cdot(-6, -3) = -150 J\)</p>
+        <p>c) \(W_{CA} = (0, 50)\cdot(0, 3) = 150 J\)</p>
+        <p>d) \(W_{net} = 0 - 150 + 150 = 0 J\) of work</p><br>
+
+        <h2>Torque</h2>
+        <p>Torque about a point A created by force \(\vec{F}\) acting on object located at B:</p>
+        <p>\(\vec{\tau} = \vec{AB}\times\vec{F} = \vec{r}\times\vec{F}\)</p>
+        <p>\(||\vec{\tau}|| = r F \sin\alpha\)</p><br>
+
+        <p>3. 30 cm wrench used to loosen a bolt by applying 20N CCW</p>
+        <p>\(||\vec{\tau}|| = ||\vec{r}||||\vec{F}||\sin\theta = (30cm)(20N)(\sin 150) = 3 Nm\)</p><br>
+
+        <h2>Area of a Parallelogram</h2>
+        <p>Parallelogram defined by vectors \(\vec{a}, \vec{b}\) is determined by the formula \(A = ||\vec{a}\times\vec{b}|| = ||\vec{a}||||\vec{b}||\sin\alpha, \alpha = \angle(\vec{a}, \vec{b})\)</p>
+        <p>Find area of parallelogram defined by \(\vec{a}=(1,-1,0), \vec{b}=(0,1,2)\)</p>
+        <p>\(\vec{a}\times\vec{b} = (-2, -2, -1), ||\vec{a}\times\vec{b}|| + \sqrt{4+4+1} = 3\)</p><br>
+
+        
+        <br><br><br><br>
+        </div>
+
+
+        <div id="vectors-review">
+        <p></p>
+
+
+        
         <br><br><br><br>
         </div>
 
