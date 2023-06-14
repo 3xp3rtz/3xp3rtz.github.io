@@ -100,10 +100,15 @@
 		font-size: 17px;
 		/* padding-inline: 10px; */
 	}
-    /* .nav-bar-elem a {
+    .nav-bar-elem .no-pad {
+        padding: 0px;
+    }
+    .nav-bar-elem img {
+        height: 40px;
+        width: auto;
         padding-left: 10px;
         padding-right: 10px;
-    } */
+    }
 }
 
 /* nav bar big screen */
