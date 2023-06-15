@@ -37,6 +37,8 @@
             <button class="indent" onclick="window.location.href='ics-notes.html?page=arrls'"><a class="content-medium">ArrayLists</a></button>
             <button class="indent" onclick="window.location.href='ics-notes.html?page=sort'"><a class="content-medium">Sort & Search</a></button>
             <button class="indent" onclick="window.location.href='ics-notes.html?page=bib'"><a class="content-medium">Bibliography</a></button>
+            <button class="indent" onclick="window.location.href='ics-notes.html?page=recur'"><a class="content-medium">Recursion</a></button>
+            <button class="indent" onclick="window.location.href='ics-notes.html?page=isp'"><a class="content-medium">ICS4U ISP</a></button>
         </div>
     <br></div>
     
@@ -424,15 +426,15 @@
         <div class="java-snippet">
             <code>
                 public int factorial(int iters) {<br>
-                    if (iters &gt; 1) return iters * factorial(iters-1);<br>
-                    return 1;<br>
+                <tab/>if (iters &gt; 1) return iters * factorial(iters-1);<br>
+                <tab/>return 1;<br>
                 }<br><br>
 
-                System.out.println(factorial(5)); // prints the 5 factorial, 120
+                System.out.println(factorial(5)); // prints 5 factorial, 120
             </code>
         </div><br>
 
-        <p>The code snippet above performs the factorial function (the multiplication of the first n numbers) recursively, as you can see it calls itself within the if statement. The usage for recursion can be very useful for tasks of recursive nature, which includes the Fibonacci sequence, factorials, GCD, and more.</p>
+        <p>The code snippet above performs the factorial function (the multiplication of the first n numbers) recursively, as you can see it calls itself within the if statement. The usage for recursion can be very useful for tasks of recursive nature, which includes the Fibonacci sequence, factorials, GCD, and more.</p><br>
         <p>Recursion can also help in other cases, such as traversing a graph using methods like BFS (breadth-first search) and DFS (depth-first search).</p>
     </div>
 
@@ -565,8 +567,41 @@
     <p>Mind Mastery is a Java program which teaches the player about attention disorders and attempts to get the player to focus on the tasks at hand. There are three levels: the learning level, the maze level, and the action level.</p>
 
     <h2>Learning</h2>
-    <p>The learning level has the person</p>
+    <p><b>Controls: WASD (movement), E (interaction)</b></p>
+    <p>The learning level has the person wandering around the neighbourhood, visiting places to learn more about attention disorders. </p>
+    <img src="images/isp-0.png"><br><br>
+    <p>They meet James, who has an attention disorder and can't focus in school, and has dropping grades as a result of it.</p>
+    <img src="images/isp-1.png"><br><br>
+    <p>They then visit the learning centre, where they can learn more details about what ADHD and other disorders are, and some strategies to combat it.</p>
+    <img src="images/isp-2.png"><br><br>
+    <p>Finally, entering the blue house ends the learning level.</p>
+    
+    <h2>Maze</h2>
+    <p><b>Controls: WASD (movement), E (interaction), mouse (tasks)</b></p>
+    <p>The maze level consists of the player navigating through their own house, trying to get to the tasks scattered about the maze.</p>
+    <img src="images/isp-3.png"><br><br>
+    
+    <h3><u>Tasks</u></h3>
+    <p>Drag and drop tasks: both the math homework and the task organization is handled by a drag and drop system, where you can drag an item from the left side onto a box on the right side.</p>
+    <img src="images/isp-4.png"><br><br>
+    <img src="images/isp-6.png"><br><br>
+    <p>Sweeping task: dragging the mouse across the dust particles will slowly sweep them away, and clearing all of the dust will allow the player to continue.</p>
+    <img src="images/isp-5.png"><br><br>
+    
+    <h2>Action</h2>
+    <p><b>Controls: mouse</b></p>
+    <p>The action level describes the instructions before sending the playing into the game, describing which icons to click and which to avoid.</p>
+    <img src="images/isp-7.png"><br><br>
+    <p>The gameplay of the level comes from icons flying across the screen from either side, and as the player clicks on an icon, they are either rewarded or deducted points for clicking either something productive or unproductive.</p>
+    <img src="images/isp-8.png"><br><br>
+    <p>After the level is complete, a level complete screen is displayed, and a prompt to enter the player's name appears to record their score.</p>
+    <img src="images/isp-9.png"><br><br>
 
+    <h2>Leaderboard</h2>
+    <p>After playing the action level, the player's score is recorded within a text file, which can then be read to display the best scores recorded so far.</p>
+    <img src="images/isp-10.png"><br><br>
+    
+    <p></p>
     </div>
 
     </div>
