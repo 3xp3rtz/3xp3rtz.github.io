@@ -243,13 +243,14 @@
         <i><tab/>A sample implementation of a <code>Dog</code> class as a child class of the <code>Pet</code> class</i><br>
         <p>The most obvious difference between the <code>Dog</code> class and any other class is the existence of <code>extends Pet</code>. This is the syntax to extend a class, or to inherit from it methods, constructors, etc.</p>
         <p>Despite inheriting the class, the <code>Dog</code> class is unable to access the <code>private</code> variables and methods in <code>Pet</code> as they are not in an accessible scope. However, it can still access <code>protected</code>, <code>public</code>, and variables/methods without an explicit scope keyword from its parent class.</p>
-        <p>For example, with the call to <code>d.getAge()</code>, there is no <code>getAge()</code> implemented in the <code>Dog</code> class, yet the code segment does not error. In fact, it calls the <code>getAge()</code> method from its parent class, <code>Pet</code>. </p>
+        <p>For example, with the call to <code>d.getAge()</code>, there is no <code>getAge()</code> implemented in the <code>Dog</code> class, yet the code segment does not error. In fact, it calls the <code>getAge()</code> method from its parent class, <code>Pet</code>. The child class "inherits" the method from its parent.</p>
+        <p>On the other hand, the <code>Dog</code> class has implemented a new version of <code>getName()</code>, and running <code>d.getName()</code> will yield <code>"Henry the Dog"</code> instead of <code>"Pet Henry"</code>. The child class "overrides" the parent class' methods in this manner.</p><br><br>
 
 
         <hr><br id="poly">
 
         <h2>Polymorphism</h2>
-        <p>Let's say you want to create an object which </p>
+        <p>Let's say you want to create several object which each have very similar behaviour, so you create a parent class with many child classes. However, you never actually instantiate the parent class. This can be handled by an abstract class, to simplify </p>
         <p></p>
 
         <h3>Upcasting/Downcasting</h3>

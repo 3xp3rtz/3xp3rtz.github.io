@@ -1,4 +1,4 @@
-var cv = document.getElementById("canvas");
+var cv = document.getElementById("gameoflife-canvas");
 var c = cv.getContext("2d");
 const wdt = 20, hgt = 20, barW = 200;
 const w = document.documentElement.scrollWidth-50-barW;

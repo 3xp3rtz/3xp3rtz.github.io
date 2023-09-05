@@ -1,0 +1,48 @@
+    /// Player Keys
+
+NQK 31 0        W
+JSK 1000
+DVK 61 2
+NQK 3A 0        A
+JSK 1020
+DVK 6A 2
+NQK 3B 0        S
+JSK 1040
+DVK 6B 2
+NQK 3C 0        D
+JSK 1060
+DVK 6C 2
+NQK 4A 0        Interact 1
+JSK 1080
+NQK 4B 0        Interact 2
+JSK 1100
+
+
+
+    /// Movement code
+# 1000          W
+LEK 61  0
+JMK 1010
+SBK 61  1
+RET
+# 1010
+ADK 10  1
+ADD 61  84
+GTK 58  0
+DVK 61  2
+
+# 1020          A
+LEK 6A  0
+JMK 1030
+SBK 6A  1
+RET
+# 1030
+ADK 10  1
+ADD 6A  84
+GTK 58  0
+DVK 61  2
+
+
+
+
+# 1080          Interact 1
