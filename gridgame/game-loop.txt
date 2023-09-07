@@ -45,4 +45,6 @@ DVK 61  2
 
 
 
-# 1080          Interact 1
+# 1080          Interact 1: Flip Hex Digits
+CLR 0
+ADD 0   1

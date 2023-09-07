@@ -45,6 +45,10 @@ Comparisons:
 > GEQ / GEK     greater than or equal to
 
 
+Map Interaction:
+- LOD   N   X   Y
+### Gets the value of the tile at [X, Y]
+
 
 
 Loop example:
@@ -67,7 +71,7 @@ Register Layout:
     0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
                                                                    Map   
     0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
- PlayerX PlayerY  Value  
+ PlayerX PlayerY  PValue  
     0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 
 # 30
@@ -93,4 +97,20 @@ Register Layout:
                                  Lockout 
 
 # 90
+    0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+
+# A0
+    0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+
+# B0
+    0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+
+# C0
+                                                        Registers
+    0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  Reg0    Reg1    Reg2    Reg3    Reg4    Reg5    Reg6    Reg7    Reg8    Reg9    Reg10   Reg11   Reg12   Reg13   Reg14   Reg15
+
+
+
+
 
