@@ -19,6 +19,10 @@ function setup() {
     }
 }
 
+function loop() {
+    
+}
+
 function loadImage(id) {
     return null;
 }

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG Style Card Game</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="1200" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const cardWidth = 100;
+        const cardHeight = 140;
+        const slotWidth = 100;
+        const slotHeight = 140;
+        const slots = [
+            { x: 10, y: 100 },
+            { x: 140, y: 100 },
+            { x: 270, y: 100 },
+            { x: 400, y: 100 },
+            { x: 10, y: 300 },
+            { x: 140, y: 300 },
+            { x: 270, y: 300 },
+            { x: 400, y: 300 }
+        ];
+
+        const handSlots = [
+            
+            { x: 200, y: 475 },
+            { x: 280, y: 475 },
+            { x: 360, y: 475 },
+            { x: 440, y: 475 },
+            { x: 520, y: 475 }
+        ];
+
+        // Sample card data
+        const cards = [
+            { name: "Goblin", color: "red", power: 2, toughness: 2, x: 10, y: 10 },
+            { name: "Elf", color: "green", power: 1, toughness: 1, x: 120, y: 10 },
+            { name: "Dragon", color: "black", power: 4, toughness: 4, x: 230, y: 10 }
+        ];
+
+        const handWidth = 400;
+        const handHeight = 150;
+
+        // Function to render all cards, hand slots, and game slots
+        function render() {
+            clearCanvas();
+            // Draw hand slots
+            handSlots.forEach((slot) => {
+                drawSlot(slot.x, slot.y, slotWidth, slotHeight);
+            });
+            // Draw game slots
+            slots.forEach((slot) => {
+                drawSlot(slot.x, slot.y, slotWidth, slotHeight);
+            });
+            // Draw cards
+            cards.forEach((card) => {
+                drawCard(card.x, card.y, card);
+            });
+        }
+
+        // Initial placement of cards in the hand section
+        cards.forEach((card, index) => {
+            card.x = handSlots[index].x;
+            card.y = handSlots[index].y;
+        });
+
+
+        // Event listener for mouse up (for drag and drop)
+        canvas.addEventListener('mouseup', function() {
+            if (isDragging && draggedCardIndex !== undefined) {
+                isDragging = false;
+                let closestSlotDist = Infinity;
+                let closestSlotIndex = -1;
+                // Check for the closest slot (whether it's in the hand section or game section)
+                for (let i = 0; i < handSlots.length; i++) {
+                    const slot = handSlots[i];
+                    const dist = distance({ x: cards[draggedCardIndex].x + cardWidth / 2, y: cards[draggedCardIndex].y + cardHeight / 2 }, { x: slot.x + slotWidth / 2, y: slot.y + slotHeight / 2 });
+                    if (dist < closestSlotDist) {
+                        closestSlotDist = dist;
+                        closestSlotIndex = i;
+                    }
+                }
+                for (let i = 0; i < slots.length; i++) {
+                    const slot = slots[i];
+                    const dist = distance({ x: cards[draggedCardIndex].x + cardWidth / 2, y: cards[draggedCardIndex].y + cardHeight / 2 }, { x: slot.x + slotWidth / 2, y: slot.y + slotHeight / 2 });
+                    if (dist < closestSlotDist) {
+                        closestSlotDist = dist;
+                        closestSlotIndex = i + handSlots.length; // Offset to account for hand slots
+                    }
+                }
+                // Snap the card to the closest slot
+                if (closestSlotIndex !== -1) {
+                    if (closestSlotIndex < handSlots.length) {
+                        cards[draggedCardIndex].x = handSlots[closestSlotIndex].x;
+                        cards[draggedCardIndex].y = handSlots[closestSlotIndex].y;
+                    } else {
+                        const gameSlotIndex = closestSlotIndex - handSlots.length;
+                        cards[draggedCardIndex].x = slots[gameSlotIndex].x;
+                        cards[draggedCardIndex].y = slots[gameSlotIndex].y;
+                    }
+                }
+                render();
+            }
+        });
+
+
+        // Function to draw a card
+        function drawCard(x, y, card) {
+            ctx.fillStyle = card.color;
+            ctx.fillRect(x, y, cardWidth, cardHeight);
+            ctx.fillStyle = 'white';
+            ctx.fillText(card.name, x + 10, y + 20);
+            ctx.fillText("P/T: " + card.power + "/" + card.toughness, x + 10, y + 40);
+            ctx.fillText("Toughness:", x + 10, y + 60);
+            ctx.fillText(card.toughness, x + 80, y + 60);
+        }
+
+        // Function to draw a slot
+        function drawSlot(x, y) {
+            ctx.strokeStyle = 'blue';
+            ctx.strokeRect(x, y, slotWidth, slotHeight);
+        }
+
+        // Function to clear canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Function to check if point is inside a rectangle
+        function isInside(pos, rect){
+            return pos.x > rect.x && pos.x < rect.x+slotWidth && pos.y < rect.y+slotHeight && pos.y > rect.y;
+        }
+
+        // Function to calculate distance between two points
+        function distance(p1, p2) {
+            return Math.sqrt((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2);
+        }
+
+        // Event listener for mouse down (for drag and drop)
+        let isDragging = false;
+        let dragOffsetX, dragOffsetY;
+        let draggedCardIndex;
+
+        canvas.addEventListener('mousedown', function(e) {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            cards.forEach((card, index) => {
+                if (mouseX >= card.x && mouseX <= card.x + cardWidth && mouseY >= card.y && mouseY <= card.y + cardHeight) {
+                    isDragging = true;
+                    draggedCardIndex = index;
+                    dragOffsetX = mouseX - card.x;
+                    dragOffsetY = mouseY - card.y;
+                }
+            });
+        });
+
+        // Event listener for mouse move (for drag and drop)
+        canvas.addEventListener('mousemove', function(e) {
+            if (isDragging && draggedCardIndex !== undefined) {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                cards[draggedCardIndex].x = mouseX - dragOffsetX;
+                cards[draggedCardIndex].y = mouseY - dragOffsetY;
+
+                render();
+            }
+        });
+        
+        // Function to add toughness to a card
+        function addToughness(index, amount) {
+            if (index >= 0 && index < cards.length) {
+                cards[index].toughness += amount;
+                render();
+            }
+        }
+
+        // Function to subtract toughness from a card
+        function subtractToughness(index, amount) {
+            if (index >= 0 && index < cards.length) {
+                cards[index].toughness -= amount;
+                render();
+            }
+        }
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>
