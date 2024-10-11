@@ -15,6 +15,7 @@
 <body>
     <canvas id="gameCanvas" width="1200" height="600"></canvas>
     <script>
+
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -26,10 +27,14 @@
         var position = [{x:400,y:500}];
         var level = [1];
         var resources = [0];
-        var baseCosts = [[[0,10]]];
+        var currCosts = [[[0,10]]];
         var scaling = [[[0,"+10"]]];
 
         var nodeSize = 50;
+
+        var ticks = 0;
+        var tickCalc = 60;
+
         
         function init() {
             window.requestAnimationFrame(draw);
@@ -72,8 +77,8 @@
             if (e.button == 0) {
                 console.log(mouseX, mouseY);
                 for (let node = 0; node < level.length; node++) {
-                    if (abs(mouseX - position[node].x) <= nodeSize/2 
-                     && abs(mouseY - position[node].y) <= nodeSize/2) {
+                    if (Math.abs(mouseX - position[node].x) <= nodeSize/2 
+                     && Math.abs(mouseY - position[node].y) <= nodeSize/2) {
                         nodeClicked(node);
                     }
                 }
@@ -111,6 +116,10 @@
                 ctx.fillStyle = 'green';
                 ctx.fillRect(position[node].x + cameraOffset.x - nodeSize/2, 
                     position[node].y + cameraOffset.y - nodeSize/2, nodeSize, nodeSize);
+                ctx.fillStyle = 'black';
+                ctx.font = '14px Arial';
+                ctx.fillText("Lv." + level[node], position[node].x + cameraOffset.x - nodeSize/4, position[node].y + cameraOffset.y);
+                ctx.fillText("Cost: " + currCosts[node], position[node].x + cameraOffset.x - nodeSize/4, position[node].y + cameraOffset.y + 10);
             }
             // ctx.fillRect(cameraOffset.x, cameraOffset.y, 50, 50);
             // ctx.fillStyle = 'black';
@@ -131,31 +140,48 @@
         function nodeClicked(node) {
             if (attemptUpgrade(node)) {
                 console.log("Upgraded node " + node + ".");
+                level[node] += 1;
+                
                 // change costs here 
+                for (let i = 0; i < currCosts[node].length; i++) {
+                    resources[currCosts[node][i][0]] -= currCosts[node][i][1];
+                    for (let groups = 0; groups < scaling[node].length; groups++) {
+                        curr = scaling[node][groups][1].split(" ")
+                        for (let group = 0; group < curr.length; group++) {
+                            console.log(currCosts[node][group], curr, curr[group], curr[group][0]);
+                            if (curr[group][0] === "+") currCosts[node][i][1] += Number(curr[group].substr(1));
+                            if (curr[group][0] === "*") currCosts[node][i][1] *= Number(curr[group].substr(1));
+                            if (curr[group][0] === "^") currCosts[node][i][1] = Math.pow(resources[currCosts[node][i][0]], Number(curr[group].substr(1)));
 
+                        }
+                    }
+                }
 
 
 
             } else console.log("Could not afford!");
         }
 
-        function getCost(node, index) {
-            cost = baseCosts[node][index];
-            scale = scaling[node][index];
-            
+        function canAfford(node) {
+            for (let i = 0; i < currCosts[node].length; i++) {
+                if (resources[currCosts[node][i][0]] < currCosts[node][i][1]) return false;
+            }
+            return true;
         }
 
         function attemptUpgrade(node) {
-            if (level[node] <= 1) return false;
-            for (let index = 0; index < baseCosts[node].length; index++) {
-                if (getCost(node, index)) return false;
-                
-            }
+            if (level[node] < 1) return false;
+            return canAfford(node);
         }
 
 
         function calculate() {
-
+            if (ticks++ >= tickCalc) {
+                ticks -= tickCalc;
+                for (let i = 0; i < level.length; i++) {
+                    resources[i] += level[i];
+                }
+            }
         }
 
         // Function to clear canvas
