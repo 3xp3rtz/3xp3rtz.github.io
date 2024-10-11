@@ -151,9 +151,9 @@
         let isDragging = false;
         let dragOffsetX, dragOffsetY;
         let draggedCardIndex;
+        const rect = canvas.getBoundingClientRect();
 
         canvas.addEventListener('mousedown', function(e) {
-            const rect = canvas.getBoundingClientRect();
             const mouseX = e.clientX - rect.left;
             const mouseY = e.clientY - rect.top;
 

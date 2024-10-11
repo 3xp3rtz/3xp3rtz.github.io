@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Tree</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="1200" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        window.onload = init;
+        
+        var panning = false;
+        var lastMousePos = {x:0,y:0};
+        var cameraOffset = {x:0,y:0};
+        var position = [{x:400,y:500}];
+        var level = [1];
+        var resources = [0];
+        var baseCosts = [[[0,10]]];
+        var scaling = [[[0,"+10"]]];
+
+        var nodeSize = 50;
+        
+        function init() {
+            window.requestAnimationFrame(draw);
+        }
+        
+        function draw() {
+            loop();
+            window.requestAnimationFrame(draw);
+        }
+        const rect = canvas.getBoundingClientRect();
+
+        addEventListener('mousemove', function (e) {
+            if (panning) {
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                const offsetX = mouseX - lastMousePos.x;
+                const offsetY = mouseY - lastMousePos.y;
+
+                cameraOffset.x += offsetX;
+                cameraOffset.y += offsetY;
+
+                lastMousePos.x = mouseX;
+                lastMousePos.y = mouseY;
+            };
+        });
+        
+        addEventListener('mousedown', function (e) {
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            if (e.button == 2 || (e.button == 0 && e.shiftKey)) { // right click (panning)
+                console.log("panning");
+                panning = true;
+
+                lastMousePos.x = mouseX;
+                lastMousePos.y = mouseY;
+            }
+
+            if (e.button == 0) {
+                console.log(mouseX, mouseY);
+                for (let node = 0; node < level.length; node++) {
+                    if (abs(mouseX - position[node].x) <= nodeSize/2 
+                     && abs(mouseY - position[node].y) <= nodeSize/2) {
+                        nodeClicked(node);
+                    }
+                }
+            }
+        });
+
+        addEventListener('mouseup', function (e) {
+            if (panning) { // right click (panning)
+                console.log("stopped panning")
+                panning = false;
+            }
+        });
+    
+        addEventListener('keyup', function (e) {
+            // console.log(e);
+            if (e.key == "Shift" && panning) {
+                console.log("stopped panning")
+                panning = false;
+            }
+            if (e.key == "p") {
+                console.log(cameraOffset);
+            }
+        });
+
+
+        function loop() { // main game loop
+            render();
+            drawUI();
+            calculate();
+        }
+
+        function render() { // rendering 
+            clearCanvas();
+            for (let node = 0; node < level.length; node++) {
+                ctx.fillStyle = 'green';
+                ctx.fillRect(position[node].x + cameraOffset.x - nodeSize/2, 
+                    position[node].y + cameraOffset.y - nodeSize/2, nodeSize, nodeSize);
+            }
+            // ctx.fillRect(cameraOffset.x, cameraOffset.y, 50, 50);
+            // ctx.fillStyle = 'black';
+            // ctx.fillRect(400, 500, 5, 5);
+        }
+
+        function drawUI() {
+            ctx.fillStyle = 'black';
+            ctx.font = '30px Arial'
+            for (let i = 0; i < level.length; i++) {
+                if (i == 0) {
+                    ctx.fillText("Basic: " + resources[i], 20, 50);
+                }
+            }
+        }
+
+
+        function nodeClicked(node) {
+            if (attemptUpgrade(node)) {
+                console.log("Upgraded node " + node + ".");
+                // change costs here 
+
+
+
+
+            } else console.log("Could not afford!");
+        }
+
+        function getCost(node, index) {
+            cost = baseCosts[node][index];
+            scale = scaling[node][index];
+            
+        }
+
+        function attemptUpgrade(node) {
+            if (level[node] <= 1) return false;
+            for (let index = 0; index < baseCosts[node].length; index++) {
+                if (getCost(node, index)) return false;
+                
+            }
+        }
+
+
+        function calculate() {
+
+        }
+
+        // Function to clear canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+
+
+    </script>
+</body>
+</html>
