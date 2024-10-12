@@ -31,9 +31,16 @@
         var scaling = [[[0,"+10"]]];
 
         var nodeSize = 50;
+        var cellSize = 50;
 
         var ticks = 0;
         var tickCalc = 60;
+
+        var state = 0;
+        var grid = [[]];
+        var gridSize = [8,8];
+        var cellsRemaining = gridSize[0]*gridSize[1];
+        var cellValue = 1;
 
         
         function init() {
@@ -44,6 +51,11 @@
             loop();
             window.requestAnimationFrame(draw);
         }
+
+        function pointWithin(mx,my,x,y,w,h) {
+            return (Math.abs(mx - cameraOffset.x - x) <= w && Math.abs(my - cameraOffset.y - y) <= h);
+        }
+
         const rect = canvas.getBoundingClientRect();
 
         addEventListener('mousemove', function (e) {
@@ -76,9 +88,11 @@
 
             if (e.button == 0) {
                 console.log(mouseX, mouseY);
+                
+                // console.log(position[0].x + cameraOffset.x, position[0].y + cameraOffset.y);
                 for (let node = 0; node < level.length; node++) {
-                    if (Math.abs(mouseX - position[node].x) <= nodeSize/2 
-                     && Math.abs(mouseY - position[node].y) <= nodeSize/2) {
+                    if (pointWithin(mouseX, mouseY, position[node].x, position[node].y, nodeSize/2, nodeSize/2)) {
+
                         nodeClicked(node);
                     }
                 }
@@ -86,20 +100,27 @@
         });
 
         addEventListener('mouseup', function (e) {
-            if (panning) { // right click (panning)
-                console.log("stopped panning")
-                panning = false;
+            if (state == 1) { // skill tree
+                if (panning) { // right click (panning)
+                    console.log("stopped panning")
+                    panning = false;
+                }
             }
         });
     
         addEventListener('keyup', function (e) {
-            // console.log(e);
-            if (e.key == "Shift" && panning) {
-                console.log("stopped panning")
-                panning = false;
+            if (state == 1) { // skill tree 
+                // console.log(e);
+                if (e.key == "Shift" && panning) {
+                    console.log("stopped panning")
+                    panning = false;
+                }
             }
             if (e.key == "p") {
                 console.log(cameraOffset);
+            }
+            if (e.key == " ") {
+                state = (state + 1)&1;
             }
         });
 
@@ -112,18 +133,29 @@
 
         function render() { // rendering 
             clearCanvas();
-            for (let node = 0; node < level.length; node++) {
-                ctx.fillStyle = 'green';
-                ctx.fillRect(position[node].x + cameraOffset.x - nodeSize/2, 
-                    position[node].y + cameraOffset.y - nodeSize/2, nodeSize, nodeSize);
-                ctx.fillStyle = 'black';
-                ctx.font = '14px Arial';
-                ctx.fillText("Lv." + level[node], position[node].x + cameraOffset.x - nodeSize/4, position[node].y + cameraOffset.y);
-                ctx.fillText("Cost: " + currCosts[node], position[node].x + cameraOffset.x - nodeSize/4, position[node].y + cameraOffset.y + 10);
+            if (state == 0) { // main game state
+                for (let row = 0; row < grid.length; row++) {
+                    for (let col = 0; col < grid[row].length; col++) {
+                        ctx.fillStyle = 'gray';
+                        ctx.fillRect(50 + col*cellSize, 50 + row*cellSize, cellSize, cellSize);
+                    }
+                }
             }
-            // ctx.fillRect(cameraOffset.x, cameraOffset.y, 50, 50);
-            // ctx.fillStyle = 'black';
-            // ctx.fillRect(400, 500, 5, 5);
+
+            if (state == 1) { // skill tree 
+                for (let node = 0; node < level.length; node++) {
+                    ctx.fillStyle = 'green';
+                    ctx.fillRect(position[node].x + cameraOffset.x - nodeSize/2, 
+                        position[node].y + cameraOffset.y - nodeSize/2, nodeSize, nodeSize);
+                    ctx.fillStyle = 'black';
+                    ctx.font = '14px Arial';
+                    ctx.fillText("Lv." + level[node], position[node].x + cameraOffset.x - nodeSize/4, position[node].y + cameraOffset.y);
+                    ctx.fillText("Cost: " + currCosts[node], position[node].x + cameraOffset.x - nodeSize/4, position[node].y + cameraOffset.y + 10);
+                }
+                // ctx.fillRect(cameraOffset.x, cameraOffset.y, 50, 50);
+                // ctx.fillStyle = 'black';
+                // ctx.fillRect(400, 500, 5, 5);
+            }
         }
 
         function drawUI() {
@@ -176,10 +208,19 @@
 
 
         function calculate() {
-            if (ticks++ >= tickCalc) {
-                ticks -= tickCalc;
-                for (let i = 0; i < level.length; i++) {
-                    resources[i] += level[i];
+            if (state == 0) { // main game 
+                if (cellsRemaining == 0) {
+                    grid = Array.from(Array(gridSize[0]), () => Array.from(gridSize[1]), () => ++cellValue);
+                    cellsRemaining = gridSize[0] * gridSize[1];
+                    
+                }
+            }
+            if (state == 1) { // skill tree passive gain
+                if (ticks++ >= tickCalc) {
+                    ticks -= tickCalc;
+                    for (let i = 0; i < level.length; i++) {
+                        resources[i] += level[i];
+                    }
                 }
             }
         }
