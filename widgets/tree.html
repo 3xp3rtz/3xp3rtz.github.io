@@ -21,6 +21,8 @@
 
         window.onload = init;
         
+        var paused = false;
+
         var panning = false;
         var lastMousePos = {x:0,y:0};
         var cameraOffset = {x:0,y:0};
@@ -32,16 +34,54 @@
 
         var nodeSize = 50;
         var cellSize = 50;
+        var cellGap = 10;
 
         var ticks = 0;
         var tickCalc = 60;
 
         var state = 0;
-        var grid = [[]];
+        var grid = [
+            [1,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,1,1]
+        ];
         var gridSize = [8,8];
-        var cellsRemaining = gridSize[0]*gridSize[1];
+        var cellsRemaining = 64;
         var cellValue = 1;
 
+        var droneDamage = [1];
+        var droneDelays = [60];
+        var playerDamage = 1;
+
+        class Drone {
+            constructor(x, y, dir, type) {
+                this.x = x;
+                this.y = y;
+                this.dir = dir;
+                this.type = type;
+                this.damage = droneDamage[type];
+                this.delay = 60;
+            }
+
+            iter() {
+                if (--this.delay > 0) return;
+                if (this.dir == 0) this.x = Math.min(this.x + 1, gridSize[0] - 1);
+                if (this.dir == 1) this.y = Math.min(this.y + 1, gridSize[1] - 1);
+                if (this.dir == 2) this.x = Math.max(this.x - 1, 0);
+                if (this.dir == 3) this.y = Math.max(this.y - 1, 0);
+                this.dir = Math.floor(Math.random()*4);
+                this.delay = droneDelays[this.type];
+            }
+        }
+
+        var drones = [new Drone(Math.floor(Math.random()*gridSize[0]), 
+                                Math.floor(Math.random()*gridSize[1]), 
+                                Math.floor(Math.random()*4), 0)];
         
         function init() {
             window.requestAnimationFrame(draw);
@@ -49,7 +89,7 @@
         
         function draw() {
             loop();
-            window.requestAnimationFrame(draw);
+            if (!paused) window.requestAnimationFrame(draw);
         }
 
         function pointWithin(mx,my,x,y,w,h) {
@@ -89,11 +129,13 @@
             if (e.button == 0) {
                 console.log(mouseX, mouseY);
                 
-                // console.log(position[0].x + cameraOffset.x, position[0].y + cameraOffset.y);
-                for (let node = 0; node < level.length; node++) {
-                    if (pointWithin(mouseX, mouseY, position[node].x, position[node].y, nodeSize/2, nodeSize/2)) {
-
-                        nodeClicked(node);
+                if (state == 1) {
+                    // console.log(position[0].x + cameraOffset.x, position[0].y + cameraOffset.y);
+                    for (let node = 0; node < level.length; node++) {
+                        if (pointWithin(mouseX, mouseY, position[node].x, position[node].y, nodeSize/2, nodeSize/2)) {
+                            
+                            nodeClicked(node);
+                        }
                     }
                 }
             }
@@ -117,13 +159,30 @@
                 }
             }
             if (e.key == "p") {
-                console.log(cameraOffset);
+                paused = !paused;
+                if (!paused) window.requestAnimationFrame(draw);
+            }
+            if (e.key == "x") {
+                paused = true;
+                console.log(grid, gridSize);
+                console.log(cellsRemaining);
             }
             if (e.key == " ") {
                 state = (state + 1)&1;
+                panning = false;
             }
         });
 
+        addEventListener("click", function (e) {
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+            x = Math.floor((mouseX - 50)/(cellSize + cellGap));
+            y = Math.floor((mouseY - 50)/(cellSize + cellGap));
+            // ctx.fillRect(50 + col*(cellSize + cellGap),50 + row*(cellSize + cellGap), cellSize, cellSize);
+            clickCell(y,x,playerDamage);
+            console.log(y,x,playerDamage);
+        }); 
+            
 
         function loop() { // main game loop
             render();
@@ -134,10 +193,35 @@
         function render() { // rendering 
             clearCanvas();
             if (state == 0) { // main game state
+                
+
                 for (let row = 0; row < grid.length; row++) {
                     for (let col = 0; col < grid[row].length; col++) {
-                        ctx.fillStyle = 'gray';
-                        ctx.fillRect(50 + col*cellSize, 50 + row*cellSize, cellSize, cellSize);
+                        fill = Math.max((grid[row][col]/cellValue)*256, 0);
+                        ctx.fillStyle = 'rgb(' + fill + ',' + fill + ',' + fill + ')';
+                        ctx.fillRect(50 + col*(cellSize + cellGap),
+                                     50 + row*(cellSize + cellGap),
+                                     cellSize, cellSize);
+                    }
+                }
+
+
+                for (let d = 0; d < drones.length; d++) {
+                    if (drones[d].type == 0) {
+                        ctx.fillStyle = 'red';
+                        offset = (drones[d].dir&2) * ((2 * Math.floor(drones[d].dir / 2)) - 1)
+                         * (1 - drones[d].delay/droneDelays[drones[d].type])
+                         * (cellSize + cellGap);
+
+                        hexagon(50 + cellSize/2 + drones[d].y * (cellSize + cellGap), 
+                                50 + cellSize/2 + drones[d].x * (cellSize + cellGap),
+                                (cellSize + cellGap)/2, drones[d].delay);
+                        
+                        ctx.fillStyle = 'darkblue';
+                        circle(50 + cellSize/2 + drones[d].y * (cellSize + cellGap), 
+                                50 + cellSize/2 + drones[d].x * (cellSize + cellGap),
+                                (cellSize + cellGap)/4);
+                        console.log('draw on grid', drones[d]);
                     }
                 }
             }
@@ -156,6 +240,39 @@
                 // ctx.fillStyle = 'black';
                 // ctx.fillRect(400, 500, 5, 5);
             }
+        }
+
+        function hexagon(x,y,r,rot) {
+            ctx.translate(x,y);
+            ctx.beginPath();
+            
+            ctx.rotate(rot * Math.PI/160);
+            
+            // ctx.moveTo(x-r,y);
+            // ctx.lineTo(x-r/2, y-(r*Math.sqrt(3)/2));
+            // ctx.lineTo(x-r/2, y+(r*Math.sqrt(3)/2));
+            // ctx.lineTo(x+r,y);
+            // ctx.lineTo(x+r/2, y-(r*Math.sqrt(3)/2));
+            // ctx.lineTo(x+r/2, y+(r*Math.sqrt(3)/2));
+            ctx.moveTo(-r,0);
+            ctx.lineTo(-r/2, -(r*Math.sqrt(3)/2));
+            ctx.lineTo(r/2, -(r*Math.sqrt(3)/2));
+            ctx.lineTo(r,0);
+            ctx.lineTo(r/2, (r*Math.sqrt(3)/2));
+            ctx.lineTo(-r/2, (r*Math.sqrt(3)/2));
+
+            ctx.closePath();
+            ctx.fill();
+            // ctx.translate(-x,-y);
+            // ctx.rotate(-rot * Math.PI/180);
+            ctx.setTransform(1,0,0,1,0,0);
+        }
+
+        function circle(x,y,r) {
+            ctx.beginPath();
+            ctx.arc(x,y,r,0,2*Math.PI);
+            ctx.closePath();
+            ctx.fill();
         }
 
         function drawUI() {
@@ -206,14 +323,36 @@
             return canAfford(node);
         }
 
+        function clickCell(x,y,dmg) {
+            if (grid[x][y] > 0) {
+                grid[x][y] = Math.max(grid[x][y] - dmg, 0);
+                if (grid[x][y] == 0) {
+                    resources[0] += level[0];
+                    cellsRemaining--;
+                }
+            }
+        }
 
         function calculate() {
-            if (state == 0) { // main game 
-                if (cellsRemaining == 0) {
-                    grid = Array.from(Array(gridSize[0]), () => Array.from(gridSize[1]), () => ++cellValue);
-                    cellsRemaining = gridSize[0] * gridSize[1];
+            if (state == 0) { // main game
+                console.log(drones);
+                for (drone in drones) {
+                    console.log(drones, drone, drones[drone]);
+                    drones[drone].iter();
                     
+                    d = drones[drone];
+
+                    console.log(d, d.x, d.y);
+                    console.log(grid);
+                    if (d.delay <= 1) clickCell(d.x,d.y,d.damage);
                 }
+
+                if (cellsRemaining <= 0) {
+                    cellValue++;
+                    grid = Array.from(Array(gridSize[0]), () => Array(gridSize[1]).fill(cellValue));
+                    cellsRemaining = gridSize[0] * gridSize[1];
+                    console.log(grid);
+                } 
             }
             if (state == 1) { // skill tree passive gain
                 if (ticks++ >= tickCalc) {
